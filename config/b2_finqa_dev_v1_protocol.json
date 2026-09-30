@@ -1,0 +1,290 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b2-finqa-dev-v1",
+  "registration_date": "2026-09-29",
+  "status": "locally_validated_no_live_api_calls",
+  "study_boundary": {
+    "system": "B2 Fixed-Role Multi-Agent",
+    "purpose": "measure the incremental effect of structured role separation, task contracting, and independent verification after tool access has already been introduced in B1",
+    "development_results_reportable_as_final_performance": false,
+    "runtime_gold_access": false,
+    "automatic_retries": 0
+  },
+  "research_questions": [
+    "Does a fixed-role multi-agent pipeline improve final-answer and execution accuracy over the B1 tool-augmented single agent under the same six-model-call ceiling?",
+    "How much of any B2 change is associated with the task-contract role and the independent verifier role?",
+    "What quality-cost and coverage-human-review trade-offs arise from the multi-agent pipeline?"
+  ],
+  "development_hypotheses": [
+    {
+      "id": "H1",
+      "statement": "Full B2 will have higher descriptive final-answer and execution accuracy than frozen B1-v1.2 on the same registered30 development set.",
+      "confirmatory": false,
+      "reason": "The 30-item set has already been used for development and interface diagnosis."
+    },
+    {
+      "id": "H2",
+      "statement": "Removing the task-contract agent will reduce contract compliance or downstream answer quality relative to full B2.",
+      "confirmatory": false
+    },
+    {
+      "id": "H3",
+      "statement": "Removing the verifier agent will increase answer coverage but may reduce reliability relative to full B2.",
+      "confirmatory": false
+    }
+  ],
+  "architecture": {
+    "orchestration": "deterministic acyclic controller",
+    "shared_model_request": "deepseek/deepseek-flash",
+    "role_isolation": "Each role starts a fresh model conversation and receives only controller-approved structured artifacts from prior roles; reasoning text is neither shared nor retained.",
+    "topology": [
+      "contract_agent -> evidence_agent",
+      "evidence_agent -> solver_agent",
+      "solver_agent -> verifier_agent",
+      "verifier_agent -> deterministic final gate"
+    ],
+    "roles": [
+      {
+        "name": "contract_agent",
+        "model_calls": 1,
+        "tools": [],
+        "input": ["sample_id", "dataset", "question", "allowed document IDs"],
+        "output": "validated structured task contract",
+        "forbidden": ["document search", "calculation", "answer generation", "gold access"]
+      },
+      {
+        "name": "evidence_agent",
+        "model_calls": 2,
+        "tools": ["search_document"],
+        "tool_calls": 1,
+        "search_top_k": 12,
+        "output": "evidence packet containing only exact returned labels and text",
+        "forbidden": ["calculation", "final answer generation", "gold access"]
+      },
+      {
+        "name": "solver_agent",
+        "model_calls": 2,
+        "tools": ["calculate_finqa"],
+        "tool_calls": 1,
+        "output": "candidate prediction whose program must equal the executed canonical program",
+        "forbidden": ["document search", "evidence outside the packet", "gold access"]
+      },
+      {
+        "name": "verifier_agent",
+        "model_calls": 1,
+        "tools": [],
+        "output": "accept or human_review verdict with four Boolean checks and reason codes",
+        "forbidden": ["document search", "calculation", "candidate rewriting", "gold access"]
+      }
+    ],
+    "conflict_resolution": {
+      "policy": "conservative deterministic override",
+      "accepted_output": "The solver candidate is returned only when all deterministic checks pass and, when present, the verifier accepts with all checks true.",
+      "rejected_output": "Any verifier rejection or deterministic check failure changes status to human_review and clears the answer; there is no model repair or retry.",
+      "rationale": "Prevent the verifier from introducing an unsearched claim or an unexecuted replacement program."
+    }
+  },
+  "frozen_common_configuration": {
+    "provider": "deepseek",
+    "responses_url": "https://api.deepseek.com/responses",
+    "requested_model": "deepseek-flash",
+    "reasoning_configuration": "provider default; no reasoning field is sent",
+    "temperature_configuration": "provider default; no temperature field is sent",
+    "store": false,
+    "normalized_dataset": "data/normalized/finqa_dev.jsonl",
+    "normalized_dataset_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739",
+    "registered30_manifest": "config/b0_finqa_dev_30_manifest.json",
+    "registered30_manifest_sha256": "3afaa34852cdf799e1993952a6326d8b1ca6ead9a4798acb0d7ed9f889542ba3",
+    "retriever": "unchanged deterministic lexical BM25-style ranking",
+    "retriever_default_top_k": 12,
+    "calculator": "unchanged B1-v1.2 deterministic structured FinQA calculator",
+    "allowed_operations": [
+      "add",
+      "subtract",
+      "multiply",
+      "divide",
+      "exp",
+      "greater",
+      "table_average",
+      "table_sum",
+      "table_max",
+      "table_min"
+    ],
+    "prediction_evaluator": "unchanged from B0/B1",
+    "cumulative_output_budget_per_sample": 32768,
+    "request_timeout_seconds_per_model_call": 300,
+    "automatic_retries": 0,
+    "sample_substitution": false,
+    "maximum_model_calls_per_sample_full": 6,
+    "maximum_tool_calls_per_sample_full": 2,
+    "budget_comparability": "Full B2 and frozen B1-v1.2 have the same maximum six model calls and cumulative 32768 output-token budget per sample. Actual calls, tokens, and latency are reported."
+  },
+  "variants": [
+    {
+      "id": "full",
+      "label": "B2 full",
+      "roles": ["contract_agent", "evidence_agent", "solver_agent", "verifier_agent"],
+      "maximum_model_calls_per_sample": 6,
+      "maximum_tool_calls_per_sample": 2,
+      "registered30_model_call_upper_bound": 180,
+      "artifact_stem": "b2_deepseek_full_preregistered30_v1"
+    },
+    {
+      "id": "no_contract",
+      "label": "B2 minus task contract",
+      "roles": ["evidence_agent", "solver_agent", "verifier_agent"],
+      "maximum_model_calls_per_sample": 5,
+      "maximum_tool_calls_per_sample": 2,
+      "registered30_model_call_upper_bound": 150,
+      "artifact_stem": "b2_deepseek_no_contract_preregistered30_v1",
+      "isolated_component": "contract_agent"
+    },
+    {
+      "id": "no_verifier",
+      "label": "B2 minus verifier",
+      "roles": ["contract_agent", "evidence_agent", "solver_agent"],
+      "maximum_model_calls_per_sample": 5,
+      "maximum_tool_calls_per_sample": 2,
+      "registered30_model_call_upper_bound": 150,
+      "artifact_stem": "b2_deepseek_no_verifier_preregistered30_v1",
+      "isolated_component": "verifier_agent"
+    }
+  ],
+  "comparators": [
+    {
+      "id": "B0",
+      "artifact": "reports/b0_deepseek_preregistered30_v1_2_report_evidence_ids_v2.json",
+      "role": "direct-LLM reference"
+    },
+    {
+      "id": "B1",
+      "artifact": "reports/b1_deepseek_preregistered30_v1_2_report.json",
+      "artifact_sha256": "88a285ffc55a10efc0b03d076ea42c428a0f76f55e9a41ac29c6533bca324c83",
+      "role": "primary tool-access single-agent comparator"
+    }
+  ],
+  "outcomes": {
+    "primary_descriptive": [
+      "final_answer_accuracy",
+      "execution_accuracy",
+      "evidence_macro_f1"
+    ],
+    "secondary": [
+      "answer_coverage",
+      "execution_coverage",
+      "program_accuracy",
+      "human_review_rate",
+      "unit_scale_error_rate",
+      "unsupported_claim_rate",
+      "schema_valid_rate"
+    ],
+    "efficiency": [
+      "model_calls",
+      "tool_calls",
+      "input_tokens",
+      "output_tokens",
+      "reasoning_tokens",
+      "total_tokens",
+      "latency_ms"
+    ],
+    "interpretation": "Development differences are descriptive only. No p-value, confidence interval, causal claim, or final-performance claim will be made from these 30 items."
+  },
+  "execution_sequence": [
+    {
+      "stage": 1,
+      "name": "three-item live interface gate",
+      "variant": "full",
+      "sample_manifest": "config/b2_finqa_dev_v1_interface_manifest.json",
+      "sample_manifest_sha256": "03bac69328d58ddb6d0011cf9e5df1508b38a5526e865c3af838c92d3d217c31",
+      "maximum_model_calls": 18,
+      "requires_separate_user_authorization": true
+    },
+    {
+      "stage": 2,
+      "name": "registered30 full B2 development run",
+      "condition": "stage 1 passes",
+      "maximum_model_calls": 180,
+      "requires_separate_user_authorization": true
+    },
+    {
+      "stage": 3,
+      "name": "registered30 no-contract ablation",
+      "condition": "stage 2 passes and a separate authorization is given",
+      "maximum_model_calls": 150,
+      "requires_separate_user_authorization": true
+    },
+    {
+      "stage": 4,
+      "name": "registered30 no-verifier ablation",
+      "condition": "stage 2 passes and a separate authorization is given",
+      "maximum_model_calls": 150,
+      "requires_separate_user_authorization": true
+    }
+  ],
+  "interface_gate": {
+    "protocol_id": "contractfin-b2-finqa-dev3-interface-v1",
+    "variant": "full",
+    "artifact_stem": "b2_deepseek_full_interface3_v1",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b2.py --provider deepseek --model deepseek-flash --variant full --sample-manifest config/b2_finqa_dev_v1_interface_manifest.json --protocol-id contractfin-b2-finqa-dev3-interface-v1 --total-output-budget 32768 --max-model-calls 6 --max-tool-calls 2 --request-timeout-seconds 300 --artifact-stem b2_deepseek_full_interface3_v1",
+    "paid_model_call_upper_bound": 18,
+    "local_tool_call_upper_bound": 6,
+    "exact_authorization_phrase": "同意执行B2-v1三题真实接口测试，最多18次模型调用。",
+    "acceptance": {
+      "successful_structured_samples": 3,
+      "samples_with_valid_task_contract": 3,
+      "samples_with_search_document": 3,
+      "samples_with_explicit_search_top_k_12": 3,
+      "samples_with_calculate_finqa": 3,
+      "samples_with_valid_verifier_verdict": 3,
+      "maximum_failed_tool_calls": 0,
+      "maximum_invalid_structured_stage_outputs": 0,
+      "maximum_output_ceiling_failures": 0,
+      "maximum_transport_timeouts": 0,
+      "required_log_completeness": 1.0,
+      "required_sample_identity_and_order_match": true,
+      "answer_accuracy_is_a_gate": false,
+      "human_review_rate_is_a_gate": false
+    }
+  },
+  "registered30_commands": {
+    "full": "PYTHONPATH=src python3 scripts/run_b2.py --provider deepseek --model deepseek-flash --variant full --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b2-finqa-dev30-full-v1 --total-output-budget 32768 --max-model-calls 6 --max-tool-calls 2 --request-timeout-seconds 300 --artifact-stem b2_deepseek_full_preregistered30_v1",
+    "no_contract": "PYTHONPATH=src python3 scripts/run_b2.py --provider deepseek --model deepseek-flash --variant no_contract --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b2-finqa-dev30-no-contract-v1 --total-output-budget 32768 --max-model-calls 5 --max-tool-calls 2 --request-timeout-seconds 300 --artifact-stem b2_deepseek_no_contract_preregistered30_v1",
+    "no_verifier": "PYTHONPATH=src python3 scripts/run_b2.py --provider deepseek --model deepseek-flash --variant no_verifier --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b2-finqa-dev30-no-verifier-v1 --total-output-budget 32768 --max-model-calls 5 --max-tool-calls 2 --request-timeout-seconds 300 --artifact-stem b2_deepseek_no_verifier_preregistered30_v1"
+  },
+  "local_validation": {
+    "unit_tests_passed": 56,
+    "bytecode_compilation_passed": true,
+    "audit": "reports/b2_local_orchestration_audit.json",
+    "audit_sha256": "c646ecf92b585b252d5d05680159651dbb771c6ab1aa02530e85b3f24555fdbf",
+    "api_calls": 0,
+    "mocked_registered30_successes": 30,
+    "mocked_registered30_failures": 0,
+    "mocked_model_calls": 180,
+    "mocked_tool_calls": 60,
+    "mocked_log_completeness": 1.0,
+    "runtime_gold_field_keys_exposed": 0
+  },
+  "version_hashes": {
+    "b2_source_sha256": "8098eb329e94bca776eaa0cc04bc907da8c5cda9530ec34f00d75dba03b74a31",
+    "b2_cli_sha256": "5e325d800a1ee72cd56bd5500d2236c25d816affa36218ec6e8e2420775183b1",
+    "contract_prompt_sha256": "598ca621003b574fa507bc897525825795c7ae1ba3953513aa35891afa3f6beb",
+    "evidence_prompt_sha256": "9a68062d022ecffee023ad04ff82d73e37bab488f080dce54a50aac791ce4b7f",
+    "solver_prompt_sha256": "076a1fef5f38838f9716e44800da5a93127247a199954f3e0814290952e877e6",
+    "verifier_prompt_sha256": "89918114188b5f20755e1b8d23bb4984d41a2fb2512f6f089b3b43856dcda03f",
+    "task_contract_schema_sha256": "ca21a170617525fb42361c4c2104172de1637e628459de7f1420e0630e564d58",
+    "evidence_packet_schema_sha256": "52324b070cce071d964601dc8d2f5a834a920892784de6be8f88c2c0f6fada0f",
+    "prediction_schema_sha256": "c024eb215ffc38e77c5aed4bed9749db1e94ddabde3616863c76764a7e0418a6",
+    "verdict_schema_sha256": "0aa997839605fbe7eb0a93f91bbe980e71ba1f5dfde0065749fb0171e322f2aa",
+    "tool_definitions_sha256": "ea2838647adfe93463d07753ecad32b1285a5bfe83f6573b64193a8168f75356",
+    "retriever_sha256": "dc99c2d362e470be424370c7647af062e96be51c8f135bce032cd9ce34690af2",
+    "calculator_source_sha256": "60ead44345e0ecf9a8e7ad23083aae7adf3a73cabe452dcbb042d386ec392359"
+  },
+  "next_stage_after_development": {
+    "action": "freeze B2 after the development protocol passes, then preregister a separate held-out FinQA test evaluation with paired statistical analysis before reading any B2 test outputs",
+    "not_authorized_by_this_protocol": [
+      "any live B2 API call",
+      "any registered30 B2 or ablation run",
+      "any held-out test run"
+    ]
+  }
+}

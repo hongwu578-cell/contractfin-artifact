@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "mode": "development_gold_program_interface_audit",
+  "warning": "Gold programs are used only for aggregate local interface validation and are never exposed at runtime.",
+  "dataset": "data/normalized/finqa_dev.jsonl",
+  "samples": 883,
+  "gold_programs_parsed": 883,
+  "structured_tool_successes": 883,
+  "execution_correct": 883,
+  "operation_counts": {
+    "add": 180,
+    "divide": 636,
+    "exp": 1,
+    "greater": 10,
+    "multiply": 83,
+    "subtract": 416,
+    "table_average": 19,
+    "table_max": 8,
+    "table_min": 5,
+    "table_sum": 4
+  },
+  "failures": [],
+  "acceptance": {
+    "required_parse_rate": 1.0,
+    "required_tool_success_rate": 1.0,
+    "required_execution_accuracy": 1.0,
+    "observed_parse_rate": 1.0,
+    "observed_tool_success_rate": 1.0,
+    "observed_execution_accuracy": 1.0,
+    "passed": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "mode": "development_retriever_audit",
+  "warning": "Uses development gold evidence for aggregate audit only; never exposed to tools.",
+  "text_label_mapping": {
+    "text_evidence_items": 442,
+    "matched_items": 442,
+    "match_rate": 1.0
+  },
+  "development": [
+    {
+      "samples": 883,
+      "top_k": 4,
+      "gold_evidence_items": 1513,
+      "retrieved_gold_items": 830,
+      "micro_recall": 0.5485789821546596,
+      "macro_recall": 0.6167839616027613,
+      "full_gold_coverage": 0.4869762174405436
+    },
+    {
+      "samples": 883,
+      "top_k": 8,
+      "gold_evidence_items": 1513,
+      "retrieved_gold_items": 1121,
+      "micro_recall": 0.7409120951751487,
+      "macro_recall": 0.7989214258749928,
+      "full_gold_coverage": 0.6998867497168743
+    },
+    {
+      "samples": 883,
+      "top_k": 12,
+      "gold_evidence_items": 1513,
+      "retrieved_gold_items": 1267,
+      "micro_recall": 0.8374091209517515,
+      "macro_recall": 0.8793075554117457,
+      "full_gold_coverage": 0.8097395243488109
+    }
+  ],
+  "registered30": [
+    {
+      "samples": 30,
+      "top_k": 4,
+      "gold_evidence_items": 44,
+      "retrieved_gold_items": 33,
+      "micro_recall": 0.75,
+      "macro_recall": 0.7833333333333333,
+      "full_gold_coverage": 0.7
+    },
+    {
+      "samples": 30,
+      "top_k": 8,
+      "gold_evidence_items": 44,
+      "retrieved_gold_items": 41,
+      "micro_recall": 0.9318181818181818,
+      "macro_recall": 0.9333333333333333,
+      "full_gold_coverage": 0.9
+    },
+    {
+      "samples": 30,
+      "top_k": 12,
+      "gold_evidence_items": 44,
+      "retrieved_gold_items": 43,
+      "micro_recall": 0.9772727272727273,
+      "macro_recall": 0.9833333333333333,
+      "full_gold_coverage": 0.9666666666666667
+    }
+  ],
+  "acceptance": {
+    "default_top_k": 12,
+    "minimum_registered30_micro_recall": 0.95,
+    "minimum_registered30_full_gold_coverage": 0.95,
+    "passed": true
+  }
+}

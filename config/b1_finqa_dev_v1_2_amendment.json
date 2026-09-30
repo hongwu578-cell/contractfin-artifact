@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev-v1.2",
+  "parent_protocol_id": "contractfin-b1-finqa-dev-v1.1",
+  "registration_date": "2026-09-29",
+  "status": "prepared_registered30_not_executed",
+  "trigger": {
+    "parent_run_id": "b1-c9077ae3-d5c5-4741-845b-7f34214582c8",
+    "parent_diagnostic": "reports/b1_deepseek_preregistered30_v1_1_diagnostic.json",
+    "parent_diagnostic_sha256": "ba8842b4c92dc5c5247b0f40f29b55a4ea5b0651c1a481f70b4eba2211b87df8",
+    "observed_structured_completions": 29,
+    "registered_samples": 30,
+    "failed_tool_calls": 1,
+    "invalid_final_json_samples": 1,
+    "classification": "two deterministic local interface defects"
+  },
+  "research_boundary_unchanged": {
+    "system": "B1 Tool-Augmented Single Agent",
+    "allowed": [
+      "one model-controlled agent",
+      "document retrieval through search_document",
+      "deterministic FinQA calculation through calculate_finqa"
+    ],
+    "prohibited": [
+      "task contract",
+      "multiple or specialized agent roles",
+      "inter-agent conflict handling",
+      "model-visible final verification gate",
+      "runtime gold access"
+    ]
+  },
+  "versioned_changes": [
+    {
+      "component": "DeepSeek response transport normalization",
+      "from": "reject any characters after the final JSON object",
+      "to": "after a valid leading JSON object, remove only a suffix composed entirely of known DeepSeek DSML closing tags",
+      "semantic_capability_change": false,
+      "guardrails": [
+        "applies only when provider is deepseek",
+        "requires a valid leading JSON object",
+        "does not remove Markdown, prose, a second JSON value, or unknown tags",
+        "records transport_normalization in prediction metadata"
+      ],
+      "rationale": "recover one observed provider transport artifact without introducing permissive output parsing"
+    },
+    {
+      "component": "structured calculator table-row validation",
+      "from": "reject commas and all parentheses in every structured argument",
+      "to": "for argument 1 of table operations only, reject commas but allow balanced parentheses in the row label",
+      "semantic_capability_change": false,
+      "guardrails": [
+        "argument 2 must remain the string none",
+        "unbalanced parentheses are rejected",
+        "commas in table row labels are rejected",
+        "commas and parentheses remain rejected in non-table calculation arguments"
+      ],
+      "rationale": "support an exact FinQA table row label observed in the registered run while preserving flat-program safety"
+    }
+  ],
+  "frozen_factors": {
+    "provider": "deepseek",
+    "responses_url": "https://api.deepseek.com/responses",
+    "requested_model": "deepseek-flash",
+    "reasoning_configuration": "provider default; no reasoning field is sent",
+    "temperature_configuration": "provider default; no temperature field is sent",
+    "store": false,
+    "normalized_dataset": "data/normalized/finqa_dev.jsonl",
+    "normalized_dataset_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739",
+    "registered30_manifest": "config/b0_finqa_dev_30_manifest.json",
+    "registered30_manifest_sha256": "3afaa34852cdf799e1993952a6326d8b1ca6ead9a4798acb0d7ed9f889542ba3",
+    "sample_identity_and_order": "unchanged",
+    "system_prompt": "unchanged from B1-v1.1",
+    "tool_definitions_exposed_to_model": "unchanged from B1-v1.1",
+    "retriever": "unchanged deterministic lexical BM25-style ranking",
+    "retriever_default_top_k": 12,
+    "deterministic_operations": [
+      "add",
+      "subtract",
+      "multiply",
+      "divide",
+      "exp",
+      "greater",
+      "table_average",
+      "table_sum",
+      "table_max",
+      "table_min"
+    ],
+    "cumulative_output_budget_per_sample": 32768,
+    "max_model_calls_per_sample": 6,
+    "max_tool_calls_per_sample": 8,
+    "request_timeout_seconds_per_model_call": 300,
+    "automatic_retries": 0,
+    "output_schema_sha256": "c024eb215ffc38e77c5aed4bed9749db1e94ddabde3616863c76764a7e0418a6",
+    "evaluator_and_metrics": "unchanged"
+  },
+  "version_hashes": {
+    "v1_1_system_prompt_sha256": "95c84f2094df422746c248c1d4f7c6556415db77a082ed54213039a2703f6137",
+    "v1_2_system_prompt_sha256": "95c84f2094df422746c248c1d4f7c6556415db77a082ed54213039a2703f6137",
+    "v1_1_tool_definitions_sha256": "ea2838647adfe93463d07753ecad32b1285a5bfe83f6573b64193a8168f75356",
+    "v1_2_tool_definitions_sha256": "ea2838647adfe93463d07753ecad32b1285a5bfe83f6573b64193a8168f75356",
+    "v1_2_transport_parser_source_sha256": "f313ef9237817351dbd151980ba71bac816cf343b7dae552d940239e6852f576",
+    "v1_2_b1_runner_source_sha256": "f9bc70b293aae1df1c8b80bb7f779d8d105810c9e91947bf422c2f4ddc20e1ad",
+    "v1_2_b1_tools_source_sha256": "60ead44345e0ecf9a8e7ad23083aae7adf3a73cabe452dcbb042d386ec392359",
+    "retriever_sha256": "dc99c2d362e470be424370c7647af062e96be51c8f135bce032cd9ce34690af2",
+    "cli_runner_sha256": "24b8cd38a4a4b2b51d0722704b793579f1e6f9cd8f7a5ed742062e52e9ca54b6"
+  },
+  "local_validation": {
+    "unit_tests_passed": 51,
+    "bytecode_compilation_passed": true,
+    "exact_transport_failure_replay": {
+      "sample_id": "finqa:dev:SNPS/2006/page_69.pdf-2",
+      "passed": true,
+      "answer": "21.65",
+      "program": "divide(3400, 15704), multiply(#0, 100)",
+      "normalization": "removed_deepseek_dsml_closing_suffix_v1"
+    },
+    "exact_table_row_failure_replay": {
+      "sample_id": "finqa:dev:JPM/2018/page_110.pdf-1",
+      "passed": true,
+      "program": "table_average(available-for-sale ( 201cafs 201d ) investment securities ( average ), none)",
+      "value": 216562.0
+    },
+    "negative_controls": {
+      "arbitrary_trailing_prose_rejected": true,
+      "nested_non_table_syntax_rejected": true,
+      "unbalanced_table_row_parentheses_rejected": true
+    }
+  },
+  "live_interface_gate": {
+    "required": false,
+    "reason": "Neither correction changes the system prompt, model-visible tool definitions, sample set, retriever, evaluator, or limits; both exact observed failing inputs were retained and passed deterministic local replay."
+  },
+  "registered30_rerun": {
+    "status": "awaiting_explicit_user_authorization",
+    "protocol_id": "contractfin-b1-finqa-dev30-v1.2",
+    "sample_count": 30,
+    "artifact_stem": "b1_deepseek_preregistered30_v1_2",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b1.py --provider deepseek --model deepseek-flash --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b1-finqa-dev30-v1.2 --total-output-budget 32768 --max-model-calls 6 --max-tool-calls 8 --request-timeout-seconds 300 --artifact-stem b1_deepseek_preregistered30_v1_2",
+    "paid_model_call_upper_bound": 180,
+    "local_tool_call_upper_bound": 240,
+    "requires_separate_user_authorization": true,
+    "exact_authorization_phrase": "同意执行B1-v1.2预注册30题测试，最多180次模型调用。",
+    "acceptance": {
+      "successful_structured_samples": 30,
+      "samples_using_search_document": 30,
+      "samples_using_search_top_k_12": 30,
+      "samples_using_calculate_finqa": 30,
+      "maximum_failed_tool_calls": 0,
+      "maximum_invalid_final_json_samples": 0,
+      "maximum_output_ceiling_failures": 0,
+      "maximum_transport_timeouts": 0,
+      "required_log_completeness": 1.0,
+      "required_sample_identity_and_order_match": true,
+      "answer_accuracy_is_a_gate": false
+    }
+  }
+}

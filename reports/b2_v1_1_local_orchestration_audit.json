@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "mode": "local_oracle_orchestration_audit_no_api",
+  "warning": "Gold programs and answers generate mocked agent responses only to validate local routing. They are never exposed to model request payloads and these scores are not research performance.",
+  "dataset": "data/normalized/finqa_dev.jsonl",
+  "sample_manifest": "config/b0_finqa_dev_30_manifest.json",
+  "sample_count": 30,
+  "api_calls": 0,
+  "mocked_model_calls": 180,
+  "mocked_tool_calls": 60,
+  "role_model_call_counts": {
+    "contract_agent": 30,
+    "evidence_agent": 60,
+    "solver_agent": 60,
+    "verifier_agent": 30
+  },
+  "successful_samples": 30,
+  "failed_samples": 0,
+  "failed_tool_calls": 0,
+  "samples_with_contract": 30,
+  "samples_with_verifier": 30,
+  "verifier_accepts": 30,
+  "human_review_outputs": 0,
+  "verifier_normalizations": 0,
+  "role_output_token_caps": {
+    "contract_agent": [
+      8192
+    ],
+    "evidence_agent": [
+      1024,
+      2048
+    ],
+    "solver_agent": [
+      8192,
+      2048
+    ],
+    "verifier_agent": [
+      11264
+    ]
+  },
+  "fixed_role_caps_sum": 32768,
+  "fixed_role_caps_passed": true,
+  "log_completeness": 1.0,
+  "runtime_gold_field_keys_exposed": [],
+  "acceptance": {
+    "required_successful_samples": 30,
+    "required_failed_tool_calls": 0,
+    "required_log_completeness": 1.0,
+    "required_runtime_gold_field_keys_exposed": 0,
+    "passed": true
+  }
+}

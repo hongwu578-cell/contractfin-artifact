@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "run_id": "sci-heldout-65790ede-9ae0-426c-8216-18af915d643a",
+  "runtime_config_sha256": "c839a885a7b1fb21af8e1fb638f3e2e8ea2337524e7f94920ffdf4b464c9e077",
+  "evaluation_deferred": true,
+  "gold_loaded": false,
+  "task_count": 400,
+  "expected_task_count": 400,
+  "completed": true,
+  "prediction_groups": {
+    "B0_R2": {
+      "system": "B0",
+      "replicate": 2,
+      "predictions": 100,
+      "errors": 0,
+      "prediction_file": "reports/sci_finqa_stability100_v1_B0_R2_predictions.jsonl",
+      "prediction_sha256": "293a9a19d81bcbdedeb156ac0bf82ed0e459d7f2a26085c8c146287ca25c3062"
+    },
+    "B0_R3": {
+      "system": "B0",
+      "replicate": 3,
+      "predictions": 100,
+      "errors": 0,
+      "prediction_file": "reports/sci_finqa_stability100_v1_B0_R3_predictions.jsonl",
+      "prediction_sha256": "1f04e4288f48bd7f249849116e8b5f1f5807eb7da017c37629f3cd77795e3ee6"
+    },
+    "B1_R2": {
+      "system": "B1",
+      "replicate": 2,
+      "predictions": 100,
+      "errors": 2,
+      "prediction_file": "reports/sci_finqa_stability100_v1_B1_R2_predictions.jsonl",
+      "prediction_sha256": "1188509a4d64a2c5c21378517d2bc9dc2ef7049985c256f7d7a882091d3b065b"
+    },
+    "B1_R3": {
+      "system": "B1",
+      "replicate": 3,
+      "predictions": 100,
+      "errors": 1,
+      "prediction_file": "reports/sci_finqa_stability100_v1_B1_R3_predictions.jsonl",
+      "prediction_sha256": "9dae69d96886137149c74a59869581988adc65cc2a477e38fe88195642d5fa5f"
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-09-29",
+  "protocol_id": "contractfin-b2-finqa-dev30-full-v1.1",
+  "run_id": "b2-162a29f6-ca94-4b45-a095-012f6fc3926c",
+  "variant": "full",
+  "status": "failed",
+  "decision": "The B2-v1.1 registered30 full run is retained as an immutable failed run. It does not unlock either preregistered ablation.",
+  "integrity": {
+    "registered_samples": 30,
+    "gold_rows": 30,
+    "prediction_rows": 30,
+    "log_rows": 30,
+    "gold_unique_sample_ids": 30,
+    "prediction_unique_sample_ids": 30,
+    "log_unique_sample_ids": 30,
+    "gold_order_matches_manifest": true,
+    "prediction_order_matches_manifest": true,
+    "log_order_matches_manifest": true,
+    "sample_substitution": false,
+    "automatic_retries": 0,
+    "log_completeness": 1.0
+  },
+  "execution": {
+    "successful_samples": 23,
+    "failed_samples": 7,
+    "model_calls": 170,
+    "model_call_ceiling": 180,
+    "role_model_call_counts": {
+      "contract_agent": 30,
+      "evidence_agent": 58,
+      "solver_agent": 58,
+      "verifier_agent": 24
+    },
+    "provider_call_status_counts": {
+      "completed": 168,
+      "incomplete": 2
+    },
+    "tool_calls": 58,
+    "tool_call_counts": {
+      "search_document": 29,
+      "calculate_finqa": 29
+    },
+    "failed_tool_calls": 0,
+    "samples_with_valid_task_contract": 29,
+    "samples_with_valid_effective_verifier_verdict": 23,
+    "samples_with_explicit_search_top_k_12": 29,
+    "samples_with_successful_calculator_call": 29,
+    "verifier_accepts": 22,
+    "human_review_outputs": 1,
+    "verifier_normalizations": 0,
+    "role_output_token_caps": [8192, 1024, 2048, 8192, 2048, 11264],
+    "token_usage": {
+      "input": 209316,
+      "output": 109507,
+      "reasoning": 85182,
+      "total": 318823
+    },
+    "latency_ms": 725979
+  },
+  "failure_classification": [
+    {
+      "category": "solver_evidence_packet_contract_violation",
+      "count": 5,
+      "sample_ids": [
+        "finqa:dev:RE/2015/page_33.pdf-3",
+        "finqa:dev:AON/2009/page_46.pdf-2",
+        "finqa:dev:LMT/2012/page_47.pdf-3",
+        "finqa:dev:ABMD/2006/page_75.pdf-3",
+        "finqa:dev:MRO/2004/page_36.pdf-2"
+      ],
+      "message": "solver candidate cites evidence outside the evidence packet",
+      "observability_gap": "The v1.1 controller logs solver_candidate only after validation, so the exact rejected candidate and out-of-packet labels were not retained."
+    },
+    {
+      "category": "contract_agent_output_ceiling",
+      "count": 1,
+      "sample_ids": [
+        "finqa:dev:AAPL/2014/page_38.pdf-1"
+      ],
+      "provider_status": "incomplete",
+      "incomplete_reason": "max_output_tokens",
+      "output_tokens": 8192,
+      "requested_cap": 8192
+    },
+    {
+      "category": "verifier_agent_output_ceiling",
+      "count": 1,
+      "sample_ids": [
+        "finqa:dev:AMAT/2014/page_18.pdf-1"
+      ],
+      "provider_status": "incomplete",
+      "incomplete_reason": "max_output_tokens",
+      "output_tokens": 11264,
+      "requested_cap": 11264
+    }
+  ],
+  "verifier_quality": {
+    "accepted_outputs": 22,
+    "correct_accepted_answers": 6,
+    "incorrect_accepted_answers": 16,
+    "false_accept_rate_among_accepted_outputs": 0.7272727272727273,
+    "human_review_outputs": 1,
+    "human_review_sample_id": "finqa:dev:BKR/2017/page_103.pdf-4",
+    "human_review_reason_codes": [
+      "operation_not_allowed"
+    ],
+    "interpretation": "The verifier accepted most incorrect answers and therefore did not provide reliable error discrimination in this run."
+  },
+  "frozen_evaluator_output_diagnostic_only": {
+    "coverage": 0.7333333333333333,
+    "final_answer_accuracy": 0.2,
+    "selective_accuracy": 0.2727272727272727,
+    "schema_valid_rate": 1.0,
+    "program_accuracy": 0.34782608695652173,
+    "execution_accuracy": 0.43478260869565216,
+    "execution_coverage": 0.7666666666666667,
+    "evidence_macro_precision": 0.5722222222222223,
+    "evidence_macro_recall": 0.75,
+    "evidence_macro_f1": 0.6277777777777778,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "interpretation": "These values describe the failed development run only. They are not an accepted B2-v1.1 performance result or a final-performance estimate."
+  },
+  "b1_v1_2_diagnostic_comparison": {
+    "comparator_run_id": "b1-bb2095c7-deeb-4a70-925e-f8991a8035c3",
+    "b1_final_answer_accuracy": 0.5,
+    "b2_v1_1_failed_run_final_answer_accuracy": 0.2,
+    "final_answer_accuracy_difference": -0.3,
+    "b1_execution_accuracy": 0.5666666666666667,
+    "b2_v1_1_failed_run_execution_accuracy": 0.43478260869565216,
+    "execution_accuracy_difference": -0.1318840579710145,
+    "b1_evidence_macro_f1": 0.9088888888888889,
+    "b2_v1_1_failed_run_evidence_macro_f1": 0.6277777777777778,
+    "evidence_macro_f1_difference": -0.2811111111111111,
+    "b1_model_calls": 94,
+    "b2_v1_1_model_calls": 170,
+    "model_call_ratio": 1.8085106382978724,
+    "b1_total_tokens": 200561,
+    "b2_v1_1_total_tokens": 318823,
+    "total_token_ratio": 1.5896560148782664,
+    "b1_latency_ms": 188915,
+    "b2_v1_1_latency_ms": 725979,
+    "latency_ratio": 3.842887012677659,
+    "interpretation": "Descriptive diagnostic only. The B2-v1.1 run failed structural completion, and the registered30 set is development data."
+  },
+  "artifact_sha256": {
+    "reports/b2_deepseek_full_preregistered30_v1_1_gold.jsonl": "b6ac633d53f78e4ffd66e6507b6dfcaddf33eec70acd7e8e8cb98f19af757e40",
+    "reports/b2_deepseek_full_preregistered30_v1_1_predictions.jsonl": "939ef4427963533b1258beb280d6594d132aeb094449ef24e570fd916200ce10",
+    "reports/b2_deepseek_full_preregistered30_v1_1_report.json": "2a69f97245147d110270b6d3d7a6e81ecf9679a6c4c383444beea2ae3a73269c",
+    "logs/b2_deepseek_full_preregistered30_v1_1.jsonl": "dbd06a808483762606287ac274ee8c356d8b50b2e47adc1abd36e777e0276549"
+  },
+  "next_step": "Do not run B2-v1.1 ablations. Decide whether to stop B2 development or preregister a B2-v1.2 diagnostic revision that improves candidate observability, evidence-packet contract enforcement, and output-ceiling handling before any new paid run."
+}

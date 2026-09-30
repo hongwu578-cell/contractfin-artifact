@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev30-v1.1",
+  "execution_date": "2026-09-29",
+  "run_id": "b1-c9077ae3-d5c5-4741-845b-7f34214582c8",
+  "gate_status": "failed",
+  "classification": "two_deterministic_interface_defects_not_final_b1_performance",
+  "sample_integrity": {
+    "sample_count": 30,
+    "unique_sample_count": 30,
+    "gold_matches_registered_identity_and_order": true,
+    "predictions_match_registered_identity_and_order": true,
+    "logs_match_registered_identity_and_order": true,
+    "automatic_retries": 0,
+    "sample_substitutions": 0
+  },
+  "acceptance": [
+    {
+      "criterion": "successful_structured_samples",
+      "required": 30,
+      "observed": 29,
+      "passed": false
+    },
+    {
+      "criterion": "samples_using_search_document",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_search_top_k_12",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_calculate_finqa",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "failed_tool_calls",
+      "required_maximum": 0,
+      "observed": 1,
+      "passed": false
+    },
+    {
+      "criterion": "invalid_final_json_samples",
+      "required_maximum": 0,
+      "observed": 1,
+      "passed": false
+    },
+    {
+      "criterion": "output_ceiling_failures",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "transport_timeouts",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "log_completeness",
+      "required": 1.0,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "criterion": "sample_identity_and_order",
+      "required": true,
+      "observed": true,
+      "passed": true
+    }
+  ],
+  "resource_use": {
+    "model_calls": 97,
+    "authorized_model_call_upper_bound": 180,
+    "tool_calls": 67,
+    "input_tokens": 207401,
+    "output_tokens_including_reasoning": 23689,
+    "reasoning_tokens": 16666,
+    "total_tokens": 231090,
+    "aggregate_measured_latency_ms": 288172
+  },
+  "diagnostic_evaluation_not_final_performance": {
+    "full_set_final_answer_accuracy": 0.4,
+    "completed_sample_selective_accuracy": 0.41379310344827586,
+    "full_set_evidence_macro_precision": 0.8055555555555556,
+    "full_set_evidence_macro_recall": 0.8666666666666667,
+    "full_set_evidence_macro_f1": 0.8266666666666667,
+    "exact_program_accuracy": 0.3103448275862069,
+    "execution_accuracy": 0.41379310344827586,
+    "persisted_record_schema_valid_rate": 1.0,
+    "warning": "The schema-valid rate includes a locally generated status=error replay record; model structured completion was 29/30."
+  },
+  "observed_defects": [
+    {
+      "sample_id": "finqa:dev:SNPS/2006/page_69.pdf-2",
+      "type": "provider_transport_suffix_after_valid_json",
+      "effect": "one valid leading JSON object was rejected because DeepSeek appended three DSML closing tags",
+      "visible_output_sha256": "500c81b1e63cdfaa0dd965e82ed2845a203100b3329cf9a17587abb71f409c3b",
+      "model_and_tool_work_completed": true
+    },
+    {
+      "sample_id": "finqa:dev:JPM/2018/page_110.pdf-1",
+      "type": "over_restrictive_local_table_row_validation",
+      "effect": "one table_average call was rejected because the actual row label contains balanced parentheses; the model recovered with scalar arithmetic",
+      "rejected_row_label": "available-for-sale ( 201cafs 201d ) investment securities ( average )",
+      "sample_completed_after_recovery": true
+    }
+  ],
+  "local_exact_failure_replay": {
+    "transport_suffix_replay_passed": true,
+    "transport_recovered_answer": "21.65",
+    "transport_recovered_program": "divide(3400, 15704), multiply(#0, 100)",
+    "transport_normalization": "removed_deepseek_dsml_closing_suffix_v1",
+    "table_row_replay_passed": true,
+    "table_row_replay_value": 216562.0,
+    "arbitrary_trailing_prose_still_rejected": true,
+    "unbalanced_parentheses_still_rejected": true
+  },
+  "decision": {
+    "report_as_final_b1_performance": false,
+    "rerun_v1_1_unchanged": false,
+    "next_step": "register B1-v1.2 with only the two deterministic runtime corrections, then rerun the same 30 samples after separate explicit authorization"
+  },
+  "artifacts": {
+    "gold": {
+      "path": "reports/b1_deepseek_preregistered30_v1_1_gold.jsonl",
+      "sha256": "b6ac633d53f78e4ffd66e6507b6dfcaddf33eec70acd7e8e8cb98f19af757e40"
+    },
+    "predictions": {
+      "path": "reports/b1_deepseek_preregistered30_v1_1_predictions.jsonl",
+      "sha256": "f8911284f144ac85f66b1fcc7b9ac5f60ffc25c79e06644f598fafde03f6b6fb"
+    },
+    "report": {
+      "path": "reports/b1_deepseek_preregistered30_v1_1_report.json",
+      "sha256": "2a1a0a0bf55f5452c661c35409828521897ae01aac849ba3bcc77f4eb3c89312"
+    },
+    "log": {
+      "path": "logs/b1_deepseek_preregistered30_v1_1.jsonl",
+      "sha256": "c8ef97e2ccc94ea237e917dae83d2e1ad83fbdc9ae3008838cbbed935690787b"
+    }
+  }
+}

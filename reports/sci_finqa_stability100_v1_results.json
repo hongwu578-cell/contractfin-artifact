@@ -1,0 +1,4183 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-29T21:06:46.153359+00:00",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "registered_items": 100,
+  "analysis_policy": {
+    "descriptive_only": true,
+    "primary_results_pooled": false,
+    "errors_abstentions_and_missing_scored_incorrect": true,
+    "replicates": [
+      1,
+      2,
+      3
+    ],
+    "cv_definition": "sample standard deviation across three runs divided by the three-run mean"
+  },
+  "systems": {
+    "B0": {
+      "replicate_accuracy": {
+        "R1": {
+          "correct": 43,
+          "total": 100,
+          "accuracy": 0.43
+        },
+        "R2": {
+          "correct": 38,
+          "total": 100,
+          "accuracy": 0.38
+        },
+        "R3": {
+          "correct": 42,
+          "total": 100,
+          "accuracy": 0.42
+        }
+      },
+      "success_frequency": {
+        "0": 53,
+        "1": 6,
+        "2": 6,
+        "3": 35
+      },
+      "items_with_any_correctness_change": {
+        "count": 12,
+        "proportion": 0.12
+      },
+      "within_item_dispersion": {
+        "definition": "sample standard deviation across R1-R3 divided by the three-run mean, summarized across items",
+        "token_cv": {
+          "mean": 0.18234135044447514,
+          "standard_deviation": 0.1326289847178434,
+          "minimum": 0.004424398616619077,
+          "q1": 0.07390733145131526,
+          "median": 0.15604254334912648,
+          "q3": 0.2531988828240125,
+          "maximum": 0.5478787025108925
+        },
+        "latency_cv": {
+          "mean": 0.2971680628110169,
+          "standard_deviation": 0.18874250311125576,
+          "minimum": 0.01101071827169289,
+          "q1": 0.1656824545644037,
+          "median": 0.26168618129403,
+          "q3": 0.4268348689665729,
+          "maximum": 0.8598577383309431
+        }
+      },
+      "additional_replicate_errors": 0,
+      "additional_replicate_model_calls": 200,
+      "additional_replicate_total_tokens": 666967
+    },
+    "B1": {
+      "replicate_accuracy": {
+        "R1": {
+          "correct": 43,
+          "total": 100,
+          "accuracy": 0.43
+        },
+        "R2": {
+          "correct": 45,
+          "total": 100,
+          "accuracy": 0.45
+        },
+        "R3": {
+          "correct": 46,
+          "total": 100,
+          "accuracy": 0.46
+        }
+      },
+      "success_frequency": {
+        "0": 47,
+        "1": 8,
+        "2": 9,
+        "3": 36
+      },
+      "items_with_any_correctness_change": {
+        "count": 17,
+        "proportion": 0.17
+      },
+      "within_item_dispersion": {
+        "definition": "sample standard deviation across R1-R3 divided by the three-run mean, summarized across items",
+        "token_cv": {
+          "mean": 0.11896079857994801,
+          "standard_deviation": 0.17495576979568253,
+          "minimum": 0.0005211047420531526,
+          "q1": 0.007126526589156518,
+          "median": 0.019497656083996548,
+          "q3": 0.2350500118708929,
+          "maximum": 0.8849382916823104
+        },
+        "latency_cv": {
+          "mean": 0.23950279280805917,
+          "standard_deviation": 0.2320754892323295,
+          "minimum": 0.02385607244548511,
+          "q1": 0.07919732350078326,
+          "median": 0.15011710293901304,
+          "q3": 0.30825356190593795,
+          "maximum": 1.1049726204615895
+        }
+      },
+      "additional_replicate_errors": 3,
+      "additional_replicate_model_calls": 642,
+      "additional_replicate_total_tokens": 1677525
+    }
+  },
+  "item_level": {
+    "B0": {
+      "finqa:test:ADI/2010/page_80.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1880,
+          1819,
+          2854
+        ],
+        "latency_ms_R1_R2_R3": [
+          3435,
+          2948,
+          7194
+        ],
+        "token_cv": 0.2658705032951141,
+        "latency_cv": 0.5134355529510533
+      },
+      "finqa:test:NKE/2009/page_43.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          7970,
+          7521,
+          7379
+        ],
+        "latency_ms_R1_R2_R3": [
+          20266,
+          16907,
+          16087
+        ],
+        "token_cv": 0.04046830474876297,
+        "latency_cv": 0.12472709210275776
+      },
+      "finqa:test:BLL/2011/page_32.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2623,
+          2459,
+          2577
+        ],
+        "latency_ms_R1_R2_R3": [
+          6016,
+          6136,
+          6128
+        ],
+        "token_cv": 0.03313479981599154,
+        "latency_cv": 0.01101071827169289
+      },
+      "finqa:test:MAS/2012/page_26.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          6718,
+          5901,
+          4313
+        ],
+        "latency_ms_R1_R2_R3": [
+          25888,
+          20572,
+          14682
+        ],
+        "token_cv": 0.21667681699457944,
+        "latency_cv": 0.27503759822749196
+      },
+      "finqa:test:UNP/2009/page_42.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2645,
+          1956,
+          3740
+        ],
+        "latency_ms_R1_R2_R3": [
+          6759,
+          3603,
+          10191
+        ],
+        "token_cv": 0.32358234870010427,
+        "latency_cv": 0.48094634786682183
+      },
+      "finqa:test:AMT/2005/page_102.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          true
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          2960,
+          3420,
+          3218
+        ],
+        "latency_ms_R1_R2_R3": [
+          7012,
+          8095,
+          7463
+        ],
+        "token_cv": 0.0720673315358175,
+        "latency_cv": 0.07231036934618096
+      },
+      "finqa:test:SLG/2001/page_48.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2866,
+          3058,
+          3746
+        ],
+        "latency_ms_R1_R2_R3": [
+          5399,
+          5959,
+          8665
+        ],
+        "token_cv": 0.14355041970130444,
+        "latency_cv": 0.26168278566478675
+      },
+      "finqa:test:IP/2006/page_38.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          10700,
+          6732,
+          3938
+        ],
+        "latency_ms_R1_R2_R3": [
+          37283,
+          20912,
+          9596
+        ],
+        "token_cv": 0.47701587786291955,
+        "latency_cv": 0.616019734972727
+      },
+      "finqa:test:ANSS/2016/page_47.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          12059,
+          10991,
+          4177
+        ],
+        "latency_ms_R1_R2_R3": [
+          42802,
+          39800,
+          13271
+        ],
+        "token_cv": 0.4711329713081528,
+        "latency_cv": 0.5085661826337061
+      },
+      "finqa:test:CDW/2017/page_38.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3057,
+          3378,
+          6557
+        ],
+        "latency_ms_R1_R2_R3": [
+          9286,
+          9384,
+          23145
+        ],
+        "token_cv": 0.4467510871601201,
+        "latency_cv": 0.572045279171344
+      },
+      "finqa:test:MKTX/2004/page_99.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          8737,
+          6107,
+          6592
+        ],
+        "latency_ms_R1_R2_R3": [
+          30338,
+          20873,
+          22219
+        ],
+        "token_cv": 0.1958750050166547,
+        "latency_cv": 0.20919855950574423
+      },
+      "finqa:test:AMT/2007/page_127.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2667,
+          2943,
+          3082
+        ],
+        "latency_ms_R1_R2_R3": [
+          4854,
+          5515,
+          5862
+        ],
+        "token_cv": 0.07290678413336187,
+        "latency_cv": 0.09464966836704228
+      },
+      "finqa:test:ETR/2008/page_442.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          4408,
+          2661,
+          2854
+        ],
+        "latency_ms_R1_R2_R3": [
+          13950,
+          6893,
+          7665
+        ],
+        "token_cv": 0.2895667657732125,
+        "latency_cv": 0.4073380693451354
+      },
+      "finqa:test:ETR/2004/page_239.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1686,
+          2826,
+          2001
+        ],
+        "latency_ms_R1_R2_R3": [
+          3832,
+          7936,
+          5082
+        ],
+        "token_cv": 0.271168221355353,
+        "latency_cv": 0.3745270207956438
+      },
+      "finqa:test:FIS/2006/page_31.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          4997,
+          5409,
+          5340
+        ],
+        "latency_ms_R1_R2_R3": [
+          16864,
+          17641,
+          17358
+        ],
+        "token_cv": 0.042041799898137035,
+        "latency_cv": 0.022747193234241632
+      },
+      "finqa:test:DG/2005/page_44.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          17452,
+          11467,
+          5048
+        ],
+        "latency_ms_R1_R2_R3": [
+          58895,
+          38188,
+          14245
+        ],
+        "token_cv": 0.5478787025108925,
+        "latency_cv": 0.6021271061607424
+      },
+      "finqa:test:AAPL/2003/page_48.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2299,
+          2840,
+          3133
+        ],
+        "latency_ms_R1_R2_R3": [
+          3485,
+          5725,
+          7075
+        ],
+        "token_cv": 0.15344566784368802,
+        "latency_cv": 0.3340424018049526
+      },
+      "finqa:test:MRO/2004/page_46.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2063,
+          2030,
+          1920
+        ],
+        "latency_ms_R1_R2_R3": [
+          3711,
+          3529,
+          3520
+        ],
+        "token_cv": 0.037356786366752624,
+        "latency_cv": 0.030047346588260773
+      },
+      "finqa:test:APD/2018/page_30.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1265,
+          1405,
+          1400
+        ],
+        "latency_ms_R1_R2_R3": [
+          2955,
+          2970,
+          3321
+        ],
+        "token_cv": 0.05854423861151772,
+        "latency_cv": 0.06720178766295327
+      },
+      "finqa:test:LMT/2014/page_91.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2558,
+          2148,
+          2946
+        ],
+        "latency_ms_R1_R2_R3": [
+          5816,
+          3626,
+          7142
+        ],
+        "token_cv": 0.15644950594225676,
+        "latency_cv": 0.32120200537877147
+      },
+      "finqa:test:GRMN/2006/page_68.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5183,
+          7870,
+          5390
+        ],
+        "latency_ms_R1_R2_R3": [
+          17095,
+          24722,
+          17706
+        ],
+        "token_cv": 0.24320951114991313,
+        "latency_cv": 0.21360290352982508
+      },
+      "finqa:test:CMCSA/2015/page_67.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1799,
+          1804,
+          2636
+        ],
+        "latency_ms_R1_R2_R3": [
+          3871,
+          3536,
+          6624
+        ],
+        "token_cv": 0.2316742838780536,
+        "latency_cv": 0.3622943443319164
+      },
+      "finqa:test:HWM/2015/page_173.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          9726,
+          10037,
+          10917
+        ],
+        "latency_ms_R1_R2_R3": [
+          32147,
+          34128,
+          36545
+        ],
+        "token_cv": 0.06040463607504462,
+        "latency_cv": 0.06426567774149218
+      },
+      "finqa:test:AES/2002/page_128.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5761,
+          6452,
+          3704
+        ],
+        "latency_ms_R1_R2_R3": [
+          19498,
+          22178,
+          10803
+        ],
+        "token_cv": 0.26942245731317915,
+        "latency_cv": 0.3399446875686924
+      },
+      "finqa:test:BKNG/2016/page_33.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1577,
+          2404,
+          1946
+        ],
+        "latency_ms_R1_R2_R3": [
+          5060,
+          8088,
+          5875
+        ],
+        "token_cv": 0.20970004920263816,
+        "latency_cv": 0.24710046768303448
+      },
+      "finqa:test:LKQ/2016/page_87.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          1587,
+          1814,
+          1749
+        ],
+        "latency_ms_R1_R2_R3": [
+          3283,
+          4376,
+          3752
+        ],
+        "token_cv": 0.06809888957559422,
+        "latency_cv": 0.14415791939161005
+      },
+      "finqa:test:MMM/2013/page_75.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3884,
+          2927,
+          5157
+        ],
+        "latency_ms_R1_R2_R3": [
+          9151,
+          4852,
+          14594
+        ],
+        "token_cv": 0.28042914011562103,
+        "latency_cv": 0.5121707306615512
+      },
+      "finqa:test:ABMD/2012/page_41.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1593,
+          1562,
+          1661
+        ],
+        "latency_ms_R1_R2_R3": [
+          7550,
+          4483,
+          5053
+        ],
+        "token_cv": 0.03154438141600393,
+        "latency_cv": 0.2864235366496853
+      },
+      "finqa:test:CME/2010/page_123.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2185,
+          2266,
+          1906
+        ],
+        "latency_ms_R1_R2_R3": [
+          4971,
+          5837,
+          3952
+        ],
+        "token_cv": 0.08912557282984696,
+        "latency_cv": 0.19177526689055746
+      },
+      "finqa:test:AAPL/2006/page_100.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1494,
+          2094,
+          1396
+        ],
+        "latency_ms_R1_R2_R3": [
+          9248,
+          5120,
+          1960
+        ],
+        "token_cv": 0.22746226127816152,
+        "latency_cv": 0.6714904204517429
+      },
+      "finqa:test:CE/2016/page_19.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1958,
+          1941,
+          1947
+        ],
+        "latency_ms_R1_R2_R3": [
+          3536,
+          3268,
+          3162
+        ],
+        "token_cv": 0.004424398616619077,
+        "latency_cv": 0.058024959899058315
+      },
+      "finqa:test:IP/2006/page_75.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          8131,
+          7380,
+          15750
+        ],
+        "latency_ms_R1_R2_R3": [
+          26138,
+          24003,
+          51411
+        ],
+        "token_cv": 0.444407641768385,
+        "latency_cv": 0.45036380858102015
+      },
+      "finqa:test:ABMD/2007/page_78.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3093,
+          2281,
+          2824
+        ],
+        "latency_ms_R1_R2_R3": [
+          7110,
+          3375,
+          5315
+        ],
+        "token_cv": 0.15136609791295605,
+        "latency_cv": 0.3546776657686482
+      },
+      "finqa:test:HOLX/2009/page_127.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2292,
+          5038,
+          2885
+        ],
+        "latency_ms_R1_R2_R3": [
+          5594,
+          16946,
+          8320
+        ],
+        "token_cv": 0.42436616200443467,
+        "latency_cv": 0.576088281715655
+      },
+      "finqa:test:C/2018/page_176.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2982,
+          4743,
+          2979
+        ],
+        "latency_ms_R1_R2_R3": [
+          6002,
+          13033,
+          6579
+        ],
+        "token_cv": 0.2851964560006895,
+        "latency_cv": 0.45718671020488216
+      },
+      "finqa:test:GS/2018/page_69.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2467,
+          2071,
+          2288
+        ],
+        "latency_ms_R1_R2_R3": [
+          4645,
+          2847,
+          3837
+        ],
+        "token_cv": 0.08715366506022991,
+        "latency_cv": 0.23846780361128583
+      },
+      "finqa:test:ADBE/1999/page_64.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5401,
+          3495,
+          9910
+        ],
+        "latency_ms_R1_R2_R3": [
+          17814,
+          10543,
+          36565
+        ],
+        "token_cv": 0.5255251786734777,
+        "latency_cv": 0.6204252620591417
+      },
+      "finqa:test:PPG/2018/page_85.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          2936,
+          2683,
+          2450
+        ],
+        "latency_ms_R1_R2_R3": [
+          7063,
+          5424,
+          4555
+        ],
+        "token_cv": 0.0903712643805737,
+        "latency_cv": 0.22418987172382698
+      },
+      "finqa:test:STT/2011/page_69.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          2651,
+          1896,
+          2094
+        ],
+        "latency_ms_R1_R2_R3": [
+          8204,
+          3343,
+          4130
+        ],
+        "token_cv": 0.17684094236239653,
+        "latency_cv": 0.49929626830033613
+      },
+      "finqa:test:AAL/2013/page_172.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          4020,
+          2429,
+          2820
+        ],
+        "latency_ms_R1_R2_R3": [
+          12140,
+          4600,
+          6084
+        ],
+        "token_cv": 0.2683370280964607,
+        "latency_cv": 0.5250197173634599
+      },
+      "finqa:test:JPM/2009/page_175.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2278,
+          4215,
+          1962
+        ],
+        "latency_ms_R1_R2_R3": [
+          7642,
+          15083,
+          5338
+        ],
+        "token_cv": 0.4328177578416422,
+        "latency_cv": 0.5444710913419004
+      },
+      "finqa:test:CME/2017/page_40.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          4230,
+          5345,
+          4504
+        ],
+        "latency_ms_R1_R2_R3": [
+          14747,
+          18990,
+          15008
+        ],
+        "token_cv": 0.12380800772238593,
+        "latency_cv": 0.14634956839691435
+      },
+      "finqa:test:PNC/2008/page_122.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2485,
+          3094,
+          2983
+        ],
+        "latency_ms_R1_R2_R3": [
+          4282,
+          6311,
+          6298
+        ],
+        "token_cv": 0.1136464738496544,
+        "latency_cv": 0.20739607078725739
+      },
+      "finqa:test:RSG/2009/page_140.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2276,
+          2356,
+          2236
+        ],
+        "latency_ms_R1_R2_R3": [
+          6119,
+          5980,
+          5790
+        ],
+        "token_cv": 0.026689433284541875,
+        "latency_cv": 0.027697048563904293
+      },
+      "finqa:test:SNA/2007/page_49.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2818,
+          2218,
+          2322
+        ],
+        "latency_ms_R1_R2_R3": [
+          5734,
+          2747,
+          3140
+        ],
+        "token_cv": 0.1307282037922984,
+        "latency_cv": 0.4189918890950905
+      },
+      "finqa:test:PPG/2012/page_29.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2539,
+          2713,
+          2592
+        ],
+        "latency_ms_R1_R2_R3": [
+          2747,
+          3499,
+          2581
+        ],
+        "token_cv": 0.03411030188049841,
+        "latency_cv": 0.16625589669358323
+      },
+      "finqa:test:AAPL/2006/page_100.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1435,
+          2201,
+          1494
+        ],
+        "latency_ms_R1_R2_R3": [
+          2667,
+          5706,
+          2664
+        ],
+        "token_cv": 0.24926347509770308,
+        "latency_cv": 0.4771498054738472
+      },
+      "finqa:test:ADBE/2008/page_89.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2513,
+          3035,
+          2346
+        ],
+        "latency_ms_R1_R2_R3": [
+          5608,
+          7746,
+          4364
+        ],
+        "token_cv": 0.1365921355262358,
+        "latency_cv": 0.2896342733813386
+      },
+      "finqa:test:GPN/2010/page_89.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          9360,
+          4973,
+          4320
+        ],
+        "latency_ms_R1_R2_R3": [
+          34281,
+          15894,
+          13315
+        ],
+        "token_cv": 0.44081759413826793,
+        "latency_cv": 0.5402354974289599
+      },
+      "finqa:test:AON/2007/page_175.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          1673,
+          1549,
+          1901
+        ],
+        "latency_ms_R1_R2_R3": [
+          4859,
+          5180,
+          6175
+        ],
+        "token_cv": 0.10455333509723574,
+        "latency_cv": 0.12695759629560394
+      },
+      "finqa:test:PPG/2006/page_42.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2826,
+          2664,
+          2476
+        ],
+        "latency_ms_R1_R2_R3": [
+          4832,
+          3990,
+          2913
+        ],
+        "token_cv": 0.06596568356744364,
+        "latency_cv": 0.24590417842377643
+      },
+      "finqa:test:AAL/2014/page_15.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          2170,
+          2195,
+          3004
+        ],
+        "latency_ms_R1_R2_R3": [
+          4740,
+          4776,
+          7796
+        ],
+        "token_cv": 0.19315698316573524,
+        "latency_cv": 0.3039653089543847
+      },
+      "finqa:test:BDX/2018/page_106.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3238,
+          2467,
+          5765
+        ],
+        "latency_ms_R1_R2_R3": [
+          9616,
+          6671,
+          19796
+        ],
+        "token_cv": 0.45121771798474936,
+        "latency_cv": 0.5725828677546441
+      },
+      "finqa:test:ABMD/2012/page_79.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2087,
+          1852,
+          2064
+        ],
+        "latency_ms_R1_R2_R3": [
+          3675,
+          2657,
+          3612
+        ],
+        "token_cv": 0.064742238104007,
+        "latency_cv": 0.1720916478264788
+      },
+      "finqa:test:PM/2017/page_32.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2387,
+          2645,
+          2453
+        ],
+        "latency_ms_R1_R2_R3": [
+          4608,
+          5006,
+          3852
+        ],
+        "token_cv": 0.05371937772430143,
+        "latency_cv": 0.13059156321847176
+      },
+      "finqa:test:IP/2006/page_38.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6274,
+          5221,
+          4219
+        ],
+        "latency_ms_R1_R2_R3": [
+          20541,
+          15727,
+          11001
+        ],
+        "token_cv": 0.19618279286742135,
+        "latency_cv": 0.3027397011481427
+      },
+      "finqa:test:INTC/2013/page_31.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1967,
+          1915,
+          1283
+        ],
+        "latency_ms_R1_R2_R3": [
+          5828,
+          5477,
+          3705
+        ],
+        "token_cv": 0.22117240296547153,
+        "latency_cv": 0.227449099544644
+      },
+      "finqa:test:STT/2007/page_111.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2662,
+          2812,
+          2829
+        ],
+        "latency_ms_R1_R2_R3": [
+          6967,
+          7388,
+          7014
+        ],
+        "token_cv": 0.03320628761392601,
+        "latency_cv": 0.03238758538190006
+      },
+      "finqa:test:AON/2007/page_171.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          977,
+          1256,
+          1326
+        ],
+        "latency_ms_R1_R2_R3": [
+          2604,
+          4086,
+          4395
+        ],
+        "token_cv": 0.15563558075599623,
+        "latency_cv": 0.2591021295679208
+      },
+      "finqa:test:IPG/2008/page_72.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2786,
+          2487,
+          2400
+        ],
+        "latency_ms_R1_R2_R3": [
+          6733,
+          4725,
+          5472
+        ],
+        "token_cv": 0.07916222103232932,
+        "latency_cv": 0.17984142100547099
+      },
+      "finqa:test:ANSS/2012/page_93.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2417,
+          2629,
+          2256
+        ],
+        "latency_ms_R1_R2_R3": [
+          4813,
+          4923,
+          4206
+        ],
+        "token_cv": 0.07686121475233672,
+        "latency_cv": 0.08308913191301284
+      },
+      "finqa:test:GS/2018/page_69.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1935,
+          2029,
+          1928
+        ],
+        "latency_ms_R1_R2_R3": [
+          2433,
+          2698,
+          2199
+        ],
+        "token_cv": 0.028717084831371843,
+        "latency_cv": 0.10218026032441761
+      },
+      "finqa:test:PNC/2012/page_68.pdf-5": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3017,
+          3076,
+          3467
+        ],
+        "latency_ms_R1_R2_R3": [
+          6741,
+          6843,
+          9111
+        ],
+        "token_cv": 0.07674524446797848,
+        "latency_cv": 0.1771112042084996
+      },
+      "finqa:test:GS/2012/page_142.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2109,
+          2112,
+          2038
+        ],
+        "latency_ms_R1_R2_R3": [
+          3852,
+          3756,
+          3405
+        ],
+        "token_cv": 0.02007577690218642,
+        "latency_cv": 0.06409981837588019
+      },
+      "finqa:test:HWM/2017/page_42.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          4712,
+          5629,
+          4026
+        ],
+        "latency_ms_R1_R2_R3": [
+          15229,
+          18822,
+          13541
+        ],
+        "token_cv": 0.16794095500692757,
+        "latency_cv": 0.17001749734591926
+      },
+      "finqa:test:PPG/2008/page_52.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          4103,
+          1965,
+          2300
+        ],
+        "latency_ms_R1_R2_R3": [
+          11650,
+          2212,
+          3782
+        ],
+        "token_cv": 0.41226094161026766,
+        "latency_cv": 0.8598577383309431
+      },
+      "finqa:test:AAPL/2003/page_48.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2593,
+          2519,
+          2865
+        ],
+        "latency_ms_R1_R2_R3": [
+          5045,
+          4778,
+          5872
+        ],
+        "token_cv": 0.06852113381957572,
+        "latency_cv": 0.10902603626408927
+      },
+      "finqa:test:ETR/2016/page_23.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2111,
+          2862,
+          2349
+        ],
+        "latency_ms_R1_R2_R3": [
+          8149,
+          7618,
+          5886
+        ],
+        "token_cv": 0.15725205997215663,
+        "latency_cv": 0.16396212817686512
+      },
+      "finqa:test:BKR/2017/page_56.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2042,
+          2146,
+          2441
+        ],
+        "latency_ms_R1_R2_R3": [
+          4107,
+          4138,
+          4900
+        ],
+        "token_cv": 0.09366981368105623,
+        "latency_cv": 0.10250833606943931
+      },
+      "finqa:test:PPG/2006/page_42.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3356,
+          2800,
+          3166
+        ],
+        "latency_ms_R1_R2_R3": [
+          7425,
+          4207,
+          5809
+        ],
+        "token_cv": 0.09094761411411548,
+        "latency_cv": 0.27676252662261097
+      },
+      "finqa:test:ETR/2004/page_239.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1921,
+          2302,
+          1734
+        ],
+        "latency_ms_R1_R2_R3": [
+          4893,
+          5879,
+          3788
+        ],
+        "token_cv": 0.14577927859129472,
+        "latency_cv": 0.2155352082905732
+      },
+      "finqa:test:AMT/2008/page_94.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3311,
+          4400,
+          3417
+        ],
+        "latency_ms_R1_R2_R3": [
+          8607,
+          12501,
+          9071
+        ],
+        "token_cv": 0.16188311117165713,
+        "latency_cv": 0.21143319076685468
+      },
+      "finqa:test:APD/2016/page_40.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          2261,
+          1942,
+          2013
+        ],
+        "latency_ms_R1_R2_R3": [
+          11732,
+          3063,
+          3728
+        ],
+        "token_cv": 0.08083220445222247,
+        "latency_cv": 0.7813883000376981
+      },
+      "finqa:test:GS/2014/page_40.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          4945,
+          3634,
+          6513
+        ],
+        "latency_ms_R1_R2_R3": [
+          15052,
+          8714,
+          21230
+        ],
+        "token_cv": 0.28652475536994526,
+        "latency_cv": 0.4172484518293681
+      },
+      "finqa:test:UNP/2011/page_24.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          2262,
+          3306,
+          3637
+        ],
+        "latency_ms_R1_R2_R3": [
+          9156,
+          8335,
+          9569
+        ],
+        "token_cv": 0.23388892063611877,
+        "latency_cv": 0.06963868156970741
+      },
+      "finqa:test:CDNS/2015/page_30.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2588,
+          1361,
+          1678
+        ],
+        "latency_ms_R1_R2_R3": [
+          8013,
+          3364,
+          4550
+        ],
+        "token_cv": 0.33957798606789485,
+        "latency_cv": 0.4550102068386861
+      },
+      "finqa:test:LMT/2015/page_89.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3153,
+          2981,
+          3206
+        ],
+        "latency_ms_R1_R2_R3": [
+          8260,
+          7300,
+          8972
+        ],
+        "token_cv": 0.03778199502965741,
+        "latency_cv": 0.10260799665021238
+      },
+      "finqa:test:AWK/2014/page_121.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2936,
+          3691,
+          2577
+        ],
+        "latency_ms_R1_R2_R3": [
+          7138,
+          10046,
+          5283
+        ],
+        "token_cv": 0.18533562841329768,
+        "latency_cv": 0.3205796925890493
+      },
+      "finqa:test:ETR/2016/page_23.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2157,
+          2434,
+          1906
+        ],
+        "latency_ms_R1_R2_R3": [
+          4580,
+          5527,
+          3749
+        ],
+        "token_cv": 0.1219516717110395,
+        "latency_cv": 0.19261629206562508
+      },
+      "finqa:test:MRO/2006/page_93.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3523,
+          3514,
+          2696
+        ],
+        "latency_ms_R1_R2_R3": [
+          6624,
+          5937,
+          3422
+        ],
+        "token_cv": 0.14637580936851163,
+        "latency_cv": 0.31640948675390784
+      },
+      "finqa:test:MRO/2013/page_19.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3555,
+          2513,
+          2779
+        ],
+        "latency_ms_R1_R2_R3": [
+          9685,
+          4520,
+          5586
+        ],
+        "token_cv": 0.18358829569384705,
+        "latency_cv": 0.4133521478374108
+      },
+      "finqa:test:PPG/2012/page_29.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2473,
+          2570,
+          2758
+        ],
+        "latency_ms_R1_R2_R3": [
+          2350,
+          2957,
+          3293
+        ],
+        "token_cv": 0.05572405423959359,
+        "latency_cv": 0.16672533220255703
+      },
+      "finqa:test:MO/2014/page_62.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1977,
+          1782,
+          2559
+        ],
+        "latency_ms_R1_R2_R3": [
+          5541,
+          4339,
+          6699
+        ],
+        "token_cv": 0.19194859371128095,
+        "latency_cv": 0.2135355014660392
+      },
+      "finqa:test:ETR/2015/page_17.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          4305,
+          5073,
+          1640
+        ],
+        "latency_ms_R1_R2_R3": [
+          14482,
+          17579,
+          3462
+        ],
+        "token_cv": 0.4905800596034021,
+        "latency_cv": 0.626620232478166
+      },
+      "finqa:test:ETR/2004/page_239.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3177,
+          2301,
+          3051
+        ],
+        "latency_ms_R1_R2_R3": [
+          9308,
+          5470,
+          8571
+        ],
+        "token_cv": 0.16658275184121135,
+        "latency_cv": 0.26168957692327316
+      },
+      "finqa:test:MKTX/2004/page_99.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3303,
+          2733,
+          1736
+        ],
+        "latency_ms_R1_R2_R3": [
+          9828,
+          7148,
+          2378
+        ],
+        "token_cv": 0.3061517063286746,
+        "latency_cv": 0.5849246464721082
+      },
+      "finqa:test:ADI/2010/page_80.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          1846,
+          2089,
+          2423
+        ],
+        "latency_ms_R1_R2_R3": [
+          3047,
+          4140,
+          5884
+        ],
+        "token_cv": 0.13669086955425608,
+        "latency_cv": 0.32841277840125366
+      },
+      "finqa:test:ILMN/2008/page_86.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2580,
+          2202,
+          3180
+        ],
+        "latency_ms_R1_R2_R3": [
+          13216,
+          4681,
+          8082
+        ],
+        "token_cv": 0.18582573781806808,
+        "latency_cv": 0.4961765128181303
+      },
+      "finqa:test:AAL/2016/page_8.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3256,
+          2430,
+          2328
+        ],
+        "latency_ms_R1_R2_R3": [
+          8464,
+          5101,
+          4911
+        ],
+        "token_cv": 0.19050342755819394,
+        "latency_cv": 0.32454040658567257
+      },
+      "finqa:test:VNO/2014/page_57.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3500,
+          2029,
+          3126
+        ],
+        "latency_ms_R1_R2_R3": [
+          13292,
+          7082,
+          11351
+        ],
+        "token_cv": 0.26500510600294075,
+        "latency_cv": 0.30041553078851196
+      },
+      "finqa:test:MSI/2007/page_70.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3293,
+          3193,
+          2853
+        ],
+        "latency_ms_R1_R2_R3": [
+          8190,
+          7332,
+          5691
+        ],
+        "token_cv": 0.07409291740874266,
+        "latency_cv": 0.1795757180296672
+      },
+      "finqa:test:JPM/2012/page_140.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3296,
+          4379,
+          3534
+        ],
+        "latency_ms_R1_R2_R3": [
+          9200,
+          13186,
+          10588
+        ],
+        "token_cv": 0.15232721890830359,
+        "latency_cv": 0.18408846704113124
+      },
+      "finqa:test:ETR/2004/page_212.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2145,
+          1722,
+          1860
+        ],
+        "latency_ms_R1_R2_R3": [
+          6189,
+          4011,
+          4877
+        ],
+        "token_cv": 0.11299899941095416,
+        "latency_cv": 0.2181968018989954
+      },
+      "finqa:test:JPM/2003/page_106.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3384,
+          2547,
+          2478
+        ],
+        "latency_ms_R1_R2_R3": [
+          7467,
+          2872,
+          2841
+        ],
+        "token_cv": 0.1799294134035359,
+        "latency_cv": 0.6058995167771021
+      },
+      "finqa:test:SLG/2011/page_91.pdf-5": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          4006,
+          3473,
+          3874
+        ],
+        "latency_ms_R1_R2_R3": [
+          7567,
+          4818,
+          6714
+        ],
+        "token_cv": 0.07335057357903302,
+        "latency_cv": 0.2210205875490807
+      },
+      "finqa:test:MSI/2007/page_70.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          7320,
+          6991,
+          7836
+        ],
+        "latency_ms_R1_R2_R3": [
+          22497,
+          21657,
+          24416
+        ],
+        "token_cv": 0.05769648149080457,
+        "latency_cv": 0.06187375626168684
+      },
+      "finqa:test:DXC/2018/page_56.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6265,
+          6113,
+          3485
+        ],
+        "latency_ms_R1_R2_R3": [
+          21158,
+          20049,
+          9100
+        ],
+        "token_cv": 0.2955942656620736,
+        "latency_cv": 0.39743909029497965
+      },
+      "finqa:test:AWK/2014/page_121.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3447,
+          2509,
+          2641
+        ],
+        "latency_ms_R1_R2_R3": [
+          10131,
+          6749,
+          6458
+        ],
+        "token_cv": 0.17718639983892925,
+        "latency_cv": 0.2624638659007672
+      },
+      "finqa:test:HOLX/2009/page_151.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          3732,
+          2701,
+          3704
+        ],
+        "latency_ms_R1_R2_R3": [
+          10916,
+          6147,
+          10741
+        ],
+        "token_cv": 0.17381832011505907,
+        "latency_cv": 0.291786926561799
+      },
+      "finqa:test:AMT/2005/page_102.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          2657,
+          2596,
+          2457
+        ],
+        "latency_ms_R1_R2_R3": [
+          5418,
+          5304,
+          4663
+        ],
+        "token_cv": 0.03988469201217726,
+        "latency_cv": 0.07936333532629351
+      }
+    },
+    "B1": {
+      "finqa:test:ADI/2010/page_80.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          9645,
+          18282,
+          9469
+        ],
+        "latency_ms_R1_R2_R3": [
+          9094,
+          19142,
+          7301
+        ],
+        "token_cv": 0.404172881598768,
+        "latency_cv": 0.5387700114758028
+      },
+      "finqa:test:NKE/2009/page_43.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          26364,
+          24379,
+          12465
+        ],
+        "latency_ms_R1_R2_R3": [
+          31542,
+          19930,
+          12235
+        ],
+        "token_cv": 0.3567923944509883,
+        "latency_cv": 0.4576968499911657
+      },
+      "finqa:test:BLL/2011/page_32.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5936,
+          5930,
+          5943
+        ],
+        "latency_ms_R1_R2_R3": [
+          5302,
+          5194,
+          4877
+        ],
+        "token_cv": 0.001096031292938578,
+        "latency_cv": 0.04310783602636968
+      },
+      "finqa:test:MAS/2012/page_26.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          13071,
+          7548,
+          13649
+        ],
+        "latency_ms_R1_R2_R3": [
+          12053,
+          8234,
+          11809
+        ],
+        "token_cv": 0.29485075911619857,
+        "latency_cv": 0.19983309682586647
+      },
+      "finqa:test:UNP/2009/page_42.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          true
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          5940,
+          5883,
+          5880
+        ],
+        "latency_ms_R1_R2_R3": [
+          5264,
+          4612,
+          4924
+        ],
+        "token_cv": 0.005729246400398904,
+        "latency_cv": 0.0661013896831403
+      },
+      "finqa:test:AMT/2005/page_102.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          7148,
+          7134,
+          7123
+        ],
+        "latency_ms_R1_R2_R3": [
+          6090,
+          5514,
+          4790
+        ],
+        "token_cv": 0.0017561267114424202,
+        "latency_cv": 0.11920262095090385
+      },
+      "finqa:test:SLG/2001/page_48.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5969,
+          5901,
+          5919
+        ],
+        "latency_ms_R1_R2_R3": [
+          6697,
+          5462,
+          4910
+        ],
+        "token_cv": 0.005941743891943925,
+        "latency_cv": 0.16081702456576003
+      },
+      "finqa:test:IP/2006/page_38.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6485,
+          6480,
+          7146
+        ],
+        "latency_ms_R1_R2_R3": [
+          6060,
+          5538,
+          6927
+        ],
+        "token_cv": 0.0571448552420869,
+        "latency_cv": 0.11362017643638561
+      },
+      "finqa:test:ANSS/2016/page_47.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6767,
+          9440,
+          6426
+        ],
+        "latency_ms_R1_R2_R3": [
+          5383,
+          10329,
+          5067
+        ],
+        "token_cv": 0.2187768486567335,
+        "latency_cv": 0.4260592696377129
+      },
+      "finqa:test:CDW/2017/page_38.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6189,
+          6909,
+          6211
+        ],
+        "latency_ms_R1_R2_R3": [
+          8850,
+          7231,
+          5199
+        ],
+        "token_cv": 0.0636214893460636,
+        "latency_cv": 0.2579025930638255
+      },
+      "finqa:test:MKTX/2004/page_99.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          28017,
+          25508,
+          23076
+        ],
+        "latency_ms_R1_R2_R3": [
+          34412,
+          19230,
+          23167
+        ],
+        "token_cv": 0.09675852774519393,
+        "latency_cv": 0.30772550671699916
+      },
+      "finqa:test:AMT/2007/page_127.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6244,
+          6166,
+          6353
+        ],
+        "latency_ms_R1_R2_R3": [
+          6848,
+          5660,
+          5731
+        ],
+        "token_cv": 0.01501795184672616,
+        "latency_cv": 0.10960181553635256
+      },
+      "finqa:test:ETR/2008/page_442.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          10526,
+          5825,
+          6468
+        ],
+        "latency_ms_R1_R2_R3": [
+          11083,
+          5650,
+          7129
+        ],
+        "token_cv": 0.33509745594998497,
+        "latency_cv": 0.35314132237183427
+      },
+      "finqa:test:ETR/2004/page_239.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5773,
+          10471,
+          5796
+        ],
+        "latency_ms_R1_R2_R3": [
+          6327,
+          8186,
+          5771
+        ],
+        "token_cv": 0.3682998831838193,
+        "latency_cv": 0.18705324666901296
+      },
+      "finqa:test:FIS/2006/page_31.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          19796,
+          34502,
+          13592
+        ],
+        "latency_ms_R1_R2_R3": [
+          28623,
+          50272,
+          11066
+        ],
+        "token_cv": 0.47455646576730715,
+        "latency_cv": 0.6549024085947718
+      },
+      "finqa:test:DG/2005/page_44.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5640,
+          5825,
+          7956
+        ],
+        "latency_ms_R1_R2_R3": [
+          5079,
+          6710,
+          21495
+        ],
+        "token_cv": 0.1988156986785458,
+        "latency_cv": 0.8151480304430204
+      },
+      "finqa:test:AAPL/2003/page_48.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5879,
+          5718,
+          6150
+        ],
+        "latency_ms_R1_R2_R3": [
+          5661,
+          4903,
+          6507
+        ],
+        "token_cv": 0.03690566769340675,
+        "latency_cv": 0.14101146271166606
+      },
+      "finqa:test:MRO/2004/page_46.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          9325,
+          6595,
+          6137
+        ],
+        "latency_ms_R1_R2_R3": [
+          8528,
+          6388,
+          4995
+        ],
+        "token_cv": 0.23443704299014287,
+        "latency_cv": 0.26813517556306654
+      },
+      "finqa:test:APD/2018/page_30.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5454,
+          5485,
+          5334
+        ],
+        "latency_ms_R1_R2_R3": [
+          6106,
+          6421,
+          5010
+        ],
+        "token_cv": 0.014702580592985794,
+        "latency_cv": 0.12670044870360747
+      },
+      "finqa:test:LMT/2014/page_91.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5767,
+          5863,
+          10491
+        ],
+        "latency_ms_R1_R2_R3": [
+          6004,
+          5638,
+          8163
+        ],
+        "token_cv": 0.36618369974613363,
+        "latency_cv": 0.20668745902813118
+      },
+      "finqa:test:GRMN/2006/page_68.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6400,
+          6507,
+          6260
+        ],
+        "latency_ms_R1_R2_R3": [
+          7180,
+          6197,
+          5834
+        ],
+        "token_cv": 0.019387519801428187,
+        "latency_cv": 0.10874900373382138
+      },
+      "finqa:test:CMCSA/2015/page_67.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          10870,
+          10140,
+          10380
+        ],
+        "latency_ms_R1_R2_R3": [
+          9371,
+          5904,
+          6908
+        ],
+        "token_cv": 0.03555906043343032,
+        "latency_cv": 0.24125659826880294
+      },
+      "finqa:test:HWM/2015/page_173.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          18393,
+          102716,
+          60135
+        ],
+        "latency_ms_R1_R2_R3": [
+          22262,
+          124234,
+          105455
+        ],
+        "token_cv": 0.6978801337469464,
+        "latency_cv": 0.6462083676143787
+      },
+      "finqa:test:AES/2002/page_128.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5765,
+          5797,
+          5845
+        ],
+        "latency_ms_R1_R2_R3": [
+          6657,
+          4890,
+          4610
+        ],
+        "token_cv": 0.0069395847052526,
+        "latency_cv": 0.20607889116793934
+      },
+      "finqa:test:BKNG/2016/page_33.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5566,
+          5519,
+          5624
+        ],
+        "latency_ms_R1_R2_R3": [
+          4608,
+          5186,
+          5470
+        ],
+        "token_cv": 0.009443283992488997,
+        "latency_cv": 0.08633582511559204
+      },
+      "finqa:test:LKQ/2016/page_87.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5578,
+          5591,
+          5608
+        ],
+        "latency_ms_R1_R2_R3": [
+          5748,
+          4812,
+          5833
+        ],
+        "token_cv": 0.0026901791968520616,
+        "latency_cv": 0.10367845028307805
+      },
+      "finqa:test:MMM/2013/page_75.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          5710,
+          5990,
+          5624
+        ],
+        "latency_ms_R1_R2_R3": [
+          5198,
+          5514,
+          6012
+        ],
+        "token_cv": 0.03314086751985199,
+        "latency_cv": 0.07361463687878593
+      },
+      "finqa:test:ABMD/2012/page_41.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6112,
+          5943,
+          6975
+        ],
+        "latency_ms_R1_R2_R3": [
+          16100,
+          5121,
+          8009
+        ],
+        "token_cv": 0.08726124669717891,
+        "latency_cv": 0.5841193087966403
+      },
+      "finqa:test:CME/2010/page_123.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6241,
+          6180,
+          6130
+        ],
+        "latency_ms_R1_R2_R3": [
+          5592,
+          5019,
+          4622
+        ],
+        "token_cv": 0.008989935844871965,
+        "latency_cv": 0.09603897603802825
+      },
+      "finqa:test:AAPL/2006/page_100.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5847,
+          5890,
+          5992
+        ],
+        "latency_ms_R1_R2_R3": [
+          22557,
+          4422,
+          5087
+        ],
+        "token_cv": 0.012602015174149184,
+        "latency_cv": 0.9621082995602815
+      },
+      "finqa:test:CE/2016/page_19.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5432,
+          5396,
+          5373
+        ],
+        "latency_ms_R1_R2_R3": [
+          5399,
+          4689,
+          4705
+        ],
+        "token_cv": 0.005506649448723151,
+        "latency_cv": 0.08221026874170154
+      },
+      "finqa:test:IP/2006/page_75.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          7473,
+          6855,
+          10520
+        ],
+        "latency_ms_R1_R2_R3": [
+          7575,
+          6465,
+          13171
+        ],
+        "token_cv": 0.23688891851314292,
+        "latency_cv": 0.3962795964738855
+      },
+      "finqa:test:ABMD/2007/page_78.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5891,
+          5983,
+          5996
+        ],
+        "latency_ms_R1_R2_R3": [
+          5415,
+          5738,
+          5131
+        ],
+        "token_cv": 0.009609277657516476,
+        "latency_cv": 0.055952236929617157
+      },
+      "finqa:test:HOLX/2009/page_127.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          5672,
+          5598,
+          5630
+        ],
+        "latency_ms_R1_R2_R3": [
+          6097,
+          4379,
+          4984
+        ],
+        "token_cv": 0.006588007412883683,
+        "latency_cv": 0.16909982321977862
+      },
+      "finqa:test:C/2018/page_176.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          true
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          11479,
+          13893,
+          6334
+        ],
+        "latency_ms_R1_R2_R3": [
+          24831,
+          32918,
+          7325
+        ],
+        "token_cv": 0.36531083033545503,
+        "latency_cv": 0.603106501410654
+      },
+      "finqa:test:GS/2018/page_69.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5825,
+          5826,
+          5819
+        ],
+        "latency_ms_R1_R2_R3": [
+          5365,
+          4795,
+          5356
+        ],
+        "token_cv": 0.0006501326097081024,
+        "latency_cv": 0.06313275082634111
+      },
+      "finqa:test:ADBE/1999/page_64.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5963,
+          5982,
+          6425
+        ],
+        "latency_ms_R1_R2_R3": [
+          6487,
+          4992,
+          6057
+        ],
+        "token_cv": 0.04269303206757281,
+        "latency_cv": 0.13166882778747568
+      },
+      "finqa:test:PPG/2018/page_85.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5533,
+          5611,
+          14546
+        ],
+        "latency_ms_R1_R2_R3": [
+          4969,
+          5145,
+          11503
+        ],
+        "token_cv": 0.6050550520778122,
+        "latency_cv": 0.5166267431992686
+      },
+      "finqa:test:STT/2011/page_69.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          8398,
+          5666,
+          5658
+        ],
+        "latency_ms_R1_R2_R3": [
+          9862,
+          5219,
+          5071
+        ],
+        "token_cv": 0.2402852754747099,
+        "latency_cv": 0.40557260959541724
+      },
+      "finqa:test:AAL/2013/page_172.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          10507,
+          5849,
+          10294
+        ],
+        "latency_ms_R1_R2_R3": [
+          10430,
+          5192,
+          7223
+        ],
+        "token_cv": 0.2960563208235876,
+        "latency_cv": 0.34680376078756314
+      },
+      "finqa:test:JPM/2009/page_175.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3815,
+          4388,
+          8173
+        ],
+        "latency_ms_R1_R2_R3": [
+          7197,
+          6995,
+          10166
+        ],
+        "token_cv": 0.43381958444513413,
+        "latency_cv": 0.2186559600041709
+      },
+      "finqa:test:CME/2017/page_40.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6309,
+          6571,
+          6771
+        ],
+        "latency_ms_R1_R2_R3": [
+          6473,
+          6578,
+          7337
+        ],
+        "token_cv": 0.03537107394812791,
+        "latency_cv": 0.06937198534494289
+      },
+      "finqa:test:PNC/2008/page_122.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5676,
+          5610,
+          5487
+        ],
+        "latency_ms_R1_R2_R3": [
+          5901,
+          4885,
+          4812
+        ],
+        "token_cv": 0.017156473472537955,
+        "latency_cv": 0.11708354582276978
+      },
+      "finqa:test:RSG/2009/page_140.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5981,
+          5992,
+          6026
+        ],
+        "latency_ms_R1_R2_R3": [
+          5087,
+          5740,
+          4962
+        ],
+        "token_cv": 0.00391008129560818,
+        "latency_cv": 0.07938350835540314
+      },
+      "finqa:test:SNA/2007/page_49.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5907,
+          6142,
+          6048
+        ],
+        "latency_ms_R1_R2_R3": [
+          7564,
+          5887,
+          5166
+        ],
+        "token_cv": 0.019607792366564913,
+        "latency_cv": 0.19826242016467005
+      },
+      "finqa:test:PPG/2012/page_29.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5484,
+          5480,
+          5546
+        ],
+        "latency_ms_R1_R2_R3": [
+          5133,
+          4957,
+          5421
+        ],
+        "token_cv": 0.006724016516718555,
+        "latency_cv": 0.045305017097023274
+      },
+      "finqa:test:AAPL/2006/page_100.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5757,
+          5754,
+          5760
+        ],
+        "latency_ms_R1_R2_R3": [
+          5400,
+          4856,
+          4905
+        ],
+        "token_cv": 0.0005211047420531526,
+        "latency_cv": 0.05954734644460251
+      },
+      "finqa:test:ADBE/2008/page_89.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6621,
+          6699,
+          6241
+        ],
+        "latency_ms_R1_R2_R3": [
+          7520,
+          6980,
+          5334
+        ],
+        "token_cv": 0.037579877981606474,
+        "latency_cv": 0.17223106939114793
+      },
+      "finqa:test:GPN/2010/page_89.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          12948,
+          6239,
+          6531
+        ],
+        "latency_ms_R1_R2_R3": [
+          13380,
+          6082,
+          7380
+        ],
+        "token_cv": 0.44233162084696953,
+        "latency_cv": 0.43513260113159424
+      },
+      "finqa:test:AON/2007/page_175.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5842,
+          6733,
+          6465
+        ],
+        "latency_ms_R1_R2_R3": [
+          5573,
+          6959,
+          7212
+        ],
+        "token_cv": 0.07202756062276644,
+        "latency_cv": 0.13406968083466733
+      },
+      "finqa:test:PPG/2006/page_42.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5299,
+          5302,
+          5286
+        ],
+        "latency_ms_R1_R2_R3": [
+          5271,
+          5272,
+          4806
+        ],
+        "token_cv": 0.0016060113076317838,
+        "latency_cv": 0.05252922315700918
+      },
+      "finqa:test:AAL/2014/page_15.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          9174,
+          9091,
+          9315
+        ],
+        "latency_ms_R1_R2_R3": [
+          8544,
+          7050,
+          6722
+        ],
+        "token_cv": 0.01231811889980835,
+        "latency_cv": 0.13056019454304987
+      },
+      "finqa:test:BDX/2018/page_106.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6693,
+          6081,
+          10640
+        ],
+        "latency_ms_R1_R2_R3": [
+          6958,
+          5486,
+          8175
+        ],
+        "token_cv": 0.3170492931214587,
+        "latency_cv": 0.19591352341361137
+      },
+      "finqa:test:ABMD/2012/page_79.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          7193,
+          7122,
+          7107
+        ],
+        "latency_ms_R1_R2_R3": [
+          7766,
+          7788,
+          8447
+        ],
+        "token_cv": 0.006433343922743493,
+        "latency_cv": 0.04837061585196293
+      },
+      "finqa:test:PM/2017/page_32.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5718,
+          5994,
+          9039
+        ],
+        "latency_ms_R1_R2_R3": [
+          5386,
+          5692,
+          7962
+        ],
+        "token_cv": 0.2664276540282924,
+        "latency_cv": 0.22173240181572626
+      },
+      "finqa:test:IP/2006/page_38.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6309,
+          6795,
+          6398
+        ],
+        "latency_ms_R1_R2_R3": [
+          6218,
+          5481,
+          5407
+        ],
+        "token_cv": 0.0398044335265995,
+        "latency_cv": 0.07863876893692365
+      },
+      "finqa:test:INTC/2013/page_31.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5813,
+          5831,
+          5756
+        ],
+        "latency_ms_R1_R2_R3": [
+          5936,
+          5015,
+          5013
+        ],
+        "token_cv": 0.0067506110173972044,
+        "latency_cv": 0.1000346819372398
+      },
+      "finqa:test:STT/2007/page_111.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5586,
+          5748,
+          5610
+        ],
+        "latency_ms_R1_R2_R3": [
+          6245,
+          5311,
+          5184
+        ],
+        "token_cv": 0.015479810902545606,
+        "latency_cv": 0.10383460581388616
+      },
+      "finqa:test:AON/2007/page_171.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5138,
+          5061,
+          5162
+        ],
+        "latency_ms_R1_R2_R3": [
+          6010,
+          4907,
+          5057
+        ],
+        "token_cv": 0.010305341282545755,
+        "latency_cv": 0.11235182510660045
+      },
+      "finqa:test:IPG/2008/page_72.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          false,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5857,
+          8863,
+          6043
+        ],
+        "latency_ms_R1_R2_R3": [
+          6143,
+          7392,
+          4907
+        ],
+        "token_cv": 0.243373889758927,
+        "latency_cv": 0.20212108241911386
+      },
+      "finqa:test:ANSS/2012/page_93.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6079,
+          6053,
+          6203
+        ],
+        "latency_ms_R1_R2_R3": [
+          5421,
+          5198,
+          5015
+        ],
+        "token_cv": 0.013115600265935801,
+        "latency_cv": 0.03901652974483164
+      },
+      "finqa:test:GS/2018/page_69.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          3650,
+          3625,
+          3606
+        ],
+        "latency_ms_R1_R2_R3": [
+          3715,
+          3271,
+          3682
+        ],
+        "token_cv": 0.006084388334908715,
+        "latency_cv": 0.06956359580887976
+      },
+      "finqa:test:PNC/2012/page_68.pdf-5": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          8172,
+          17316,
+          18548
+        ],
+        "latency_ms_R1_R2_R3": [
+          6315,
+          11324,
+          13825
+        ],
+        "token_cv": 0.3861732602915448,
+        "latency_cv": 0.36462239190018064
+      },
+      "finqa:test:GS/2012/page_142.pdf-4": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5655,
+          5815,
+          5773
+        ],
+        "latency_ms_R1_R2_R3": [
+          6034,
+          5626,
+          5539
+        ],
+        "token_cv": 0.014432604953484338,
+        "latency_cv": 0.04609772587531935
+      },
+      "finqa:test:HWM/2017/page_42.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6610,
+          6946,
+          6327
+        ],
+        "latency_ms_R1_R2_R3": [
+          6354,
+          7142,
+          5505
+        ],
+        "token_cv": 0.04675520790973247,
+        "latency_cv": 0.12925994418077133
+      },
+      "finqa:test:PPG/2008/page_52.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5646,
+          5621,
+          5670
+        ],
+        "latency_ms_R1_R2_R3": [
+          5063,
+          4957,
+          5649
+        ],
+        "token_cv": 0.00433991272738668,
+        "latency_cv": 0.07136020828021283
+      },
+      "finqa:test:AAPL/2003/page_48.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5691,
+          5689,
+          5652
+        ],
+        "latency_ms_R1_R2_R3": [
+          4894,
+          6281,
+          4623
+        ],
+        "token_cv": 0.0038683810263102705,
+        "latency_cv": 0.16889443810940363
+      },
+      "finqa:test:ETR/2016/page_23.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6347,
+          6283,
+          6295
+        ],
+        "latency_ms_R1_R2_R3": [
+          19571,
+          4668,
+          5095
+        ],
+        "token_cv": 0.005392803517959555,
+        "latency_cv": 0.8676287250554426
+      },
+      "finqa:test:BKR/2017/page_56.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5807,
+          9839,
+          6232
+        ],
+        "latency_ms_R1_R2_R3": [
+          6334,
+          7306,
+          6347
+        ],
+        "token_cv": 0.30378521719725815,
+        "latency_cv": 0.08367482573197182
+      },
+      "finqa:test:PPG/2006/page_42.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6244,
+          5834,
+          5905
+        ],
+        "latency_ms_R1_R2_R3": [
+          6496,
+          5428,
+          5825
+        ],
+        "token_cv": 0.03655328992359613,
+        "latency_cv": 0.09124337257328863
+      },
+      "finqa:test:ETR/2004/page_239.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5730,
+          5745,
+          5660
+        ],
+        "latency_ms_R1_R2_R3": [
+          6029,
+          4698,
+          5423
+        ],
+        "token_cv": 0.007943190889300377,
+        "latency_cv": 0.12378687757211414
+      },
+      "finqa:test:AMT/2008/page_94.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          11767,
+          10232,
+          45419
+        ],
+        "latency_ms_R1_R2_R3": [
+          24421,
+          17722,
+          132043
+        ],
+        "token_cv": 0.8849382916823104,
+        "latency_cv": 1.1049726204615895
+      },
+      "finqa:test:APD/2016/page_40.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5698,
+          5683,
+          5699
+        ],
+        "latency_ms_R1_R2_R3": [
+          17870,
+          4762,
+          5212
+        ],
+        "token_cv": 0.0015742774777223365,
+        "latency_cv": 0.8017604371595428
+      },
+      "finqa:test:GS/2014/page_40.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5918,
+          5791,
+          6697
+        ],
+        "latency_ms_R1_R2_R3": [
+          7650,
+          4873,
+          8325
+        ],
+        "token_cv": 0.07995408047604671,
+        "latency_cv": 0.263270767667405
+      },
+      "finqa:test:UNP/2011/page_24.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5763,
+          5937,
+          5675
+        ],
+        "latency_ms_R1_R2_R3": [
+          13175,
+          5486,
+          5332
+        ],
+        "token_cv": 0.023021294962230193,
+        "latency_cv": 0.5607089543809874
+      },
+      "finqa:test:CDNS/2015/page_30.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6319,
+          6237,
+          6311
+        ],
+        "latency_ms_R1_R2_R3": [
+          5515,
+          5345,
+          5814
+        ],
+        "token_cv": 0.0071888405504578244,
+        "latency_cv": 0.042720117500444965
+      },
+      "finqa:test:LMT/2015/page_89.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5758,
+          5900,
+          5865
+        ],
+        "latency_ms_R1_R2_R3": [
+          5526,
+          4982,
+          4867
+        ],
+        "token_cv": 0.012665592698634947,
+        "latency_cv": 0.06868375830982289
+      },
+      "finqa:test:AWK/2014/page_121.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          5510,
+          5524,
+          5486
+        ],
+        "latency_ms_R1_R2_R3": [
+          4965,
+          4788,
+          4667
+        ],
+        "token_cv": 0.003489960122372778,
+        "latency_cv": 0.031180525350850734
+      },
+      "finqa:test:ETR/2016/page_23.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6637,
+          6469,
+          6400
+        ],
+        "latency_ms_R1_R2_R3": [
+          6518,
+          4831,
+          5238
+        ],
+        "token_cv": 0.018747692698163683,
+        "latency_cv": 0.15922274316635998
+      },
+      "finqa:test:MRO/2006/page_93.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          5951,
+          5962,
+          5866
+        ],
+        "latency_ms_R1_R2_R3": [
+          6567,
+          6543,
+          5876
+        ],
+        "token_cv": 0.008865325580109558,
+        "latency_cv": 0.06197268305353875
+      },
+      "finqa:test:MRO/2013/page_19.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6520,
+          6141,
+          6445
+        ],
+        "latency_ms_R1_R2_R3": [
+          5721,
+          5177,
+          6380
+        ],
+        "token_cv": 0.03151359934559918,
+        "latency_cv": 0.10459811597107387
+      },
+      "finqa:test:PPG/2012/page_29.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5802,
+          5806,
+          5814
+        ],
+        "latency_ms_R1_R2_R3": [
+          5162,
+          4713,
+          4903
+        ],
+        "token_cv": 0.0010521353908749488,
+        "latency_cv": 0.04575353189598332
+      },
+      "finqa:test:MO/2014/page_62.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6170,
+          6190,
+          6369
+        ],
+        "latency_ms_R1_R2_R3": [
+          5304,
+          4496,
+          5141
+        ],
+        "token_cv": 0.01755189129031996,
+        "latency_cv": 0.08579536563846402
+      },
+      "finqa:test:ETR/2015/page_17.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          7502,
+          6279,
+          6127
+        ],
+        "latency_ms_R1_R2_R3": [
+          8415,
+          6327,
+          5466
+        ],
+        "token_cv": 0.11359538031629629,
+        "latency_cv": 0.22512571761951491
+      },
+      "finqa:test:ETR/2004/page_239.pdf-4": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          10580,
+          11737,
+          17179
+        ],
+        "latency_ms_R1_R2_R3": [
+          8271,
+          9482,
+          21243
+        ],
+        "token_cv": 0.2676535600337638,
+        "latency_cv": 0.5512435534608671
+      },
+      "finqa:test:MKTX/2004/page_99.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5931,
+          5831,
+          5909
+        ],
+        "latency_ms_R1_R2_R3": [
+          5038,
+          4890,
+          5127
+        ],
+        "token_cv": 0.00892112337680428,
+        "latency_cv": 0.02385607244548511
+      },
+      "finqa:test:ADI/2010/page_80.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5557,
+          5544,
+          5438
+        ],
+        "latency_ms_R1_R2_R3": [
+          5502,
+          4659,
+          4928
+        ],
+        "token_cv": 0.011840438179116699,
+        "latency_cv": 0.08561156737121826
+      },
+      "finqa:test:ILMN/2008/page_86.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5545,
+          5742,
+          5595
+        ],
+        "latency_ms_R1_R2_R3": [
+          21979,
+          7571,
+          5111
+        ],
+        "token_cv": 0.01819739357438112,
+        "latency_cv": 0.7886675556314356
+      },
+      "finqa:test:AAL/2016/page_8.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5605,
+          5626,
+          5594
+        ],
+        "latency_ms_R1_R2_R3": [
+          5971,
+          5741,
+          4251
+        ],
+        "token_cv": 0.0028989595003286062,
+        "latency_cv": 0.17548503227626522
+      },
+      "finqa:test:VNO/2014/page_57.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          false
+        ],
+        "successes": 1,
+        "tokens_R1_R2_R3": [
+          6353,
+          6021,
+          5573
+        ],
+        "latency_ms_R1_R2_R3": [
+          9709,
+          6736,
+          5515
+        ],
+        "token_cv": 0.06543182151789907,
+        "latency_cv": 0.294689610887806
+      },
+      "finqa:test:MSI/2007/page_70.pdf-1": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          6324,
+          13530,
+          10689
+        ],
+        "latency_ms_R1_R2_R3": [
+          5667,
+          16388,
+          10852
+        ],
+        "token_cv": 0.35652292598128843,
+        "latency_cv": 0.48878270985161393
+      },
+      "finqa:test:JPM/2012/page_140.pdf-2": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          false
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          6532,
+          6406,
+          6405
+        ],
+        "latency_ms_R1_R2_R3": [
+          6478,
+          5053,
+          4781
+        ],
+        "token_cv": 0.011327589393334518,
+        "latency_cv": 0.1676276453672916
+      },
+      "finqa:test:ETR/2004/page_212.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          5743,
+          5836,
+          5624
+        ],
+        "latency_ms_R1_R2_R3": [
+          6328,
+          5912,
+          4525
+        ],
+        "token_cv": 0.01853142900228687,
+        "latency_cv": 0.1689362733713721
+      },
+      "finqa:test:JPM/2003/page_106.pdf-3": {
+        "correctness_R1_R2_R3": [
+          true,
+          true,
+          true
+        ],
+        "successes": 3,
+        "tokens_R1_R2_R3": [
+          5854,
+          5844,
+          5852
+        ],
+        "latency_ms_R1_R2_R3": [
+          5376,
+          4787,
+          4818
+        ],
+        "token_cv": 0.0009045303627571251,
+        "latency_cv": 0.06637867470832504
+      },
+      "finqa:test:SLG/2011/page_91.pdf-5": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          6334,
+          6396,
+          6041
+        ],
+        "latency_ms_R1_R2_R3": [
+          4739,
+          5083,
+          5168
+        ],
+        "token_cv": 0.030304101531642615,
+        "latency_cv": 0.04546172132219772
+      },
+      "finqa:test:MSI/2007/page_70.pdf-3": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          12118,
+          13473,
+          20991
+        ],
+        "latency_ms_R1_R2_R3": [
+          9527,
+          12385,
+          27951
+        ],
+        "token_cv": 0.30783982810978194,
+        "latency_cv": 0.5965693675837536
+      },
+      "finqa:test:DXC/2018/page_56.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          7193,
+          4277,
+          8037
+        ],
+        "latency_ms_R1_R2_R3": [
+          6782,
+          5687,
+          9171
+        ],
+        "token_cv": 0.30340756903985083,
+        "latency_cv": 0.24698712999259498
+      },
+      "finqa:test:AWK/2014/page_121.pdf-1": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          10465,
+          13893,
+          14855
+        ],
+        "latency_ms_R1_R2_R3": [
+          8369,
+          14625,
+          15847
+        ],
+        "token_cv": 0.1765396845029698,
+        "latency_cv": 0.30983772747275434
+      },
+      "finqa:test:HOLX/2009/page_151.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          true,
+          true
+        ],
+        "successes": 2,
+        "tokens_R1_R2_R3": [
+          6040,
+          5861,
+          5921
+        ],
+        "latency_ms_R1_R2_R3": [
+          5988,
+          5450,
+          5357
+        ],
+        "token_cv": 0.015336017031322355,
+        "latency_cv": 0.06084844342769819
+      },
+      "finqa:test:AMT/2005/page_102.pdf-2": {
+        "correctness_R1_R2_R3": [
+          false,
+          false,
+          false
+        ],
+        "successes": 0,
+        "tokens_R1_R2_R3": [
+          7133,
+          7208,
+          7208
+        ],
+        "latency_ms_R1_R2_R3": [
+          5556,
+          6131,
+          5493
+        ],
+        "token_cv": 0.006028298787306408,
+        "latency_cv": 0.061392943616679976
+      }
+    }
+  },
+  "artifacts": {
+    "stability_structural_gate": {
+      "path": "reports/sci_finqa_stability100_v1_structural_gate.json",
+      "sha256": "5425f2d6c9eeede3355efdafd80bb29f78883b555b6727a07bda114f6f5be376"
+    },
+    "primary_structural_gate": {
+      "path": "reports/sci_finqa_test500_primary_v1_rerun1_structural_gate.json",
+      "sha256": "a0db923f6b83bf3f5f7e8b786f7eb5104b65cee51960df5603a9077f5aa20e54"
+    },
+    "manifest": {
+      "path": "config/sci_finqa_test500_manifest_v1.json",
+      "sha256": "4d668998e764dcd2b9441be5b538cd3db209112275dd87def37aca273c259955"
+    },
+    "gold": {
+      "path": "data/heldout/finqa_test500_gold_v1.jsonl",
+      "sha256": "71ff6e770ee3129e784b1e54a863736b034e555e9c8ce7c0e33d587bf579b9c0"
+    },
+    "primary_log": {
+      "path": "logs/sci_finqa_test500_primary_v1_rerun1_tasks.jsonl",
+      "sha256": "6f9a2a4c743629d4901d82f493babfa4acb2cccd99af915833e2499345e9be5b"
+    },
+    "stability_log": {
+      "path": "logs/sci_finqa_stability100_v1_tasks.jsonl",
+      "sha256": "1e7d305d0182cc1de8889ed95162d1b04f3e249e73653f31efe54333d5f256b0"
+    },
+    "evaluations": {
+      "B0_R1": {
+        "path": "reports/sci_finqa_stability100_v1_B0_R1_evaluation.json",
+        "sha256": "9fc4168847dd83836a0c20d5a0a4474d33ae0b7c2e03efb5d5dbc9566f368eea"
+      },
+      "B0_R2": {
+        "path": "reports/sci_finqa_stability100_v1_B0_R2_evaluation.json",
+        "sha256": "4b59996784fca35a78411c9ffe10ac61bdc135ec8e06724d3b0971e488dfacdc"
+      },
+      "B0_R3": {
+        "path": "reports/sci_finqa_stability100_v1_B0_R3_evaluation.json",
+        "sha256": "14e9a3488a986a9aaec7e1ae5e6f00f2a0d4bdc674c808effa74ca4e63899461"
+      },
+      "B1_R1": {
+        "path": "reports/sci_finqa_stability100_v1_B1_R1_evaluation.json",
+        "sha256": "9072b0b278de66a5b60991de087741262f673cfb7aa8b315e20d8152639627cf"
+      },
+      "B1_R2": {
+        "path": "reports/sci_finqa_stability100_v1_B1_R2_evaluation.json",
+        "sha256": "0f43a5ee28cb3c9bd9eab7d83c7d0f275000cdc43238ded112e0da0f062b4a48"
+      },
+      "B1_R3": {
+        "path": "reports/sci_finqa_stability100_v1_B1_R3_evaluation.json",
+        "sha256": "81b9f1782fab9cfc944cf52a35748c3e4a7fedc11d12b8f8fc339ee32ba4a327"
+      }
+    }
+  }
+}

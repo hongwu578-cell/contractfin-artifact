@@ -1,0 +1,20 @@
+
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the associated manuscript."
+title: "ContractFin reproducibility artifact: Tool Use Before Teamwork?"
+type: software
+version: "1.0.0-rc5"
+license: MIT
+date-released: 2026-09-30
+authors:
+  - family-names: Wang
+    given-names: Hongwu
+    affiliation: Beijing University of Financial Technology
+  - family-names: Xu
+    given-names: Hui
+    affiliation: Beijing University of Financial Technology
+repository-code: "TO_BE_ADDED_AFTER_PUBLICATION"
+abstract: >-
+  Code, frozen configurations, registered FinQA inputs, predictions, logs,
+  and analyses for a preregistered cost-aware comparison of direct generation,
+  deterministic tool augmentation, and development-stage multi-agent designs.

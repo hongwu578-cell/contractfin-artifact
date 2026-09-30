@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b2-finqa-dev3-interface-v1",
+  "registration_date": "2026-09-29",
+  "purpose": "live interface validation of the four-role B2 pipeline before any registered-30 B2 or ablation run",
+  "reportable_performance_estimate": false,
+  "source": {
+    "dataset": "FinQA",
+    "split": "dev",
+    "record_count": 883,
+    "normalized_file_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739"
+  },
+  "selection_rule": {
+    "method": "deterministic source-order interface coverage",
+    "description": "Outside every B0/B1 registered or interface sample, select the first normalized development item in source order for five-step arithmetic, table_sum, and comparison strata.",
+    "selected_count": 3,
+    "notes": [
+      "Gold programs are used only to identify interface strata and are never placed in live prompts.",
+      "No item from the registered30 comparison set or prior interface gates is used.",
+      "No sample may be substituted after registration.",
+      "Answer accuracy is observed but is not an interface acceptance criterion."
+    ]
+  },
+  "exclusions": [
+    "all IDs in config/b0_finqa_dev_30_manifest.json",
+    "finqa:dev:V/2008/page_17.pdf-1",
+    "finqa:dev:C/2010/page_223.pdf-3",
+    "finqa:dev:AES/2016/page_191.pdf-3"
+  ],
+  "samples": [
+    {
+      "run_order": 1,
+      "sample_id": "finqa:dev:PM/2018/page_24.pdf-2",
+      "source_position": 105,
+      "interface_stratum": "five_step_arithmetic",
+      "operation_sequence": ["subtract", "divide", "subtract", "divide", "subtract"],
+      "document_id": "PM/2018/page_24.pdf-2",
+      "gold_evidence_count": 2,
+      "question": "what was the difference in percentage return for pmi common stock compared to the s&p 500 index for the five years ended 2018?"
+    },
+    {
+      "run_order": 2,
+      "sample_id": "finqa:dev:ABMD/2009/page_56.pdf-1",
+      "source_position": 103,
+      "interface_stratum": "table_sum",
+      "operation_sequence": ["table_sum"],
+      "document_id": "ABMD/2009/page_56.pdf-1",
+      "gold_evidence_count": 1,
+      "question": "what are the total contractual commitments , in millions?"
+    },
+    {
+      "run_order": 3,
+      "sample_id": "finqa:dev:PNC/2009/page_46.pdf-3",
+      "source_position": 145,
+      "interface_stratum": "comparison",
+      "operation_sequence": ["greater"],
+      "document_id": "PNC/2009/page_46.pdf-3",
+      "gold_evidence_count": 1,
+      "question": "did the share of securities rated aaa/aaa increase between 2008 and 2009?"
+    }
+  ]
+}

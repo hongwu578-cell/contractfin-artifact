@@ -1,0 +1,631 @@
+{
+  "schema_version": "1.0",
+  "gold_file": "reports/infrastructure_smoke_gold.jsonl",
+  "prediction_file": "reports/infrastructure_smoke_predictions.jsonl",
+  "duplicates": [],
+  "summary": {
+    "total": 30,
+    "coverage": 1.0,
+    "final_answer_accuracy": 1.0,
+    "selective_accuracy": 1.0,
+    "schema_valid_rate": 1.0,
+    "program_accuracy": 1.0,
+    "execution_accuracy": 1.0,
+    "execution_coverage": 1.0,
+    "evidence_macro_precision": 1.0,
+    "evidence_macro_recall": 1.0,
+    "evidence_macro_f1": 1.0,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0
+  },
+  "results": [
+    {
+      "sample_id": "finqa:test:ETR/2016/page_23.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:INTC/2015/page_41.pdf-4",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:ADI/2011/page_61.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:FIS/2010/page_70.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:MAS/2017/page_27.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:SYY/2006/page_71.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:AES/2010/page_227.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:GS/2015/page_188.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:MO/2016/page_19.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:CMCSA/2015/page_112.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:STT/2007/page_111.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:UAA/2016/page_42.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:GIS/2018/page_110.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:JKHY/2019/page_18.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:AWK/2014/page_121.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:MRO/2011/page_108.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:RCL/2012/page_75.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:ETR/2017/page_372.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:ADBE/2008/page_89.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:JPM/2010/page_273.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:PNC/2012/page_68.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:FIS/2016/page_31.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:AMT/2016/page_49.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:MAR/2018/page_43.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:AAL/2016/page_8.pdf-4",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:ETFC/2007/page_18.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:GPN/2010/page_87.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:ADBE/2008/page_89.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:DG/2005/page_44.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 2,
+        "gold_count": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "sample_id": "finqa:test:ALXN/2016/page_153.pdf-2",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 6,
+        "predicted_count": 6,
+        "gold_count": 6,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  ],
+  "infrastructure_smoke": {
+    "mode": "infrastructure_oracle",
+    "warning": "This run copies gold outputs and is not a model baseline.",
+    "sample_count": 30,
+    "schema_valid_rate": 1.0,
+    "log_completeness": 1.0,
+    "scoring_loop_passed": true
+  }
+}

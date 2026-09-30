@@ -1,0 +1,15 @@
+
+.DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/

@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-29T13:30:57.835434+00:00",
+  "artifact_stem": "sci_finqa_test500_primary_v1_rerun1",
+  "run_id": "sci-heldout-9d2c37d5-bc3e-473f-b8af-7630be75e31e",
+  "gold_loaded": false,
+  "decision": {
+    "passed": true,
+    "unblinding_permitted": true,
+    "reason": "all preregistered structural gates passed"
+  },
+  "checks": {
+    "task_count_is_1000": true,
+    "schedule_and_log_are_identical_in_order": true,
+    "schedule_sequences_are_1_through_1000": true,
+    "single_run_id": true,
+    "protocol_id_matches_runtime": true,
+    "runtime_hash_matches_all_records": true,
+    "inference_summary_is_complete": true,
+    "gold_was_not_loaded": true,
+    "B0_has_500_unique_predictions": true,
+    "B1_has_500_unique_predictions": true,
+    "prediction_sample_id_sets_match": true,
+    "prediction_files_match_logged_outputs": true,
+    "prediction_hashes_match_inference_summary": true,
+    "first_system_balance_is_250_250": true,
+    "infrastructure_rate_each_system_at_most_2_percent": true,
+    "infrastructure_rate_difference_at_most_1_point": true,
+    "returned_model_mismatch_rate_at_most_1_percent": true,
+    "every_pair_has_returned_model_identifiers": true,
+    "completed_model_calls_within_authorized_ceiling": true
+  },
+  "counts": {
+    "expected_tasks": 1000,
+    "logged_tasks": 1000,
+    "predictions_by_system": {
+      "B0": 500,
+      "B1": 500
+    },
+    "duplicate_sample_ids_by_system": {
+      "B0": 0,
+      "B1": 0
+    },
+    "first_system_balance": {
+      "B0": 250,
+      "B1": 250
+    },
+    "returned_model_mismatch_pairs": 0,
+    "returned_model_mismatch_rate": 0.0,
+    "missing_model_identifier_pairs": 0
+  },
+  "failure_classification": {
+    "B0": {
+      "system": 0,
+      "infrastructure": 0,
+      "infrastructure_rate": 0.0
+    },
+    "B1": {
+      "system": 7,
+      "infrastructure": 0,
+      "infrastructure_rate": 0.0
+    },
+    "absolute_rate_difference": 0.0,
+    "details": [
+      {
+        "schedule_sequence": 9,
+        "task_id": "B1:finqa:test:CDNS/2018/page_66.pdf-4",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "structured output was not valid JSON"
+        }
+      },
+      {
+        "schedule_sequence": 236,
+        "task_id": "B1:finqa:test:ETR/2011/page_17.pdf-2",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "structured output was not valid JSON"
+        }
+      },
+      {
+        "schedule_sequence": 776,
+        "task_id": "B1:finqa:test:WRK/2018/page_107.pdf-4",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "structured output was not valid JSON"
+        }
+      },
+      {
+        "schedule_sequence": 803,
+        "task_id": "B1:finqa:test:MO/2014/page_62.pdf-2",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "Responses API produced no output_text (status=completed)"
+        }
+      },
+      {
+        "schedule_sequence": 829,
+        "task_id": "B1:finqa:test:PPG/2006/page_42.pdf-2",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "structured output was not valid JSON"
+        }
+      },
+      {
+        "schedule_sequence": 897,
+        "task_id": "B1:finqa:test:IPG/2006/page_77.pdf-3",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "model call did not complete (status=incomplete, reason=max_output_tokens)"
+        }
+      },
+      {
+        "schedule_sequence": 906,
+        "task_id": "B1:finqa:test:ALXN/2016/page_153.pdf-2",
+        "system": "B1",
+        "classification": "system",
+        "error": {
+          "type": "B1SampleFailure",
+          "message": "structured output was not valid JSON"
+        }
+      }
+    ]
+  },
+  "models": {
+    "returned_identifier_counts": {
+      "deepseek-flash": 2110
+    },
+    "mismatch_sample_ids": [],
+    "missing_identifier_sample_ids": []
+  },
+  "resources": {
+    "completed_provider_model_calls": 2110,
+    "authorized_call_ceiling": 3500,
+    "total_tokens": 5460000,
+    "tokens_by_system": {
+      "B0": 1603138,
+      "B1": 3856862
+    }
+  },
+  "prediction_files": {
+    "B0": {
+      "path": "reports/sci_finqa_test500_primary_v1_rerun1_B0_predictions.jsonl",
+      "sha256": "ab9bcf0252ccee773e7d9c3a6b938892c91788a3a057422f93fb954be554eed3",
+      "bytes": 189862
+    },
+    "B1": {
+      "path": "reports/sci_finqa_test500_primary_v1_rerun1_B1_predictions.jsonl",
+      "sha256": "bee83fe075fedfdf3ee6a06d529cef3dfc8f5316837615ea0b06a3cf6de10cee",
+      "bytes": 208014
+    }
+  },
+  "source_files": {
+    "runtime_config": "config/sci_heldout_runtime_v1.json",
+    "runtime_config_sha256": "7c0d3d37cbec25609c9c052b2d79dd7f332ff2795585431903f8748bdfaa050c",
+    "schedule": "config/sci_finqa_test500_interleaved_schedule_v1.jsonl",
+    "schedule_sha256": "041d935f9a87a6c67fd2aee453656c41902074ddf5952372f2293e8f6a66282d",
+    "task_log": "logs/sci_finqa_test500_primary_v1_rerun1_tasks.jsonl",
+    "task_log_sha256": "6f9a2a4c743629d4901d82f493babfa4acb2cccd99af915833e2499345e9be5b",
+    "inference_summary": "reports/sci_finqa_test500_primary_v1_rerun1_inference_summary.json",
+    "inference_summary_sha256": "f45991e6ba175520d0ee0e2d7ebfb57945b193cf4a388e676d48b736d05a6077"
+  }
+}

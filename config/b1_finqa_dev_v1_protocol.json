@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev-v1",
+  "registration_date": "2026-09-28",
+  "status": "prepared_interface_gate_not_executed",
+  "research_role": {
+    "system": "B1 Tool-Augmented Single Agent",
+    "purpose": "isolate tool-access gain before introducing multi-agent coordination",
+    "allowed": [
+      "one model-controlled agent",
+      "document retrieval through search_document",
+      "deterministic FinQA calculation through calculate_finqa"
+    ],
+    "prohibited": [
+      "task contract",
+      "specialized or multiple agent roles",
+      "inter-agent conflict handling",
+      "model-visible final verification gate",
+      "gold answer, gold program, or gold evidence access"
+    ]
+  },
+  "provider_and_model": {
+    "provider": "deepseek",
+    "responses_url": "https://api.deepseek.com/responses",
+    "requested_model": "deepseek-flash",
+    "reasoning_configuration": "provider default; no reasoning field is sent",
+    "temperature_configuration": "provider default; no temperature field is sent",
+    "structured_output_strict_flag": false,
+    "store": false
+  },
+  "frozen_agent_configuration": {
+    "prompt_version": "b1-tool-single-agent-v1",
+    "system_prompt_sha256": "3abdbcff07f013f7198e15ae4259f2e81a5bf4d46b28ebedb165badf6c85319b",
+    "tool_definitions_sha256": "4fccf5ebf114fcb3e39bc443cecca2e17de7be3129a72299927f716797fb866e",
+    "output_schema_sha256": "c024eb215ffc38e77c5aed4bed9749db1e94ddabde3616863c76764a7e0418a6",
+    "retriever": "deterministic lexical BM25-style ranking over the allowed sample document",
+    "retriever_default_top_k": 12,
+    "calculator": "deterministic FinQA program executor",
+    "cumulative_output_budget_per_sample": 32768,
+    "maximum_model_calls_per_sample": 4,
+    "maximum_tool_calls_per_sample": 6,
+    "request_timeout_seconds_per_model_call": 300,
+    "automatic_retries": 0,
+    "final_model_call_behavior": "tools disabled; structured final response still required"
+  },
+  "frozen_inputs": {
+    "normalized_dataset": "data/normalized/finqa_dev.jsonl",
+    "normalized_dataset_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739",
+    "registered30_manifest": "config/b0_finqa_dev_30_manifest.json",
+    "registered30_manifest_sha256": "3afaa34852cdf799e1993952a6326d8b1ca6ead9a4798acb0d7ed9f889542ba3",
+    "registered30_sample_identity_and_order": "identical to B0 v1.2"
+  },
+  "retriever_development_audit": {
+    "artifact": "reports/b1_retriever_audit.json",
+    "artifact_sha256": "eb84689c0ed99f47172ed47ee0673ad13349f60bdc800b50e1738ebfc965aef4",
+    "official_text_id_mapping_rate": 1.0,
+    "registered30_top12_micro_gold_evidence_recall": 0.9772727272727273,
+    "registered30_top12_full_gold_coverage": 0.9666666666666667,
+    "boundary": "development gold was used only for aggregate retriever audit and is never exposed to the agent or tools"
+  },
+  "interface_gate": {
+    "status": "prepared_not_executed",
+    "protocol_id": "contractfin-b1-finqa-dev1-interface-v1",
+    "sample_count": 1,
+    "sample_id": "finqa:dev:V/2008/page_17.pdf-1",
+    "selection": "first normalized FinQA development item; previously used for the B0 interface gate and excluded from the registered30 manifest",
+    "artifact_stem": "b1_deepseek_interface1_v1",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b1.py --provider deepseek --model deepseek-flash --limit 1 --protocol-id contractfin-b1-finqa-dev1-interface-v1 --total-output-budget 32768 --max-model-calls 4 --max-tool-calls 6 --request-timeout-seconds 300 --artifact-stem b1_deepseek_interface1_v1",
+    "paid_model_call_upper_bound": 4,
+    "local_tool_call_upper_bound": 6,
+    "requires_separate_user_authorization": true,
+    "acceptance": {
+      "successful_structured_samples": 1,
+      "samples_using_search_document": 1,
+      "samples_using_search_top_k_12": 1,
+      "samples_using_calculate_finqa": 1,
+      "maximum_failed_tool_calls": 0,
+      "maximum_output_ceiling_failures": 0,
+      "maximum_transport_timeouts": 0,
+      "required_log_completeness": 1.0,
+      "answer_accuracy_is_a_gate": false
+    }
+  },
+  "registered30_gate": {
+    "status": "blocked_until_interface_gate_passes_and_separate_authorization_is_given",
+    "protocol_id": "contractfin-b1-finqa-dev30-v1",
+    "sample_count": 30,
+    "artifact_stem": "b1_deepseek_preregistered30_v1",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b1.py --provider deepseek --model deepseek-flash --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b1-finqa-dev30-v1 --total-output-budget 32768 --max-model-calls 4 --max-tool-calls 6 --request-timeout-seconds 300 --artifact-stem b1_deepseek_preregistered30_v1",
+    "paid_model_call_upper_bound": 120,
+    "local_tool_call_upper_bound": 180,
+    "automatic_retries": 0,
+    "requires_separate_user_authorization": true,
+    "acceptance": {
+      "successful_structured_samples": 30,
+      "samples_using_search_document": 30,
+      "samples_using_search_top_k_12": 30,
+      "samples_using_calculate_finqa": 30,
+      "maximum_failed_tool_calls": 0,
+      "maximum_output_ceiling_failures": 0,
+      "maximum_transport_timeouts": 0,
+      "required_log_completeness": 1.0,
+      "required_sample_identity_and_order_match": true,
+      "answer_accuracy_is_a_gate": false
+    }
+  },
+  "b0_comparator": {
+    "run_id": "b0-f72a2ba2-9883-49fb-839f-8a79a7909fad",
+    "original_report": "reports/b0_deepseek_preregistered30_v1_2_report.json",
+    "original_report_sha256": "2bbc5c895164f907dd320fd78a87012ecede7cb8b587be7c00bda64c46677551",
+    "corrected_evidence_report": "reports/b0_deepseek_preregistered30_v1_2_report_evidence_ids_v2.json",
+    "corrected_evidence_report_sha256": "e76cc0368ffbcd2019fe19c8ac3ea39cba056c562fac2578e141a64fe8451e9c",
+    "correction": "deterministic legacy pre/post identifier migration; no model rerun and no answer/program metric change"
+  },
+  "frozen_code_hashes": {
+    "b1_runner": "fd515f1ccc55e953790953187e4466b8a48bbb7168a182cfdbef7d625e759049",
+    "b1_tools": "a3ec339b6e973447c0813bb0b5725e1e273842449e5caff54d80b0f7f6f62bcc",
+    "retriever": "dc99c2d362e470be424370c7647af062e96be51c8f135bce032cd9ce34690af2",
+    "cli_runner": "5983f1719a013af699ebb912c8bb71570108038946203037ec9d50ae83c93df0"
+  },
+  "official_references": [
+    "https://api-docs.deepseek.com/api/create-response/",
+    "https://api-docs.deepseek.com/guides/responses_api/",
+    "https://api-docs.deepseek.com/guides/tool_calls/"
+  ]
+}

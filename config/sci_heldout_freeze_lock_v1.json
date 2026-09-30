@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "freeze_date": "2026-09-29",
+  "status": "frozen_confirmed_no_live_api_authorization",
+  "live_api_calls_at_freeze": 0,
+  "review_checks": {
+    "preregistration_status_is_frozen": true,
+    "local_audit_passed": true,
+    "primary_sample_is_500": true,
+    "inference_contains_no_gold_fields": true,
+    "gold_contains_execution_documents": true,
+    "primary_runtime_is_not_authorized": true,
+    "stability_runtime_is_not_authorized": true,
+    "primary_first_order_is_250_250": true,
+    "stability_first_order_is_50_50_per_replicate": true,
+    "primary_test_is_two_sided_exact_mcnemar": true,
+    "secondary_itt_denominators_are_frozen": true,
+    "small_effect_power_at_500_is_at_least_80_percent": true,
+    "B2_is_excluded_from_confirmation": true,
+    "current_call_authorization_is_zero": true
+  },
+  "locked_files": [
+    {
+      "path": "pyproject.toml",
+      "bytes": 434,
+      "sha256": "e82a4c0b06593258f0fe8a4802c3cebfe5bfebb9a3721e326af541080d456323"
+    },
+    {
+      "path": "schemas/prediction.schema.json",
+      "bytes": 1102,
+      "sha256": "340aeeb7cedf90e4f8ce2e5710a7c7c2505fae63ff809fe5e47a95bf928e4221"
+    },
+    {
+      "path": "config/b0_finqa_dev_30_v1_2_amendment.json",
+      "bytes": 3518,
+      "sha256": "2934c487858c7b9be11b71e9d1f5e261be09c861beca2cc818b9f07e28d3bb55"
+    },
+    {
+      "path": "config/b1_finqa_dev_v1_2_amendment.json",
+      "bytes": 7460,
+      "sha256": "223dbb5d3547823736661b1acfb938070affcf6475be9e89c6085007d2736d7d"
+    },
+    {
+      "path": "config/sci_heldout_preregistration_v1.json",
+      "bytes": 17781,
+      "sha256": "35fddb7aecaf248d57e2a8099022350f2aafb7ecc2c7c3e93729e9dc6587c8b5"
+    },
+    {
+      "path": "config/sci_finqa_test500_manifest_v1.json",
+      "bytes": 449305,
+      "sha256": "4d668998e764dcd2b9441be5b538cd3db209112275dd87def37aca273c259955"
+    },
+    {
+      "path": "config/sci_finqa_test500_interleaved_schedule_v1.jsonl",
+      "bytes": 167305,
+      "sha256": "041d935f9a87a6c67fd2aee453656c41902074ddf5952372f2293e8f6a66282d"
+    },
+    {
+      "path": "config/sci_finqa_stability100_interleaved_schedule_v1.jsonl",
+      "bytes": 73356,
+      "sha256": "e9988a8a45fb11d78f08f39a76a8142492df63bae643bca92cdaca72560428b4"
+    },
+    {
+      "path": "config/sci_heldout_runtime_v1.json",
+      "bytes": 1524,
+      "sha256": "7c0d3d37cbec25609c9c052b2d79dd7f332ff2795585431903f8748bdfaa050c"
+    },
+    {
+      "path": "config/sci_heldout_stability_runtime_v1.json",
+      "bytes": 1619,
+      "sha256": "c839a885a7b1fb21af8e1fb638f3e2e8ea2337524e7f94920ffdf4b464c9e077"
+    },
+    {
+      "path": "data/normalized/finqa_test.jsonl",
+      "bytes": 5690012,
+      "sha256": "da64fbde6763d0832a04c4f17e7a945bb3f195ab23e12bc57b31167a5b745541"
+    },
+    {
+      "path": "data/heldout/finqa_test500_inference_v1.jsonl",
+      "bytes": 2162060,
+      "sha256": "ce6b78a25aa709cbac0b862df775df079d869fb79df1ace3ce8cf4d8d4e7b6e1"
+    },
+    {
+      "path": "data/heldout/finqa_test500_gold_v1.jsonl",
+      "bytes": 2329556,
+      "sha256": "71ff6e770ee3129e784b1e54a863736b034e555e9c8ce7c0e33d587bf579b9c0"
+    },
+    {
+      "path": "reports/sci_finqa_test500_manifest_v1.md",
+      "bytes": 86146,
+      "sha256": "c255b43ec2c8363eae867cece78a4b8f7843d8eddfd57f47299cd1cfa9861dcb"
+    },
+    {
+      "path": "reports/sci_exact_mcnemar_power_v1.json",
+      "bytes": 10185,
+      "sha256": "905dcd44457e4c3efc439a2047c0f858c45dda1189b51661e7f33f3046313a98"
+    },
+    {
+      "path": "reports/sci_exact_mcnemar_power_v1.csv",
+      "bytes": 2483,
+      "sha256": "d83540e351958be14f9c7f91d4f4a7c46b7a838869c49ecbba757fc0f9600cac"
+    },
+    {
+      "path": "reports/sci_exact_mcnemar_power_v1.md",
+      "bytes": 1898,
+      "sha256": "3e32c26a21a9812a71b3378e46aca1aa656da402dc0e39d4f0d7bbc282f970b3"
+    },
+    {
+      "path": "reports/sci_heldout_local_audit_v1.json",
+      "bytes": 1649,
+      "sha256": "d753421dfea89ce4f965974cc68ae44655bc709ab1aa6db90226b5033a99c0fa"
+    },
+    {
+      "path": "reports/sci_heldout_preregistration_v1.md",
+      "bytes": 2944,
+      "sha256": "7d2345dd6f7c2368a1a5adcd2db6b9dfdce4bb54253c2a1afb4be9d1b6494e93"
+    },
+    {
+      "path": "src/contractfin/b0.py",
+      "bytes": 14527,
+      "sha256": "f313ef9237817351dbd151980ba71bac816cf343b7dae552d940239e6852f576"
+    },
+    {
+      "path": "src/contractfin/b1.py",
+      "bytes": 18937,
+      "sha256": "f9bc70b293aae1df1c8b80bb7f779d8d105810c9e91947bf422c2f4ddc20e1ad"
+    },
+    {
+      "path": "src/contractfin/b1_tools.py",
+      "bytes": 9028,
+      "sha256": "60ead44345e0ecf9a8e7ad23083aae7adf3a73cabe452dcbb042d386ec392359"
+    },
+    {
+      "path": "src/contractfin/evaluation.py",
+      "bytes": 11049,
+      "sha256": "1b15f285c27e41279577e5d32275168d56c94f0d0eeeb03fa7baf0bdc440f1e5"
+    },
+    {
+      "path": "src/contractfin/evidence_ids.py",
+      "bytes": 2675,
+      "sha256": "0e63965aeca161e174054a4d302894de186417619dadb1274a0fdc612a3dfbb5"
+    },
+    {
+      "path": "src/contractfin/heldout.py",
+      "bytes": 25369,
+      "sha256": "fc5b040d9aee44c5cc2f28654ebefaf99193e8627854b55273eb08c618247e4e"
+    },
+    {
+      "path": "src/contractfin/program.py",
+      "bytes": 6267,
+      "sha256": "35488b96f167837e0fbef8070120f09c4db3ab1e036f6d90fbf7c80ca2838756"
+    },
+    {
+      "path": "src/contractfin/retrieval.py",
+      "bytes": 4166,
+      "sha256": "dc99c2d362e470be424370c7647af062e96be51c8f135bce032cd9ce34690af2"
+    },
+    {
+      "path": "src/contractfin/run_logging.py",
+      "bytes": 1091,
+      "sha256": "50d0aa348b53d69a4e1acc0d4b878a501b66f18ea5ceae42404f7edc6bcd5af7"
+    },
+    {
+      "path": "src/contractfin/schemas.py",
+      "bytes": 3965,
+      "sha256": "edc8b7344bb60c2284453657383e3da04cb2ed9311f7e7f7b242e9fb6eb90ab5"
+    },
+    {
+      "path": "src/contractfin/utils.py",
+      "bytes": 2043,
+      "sha256": "bf96a8d188646bda12603b8c7070f8f286f9845479c8015ced4bb27fb7261f0c"
+    },
+    {
+      "path": "scripts/prepare_sci_heldout.py",
+      "bytes": 20950,
+      "sha256": "df8cae4026cf3237a5495e3282bc61bc407bef14940139cf63e5eee71896095d"
+    },
+    {
+      "path": "scripts/run_sci_heldout.py",
+      "bytes": 17052,
+      "sha256": "b930c1b127dc2eeb7569ad66e85548810b946156a8b6fb9d551f7581591624c5"
+    },
+    {
+      "path": "scripts/freeze_sci_heldout.py",
+      "bytes": 11131,
+      "sha256": "c11962dfa33c7d2a57d23b9e77ac8dab8106fb245b822c268d91727a9f088980"
+    },
+    {
+      "path": "tests/test_heldout.py",
+      "bytes": 3674,
+      "sha256": "14fc722228340a1897597c548b57cebaecd1a84664fe6a5b3edb6b99fa6dc18b"
+    }
+  ],
+  "change_policy": "Any hash change invalidates this v1 lock. Use a dated amendment bound to this lock and runtime hash; never silently overwrite or tune from held-out outcomes."
+}

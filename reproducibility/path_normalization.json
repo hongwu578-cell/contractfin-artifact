@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "reason": "Remove local usernames and absolute workspace paths from public artifacts.",
+  "files": [
+    {
+      "path": "reports/b0_deepseek_preregistered30_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b0_deepseek_preregistered30_v1_1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b0_deepseek_preregistered30_v1_2_evidence_ids_v2_migration.json",
+      "replacement_count": 5,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b0_deepseek_preregistered30_v1_2_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b0_deepseek_preregistered30_v1_2_report_evidence_ids_v2.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b0_deepseek_smoke_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b0_smoke_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b1_calculator_v1_1_audit.json",
+      "replacement_count": 1,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b1_deepseek_interface1_v1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b1_deepseek_interface2_v1_1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b1_deepseek_preregistered30_v1_1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b1_deepseek_preregistered30_v1_2_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b1_deepseek_preregistered30_v1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_deepseek_full_interface3_v1_1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_deepseek_full_interface3_v1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_deepseek_full_preregistered30_v1_1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_deepseek_full_preregistered30_v1_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_local_orchestration_audit.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_v1_1_failure_diagnostic.json",
+      "replacement_count": 1,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/b2_v1_1_local_orchestration_audit.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/infrastructure_smoke_report.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/normalization_summary.json",
+      "replacement_count": 4,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/sci_finqa_test500_primary_v1_rerun1_B0_evaluation.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    },
+    {
+      "path": "reports/sci_finqa_test500_primary_v1_rerun1_B1_evaluation.json",
+      "replacement_count": 2,
+      "replacement": "project-relative path"
+    }
+  ],
+  "total_replacements": 51
+}

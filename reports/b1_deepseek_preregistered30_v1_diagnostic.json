@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev30-v1",
+  "execution_date": "2026-09-29",
+  "run_id": "b1-81337a19-ea61-4f81-badc-781b2032db51",
+  "gate_status": "failed",
+  "classification": "development_interface_failure_not_final_b1_performance",
+  "sample_integrity": {
+    "sample_count": 30,
+    "unique_sample_count": 30,
+    "gold_matches_registered_identity_and_order": true,
+    "predictions_match_registered_identity_and_order": true,
+    "logs_match_registered_identity_and_order": true,
+    "automatic_retries": 0,
+    "sample_substitutions": 0
+  },
+  "acceptance": [
+    {
+      "criterion": "successful_structured_samples",
+      "required": 30,
+      "observed": 16,
+      "passed": false
+    },
+    {
+      "criterion": "samples_using_search_document",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_search_top_k_12",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_calculate_finqa",
+      "required": 30,
+      "observed": 26,
+      "passed": false
+    },
+    {
+      "criterion": "failed_tool_calls",
+      "required_maximum": 0,
+      "observed": 21,
+      "passed": false
+    },
+    {
+      "criterion": "output_ceiling_failures",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "transport_timeouts",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "log_completeness",
+      "required": 1.0,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "criterion": "sample_identity_and_order",
+      "required": true,
+      "observed": true,
+      "passed": true
+    }
+  ],
+  "resource_use": {
+    "model_calls": 109,
+    "authorized_model_call_upper_bound": 120,
+    "tool_calls": 93,
+    "input_tokens": 213820,
+    "output_tokens_including_reasoning": 15937,
+    "reasoning_tokens": 8595,
+    "total_tokens": 229757,
+    "aggregate_measured_latency_ms": 213390
+  },
+  "completion": {
+    "successful_structured_samples": 16,
+    "failed_samples": 14,
+    "all_model_calls_reported_completed": true,
+    "samples_reaching_fourth_model_call": 19,
+    "fourth_call_samples_with_invalid_final_json": 14,
+    "failure_message": "structured output was not valid JSON"
+  },
+  "tool_behavior": {
+    "samples_using_any_tool": 30,
+    "samples_using_search_document": 30,
+    "samples_using_calculate_finqa": 26,
+    "search_document_calls": 55,
+    "calculate_finqa_calls": 38,
+    "failed_calculate_finqa_calls": 21,
+    "failure_categories": [
+      {
+        "category": "non_flat_separator_assignment_or_infix_syntax",
+        "count": 10
+      },
+      {
+        "category": "nested_operations_not_supported_by_flat_finqa_parser",
+        "count": 5
+      },
+      {
+        "category": "table_aggregate_argument_mismatch",
+        "count": 5
+      },
+      {
+        "category": "operation_arity_mismatch",
+        "count": 1
+      }
+    ]
+  },
+  "diagnostic_evaluation_not_final_performance": {
+    "full_set_final_answer_accuracy": 0.23333333333333334,
+    "completed_sample_selective_accuracy": 0.4375,
+    "completed_sample_answer_count": 7,
+    "completed_sample_denominator": 16,
+    "full_set_evidence_macro_f1": 0.48777777777777775,
+    "completed_sample_evidence_macro_f1": 0.9145833333333333,
+    "exact_program_correct": 4,
+    "program_attempts": 15,
+    "execution_correct": 7,
+    "execution_attempts": 15,
+    "persisted_record_schema_valid_rate": 1.0,
+    "warning": "Persisted local error records pass the replay schema; model structured-output completion was only 16/30."
+  },
+  "root_cause_assessment": [
+    "The calculator tool contract did not specify the accepted flat FinQA grammar precisely enough for reliable model use.",
+    "The four-model-call cap forced 19 samples into a final no-tool turn after repeated search or calculator recovery; 14 final visible responses were not valid JSON.",
+    "The current trace retains response status and token accounting but not the invalid visible output, so the exact JSON syntax defect cannot be reconstructed from this run."
+  ],
+  "decision": {
+    "report_as_final_b1_performance": false,
+    "rerun_without_versioned_amendment": false,
+    "next_step": "prepare and locally validate a versioned B1 protocol amendment; any new paid run requires separate authorization"
+  },
+  "artifacts": {
+    "gold": {
+      "path": "reports/b1_deepseek_preregistered30_v1_gold.jsonl",
+      "sha256": "b6ac633d53f78e4ffd66e6507b6dfcaddf33eec70acd7e8e8cb98f19af757e40"
+    },
+    "predictions": {
+      "path": "reports/b1_deepseek_preregistered30_v1_predictions.jsonl",
+      "sha256": "e88ab4f4c784593721c7420c8d8d632072b9c8365930b15ab63356c5e8e40ebf"
+    },
+    "report": {
+      "path": "reports/b1_deepseek_preregistered30_v1_report.json",
+      "sha256": "cb28610d326345a0b192d363e57d44189ee36d00fd5288f6592174196b12b356"
+    },
+    "log": {
+      "path": "logs/b1_deepseek_preregistered30_v1.jsonl",
+      "sha256": "6e542ab34b8c44da3cc8787757c0edc7f2b77f81a30fdd83c534b3dff01b5591"
+    }
+  }
+}

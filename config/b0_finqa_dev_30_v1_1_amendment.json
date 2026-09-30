@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b0-finqa-dev30-v1.1",
+  "parent_protocol_id": "contractfin-b0-finqa-dev30-v1",
+  "registration_date": "2026-09-28",
+  "status": "prepared_not_executed",
+  "reason": {
+    "category": "systemic_interface_configuration",
+    "evidence": "All 16 failed responses in the parent run consumed exactly 1024 output tokens; 15 were incomplete and one contained truncated invalid JSON.",
+    "parent_run_id": "b0-f8beac55-fd32-4358-bada-9c002a38bbc0",
+    "parent_report_sha256": "0c3e1c0ab5ae323ffc33d13743addfb37aff81dd550283bc87b828a343244d4d"
+  },
+  "single_behavioral_change": {
+    "parameter": "max_output_tokens",
+    "from": 1024,
+    "to": 8192,
+    "rationale": "The Responses API counts both reasoning and visible answer tokens toward this ceiling. Raising the ceiling prevents interface truncation without forcing the model to consume the full allowance."
+  },
+  "frozen_factors": {
+    "provider": "deepseek",
+    "responses_url": "https://api.deepseek.com/responses",
+    "requested_model": "deepseek-flash",
+    "prompt_version": "b0-direct-v1",
+    "structured_output_schema": "contractfin_prediction",
+    "reasoning_configuration": "provider default; no reasoning field is sent",
+    "temperature_configuration": "provider default; no temperature field is sent",
+    "sample_manifest": "config/b0_finqa_dev_30_manifest.json",
+    "sample_manifest_sha256": "3afaa34852cdf799e1993952a6326d8b1ca6ead9a4798acb0d7ed9f889542ba3",
+    "normalized_dataset_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739",
+    "sample_count": 30,
+    "sample_ids_and_execution_order": "unchanged",
+    "retry_count_per_sample": 0,
+    "evaluation_code_and_metrics": "unchanged"
+  },
+  "non_behavioral_instrumentation": [
+    "Record protocol_id and max_output_tokens in the run summary.",
+    "Record response status, response ID, incomplete reason and provider error code without storing reasoning text.",
+    "Record reasoning-token count when the provider returns it.",
+    "Refuse to overwrite any existing B0 artifact."
+  ],
+  "execution": {
+    "scope": "rerun all 30 registered samples, not only the prior failures",
+    "artifact_stem": "b0_deepseek_preregistered30_v1_1",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b0.py --provider deepseek --model deepseek-flash --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b0-finqa-dev30-v1.1 --max-output-tokens 8192 --artifact-stem b0_deepseek_preregistered30_v1_1",
+    "paid_api_calls": 30,
+    "requires_separate_user_authorization": true
+  },
+  "acceptance_gate": {
+    "attempted_calls": 30,
+    "minimum_successful_structured_responses": 29,
+    "maximum_max_output_token_failures": 0,
+    "required_log_completeness": 1.0,
+    "required_sample_identity_and_order_match": true,
+    "accuracy_is_a_gate": false
+  },
+  "official_references": [
+    "https://api-docs.deepseek.com/api/create-response/",
+    "https://api-docs.deepseek.com/guides/responses_api/",
+    "https://api-docs.deepseek.com/quick_start/pricing/"
+  ]
+}

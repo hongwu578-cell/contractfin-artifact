@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "mode": "b2_v1_1_failure_replay_no_api",
+  "api_calls": 0,
+  "parent_run_id": "b2-17e7cc82-19a1-4814-ad6c-bf00d231f7a2",
+  "parent_log": "logs/b2_deepseek_full_preregistered30_v1.jsonl",
+  "parent_sample_count": 30,
+  "parent_failures": [
+    {
+      "sample_id": "finqa:dev:LMT/2012/page_47.pdf-3",
+      "error": {
+        "type": "B2SampleFailure",
+        "message": "an accepting verifier must have all checks true and no reason codes"
+      }
+    },
+    {
+      "sample_id": "finqa:dev:APD/2018/page_59.pdf-1",
+      "error": {
+        "type": "B2SampleFailure",
+        "message": "model call did not complete (role=verifier_agent, status=incomplete, reason=max_output_tokens)"
+      }
+    },
+    {
+      "sample_id": "finqa:dev:LKQ/2016/page_26.pdf-2",
+      "error": {
+        "type": "B2SampleFailure",
+        "message": "an accepting verifier must have all checks true and no reason codes"
+      }
+    }
+  ],
+  "failure_message_counts": {
+    "an accepting verifier must have all checks true and no reason codes": 2,
+    "model call did not complete (role=verifier_agent, status=incomplete, reason=max_output_tokens)": 1
+  },
+  "semantic_verdict_replay": {
+    "accept_with_false_check": {
+      "raw": {
+        "decision": "accept",
+        "checks": {
+          "contract_compliant": false,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": []
+      },
+      "effective": {
+        "decision": "human_review",
+        "checks": {
+          "contract_compliant": false,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": [
+          "controller_downgraded_inconsistent_accept"
+        ]
+      },
+      "normalization": {
+        "rule": "conservative_verifier_normalization_v1_1",
+        "original_decision": "accept",
+        "effective_decision": "human_review",
+        "triggers": [
+          "false_check:contract_compliant"
+        ]
+      }
+    },
+    "accept_with_reason_code": {
+      "raw": {
+        "decision": "accept",
+        "checks": {
+          "contract_compliant": true,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": [
+          "model_reported_uncertainty"
+        ]
+      },
+      "effective": {
+        "decision": "human_review",
+        "checks": {
+          "contract_compliant": true,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": [
+          "model_reported_uncertainty",
+          "controller_downgraded_inconsistent_accept"
+        ]
+      },
+      "normalization": {
+        "rule": "conservative_verifier_normalization_v1_1",
+        "original_decision": "accept",
+        "effective_decision": "human_review",
+        "triggers": [
+          "accept_with_reason_codes"
+        ]
+      }
+    },
+    "valid_accept": {
+      "raw": {
+        "decision": "accept",
+        "checks": {
+          "contract_compliant": true,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": []
+      },
+      "effective": {
+        "decision": "accept",
+        "checks": {
+          "contract_compliant": true,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": []
+      },
+      "normalization": null
+    },
+    "human_review_without_reason": {
+      "raw": {
+        "decision": "human_review",
+        "checks": {
+          "contract_compliant": true,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": []
+      },
+      "effective": {
+        "decision": "human_review",
+        "checks": {
+          "contract_compliant": true,
+          "evidence_supported": true,
+          "program_executed": true,
+          "answer_consistent": true
+        },
+        "reason_codes": [
+          "verifier_unspecified_review_reason"
+        ]
+      },
+      "normalization": {
+        "rule": "conservative_verifier_normalization_v1_1",
+        "original_decision": "human_review",
+        "effective_decision": "human_review",
+        "triggers": [
+          "human_review_without_reason_code"
+        ]
+      }
+    }
+  },
+  "role_output_token_caps": {
+    "contract_agent": [
+      8192
+    ],
+    "evidence_agent": [
+      1024,
+      2048
+    ],
+    "solver_agent": [
+      8192,
+      2048
+    ],
+    "verifier_agent": [
+      11264
+    ]
+  },
+  "full_pipeline_cap_sequence": [
+    8192,
+    1024,
+    2048,
+    8192,
+    2048,
+    11264
+  ],
+  "full_pipeline_cap_sum": 32768,
+  "verifier_reserved_tokens": 11264,
+  "parent_output_ceiling_sample_usage": [
+    {
+      "role": "contract_agent",
+      "role_call_index": 1,
+      "output_tokens": 13986,
+      "v1_1_cap": 8192
+    },
+    {
+      "role": "evidence_agent",
+      "role_call_index": 1,
+      "output_tokens": 93,
+      "v1_1_cap": 1024
+    },
+    {
+      "role": "evidence_agent",
+      "role_call_index": 2,
+      "output_tokens": 527,
+      "v1_1_cap": 2048
+    },
+    {
+      "role": "solver_agent",
+      "role_call_index": 1,
+      "output_tokens": 16311,
+      "v1_1_cap": 8192
+    },
+    {
+      "role": "solver_agent",
+      "role_call_index": 2,
+      "output_tokens": 142,
+      "v1_1_cap": 2048
+    },
+    {
+      "role": "verifier_agent",
+      "role_call_index": 1,
+      "output_tokens": 1709,
+      "v1_1_cap": 11264
+    }
+  ],
+  "acceptance": {
+    "parent_failure_classification_passed": true,
+    "contradictory_accepts_route_to_human_review": true,
+    "valid_accept_is_unchanged": true,
+    "missing_human_review_reason_is_filled": true,
+    "fixed_budget_allocation_passed": true,
+    "passed": true
+  },
+  "residual_risk": "The parent output-ceiling sample used more than the new per-turn caps in its contract and first solver calls. Local validation proves reservation and safe failure handling, not live model completion; the exact three parent failures must pass a separately authorized live interface gate before a registered30 rerun."
+}

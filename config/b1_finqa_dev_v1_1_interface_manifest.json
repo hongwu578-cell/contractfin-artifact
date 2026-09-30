@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev2-interface-v1.1",
+  "registration_date": "2026-09-29",
+  "purpose": "live interface validation for the structured calculator schema before any registered-30 rerun",
+  "reportable_performance_estimate": false,
+  "source": {
+    "dataset": "FinQA",
+    "split": "dev",
+    "record_count": 883,
+    "normalized_file_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739"
+  },
+  "selection_rule": {
+    "method": "deterministic source-order interface coverage",
+    "description": "Select the first normalized development item outside the registered30 set and prior interface item with at least three arithmetic operations, then the first such item with a table aggregate operation.",
+    "selected_count": 2,
+    "notes": [
+      "Gold programs are used only to assign interface strata and are never placed in prompts.",
+      "No item from the registered30 comparison set is used for this interface gate.",
+      "No sample may be substituted after registration."
+    ]
+  },
+  "exclusions": [
+    "all IDs in config/b0_finqa_dev_30_manifest.json",
+    "finqa:dev:V/2008/page_17.pdf-1"
+  ],
+  "samples": [
+    {
+      "run_order": 1,
+      "sample_id": "finqa:dev:C/2010/page_223.pdf-3",
+      "source_position": 17,
+      "interface_stratum": "four_step_arithmetic",
+      "document_id": "C/2010/page_223.pdf-3",
+      "gold_evidence_count": 2,
+      "question": "in 2010 what was the percentage change of the carrying amount of loan receivable net of the allowance"
+    },
+    {
+      "run_order": 2,
+      "sample_id": "finqa:dev:AES/2016/page_191.pdf-3",
+      "source_position": 31,
+      "interface_stratum": "table_aggregate",
+      "document_id": "AES/2016/page_191.pdf-3",
+      "gold_evidence_count": 1,
+      "question": "for the period ending in 2016 , what was the average amount of settlements , in millions?"
+    }
+  ]
+}

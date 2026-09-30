@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "finqa": {
+    "train": {
+      "input_records": 6251,
+      "output_records": 6251,
+      "failures": [],
+      "success_rate": 1.0,
+      "output": "data/normalized/finqa_train.jsonl"
+    },
+    "dev": {
+      "input_records": 883,
+      "output_records": 883,
+      "failures": [],
+      "success_rate": 1.0,
+      "output": "data/normalized/finqa_dev.jsonl"
+    },
+    "test": {
+      "input_records": 1147,
+      "output_records": 1147,
+      "failures": [],
+      "success_rate": 1.0,
+      "output": "data/normalized/finqa_test.jsonl"
+    }
+  },
+  "financebench": {
+    "input_records": 150,
+    "output_records": 150,
+    "failures": [],
+    "success_rate": 1.0,
+    "output": "data/normalized/financebench_open_source.jsonl"
+  },
+  "acceptance": {
+    "minimum_parse_success_rate": 0.99,
+    "passed": true
+  }
+}

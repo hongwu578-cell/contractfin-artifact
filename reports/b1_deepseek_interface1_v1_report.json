@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "gold_file": "reports/b1_deepseek_interface1_v1_gold.jsonl",
+  "prediction_file": "reports/b1_deepseek_interface1_v1_predictions.jsonl",
+  "duplicates": [],
+  "summary": {
+    "total": 1,
+    "coverage": 1.0,
+    "final_answer_accuracy": 1.0,
+    "selective_accuracy": 1.0,
+    "schema_valid_rate": 1.0,
+    "program_accuracy": 0.0,
+    "execution_accuracy": 1.0,
+    "execution_coverage": 1.0,
+    "evidence_macro_precision": 1.0,
+    "evidence_macro_recall": 1.0,
+    "evidence_macro_f1": 1.0,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0
+  },
+  "results": [
+    {
+      "sample_id": "finqa:dev:V/2008/page_17.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": false,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 1,
+        "gold_count": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  ],
+  "run": {
+    "run_id": "b1-558626a3-9760-421a-8479-f90c99cbca15",
+    "system": "B1_tool_augmented_single_agent",
+    "provider": "deepseek",
+    "requested_model": "deepseek-flash",
+    "prompt_version": "b1-tool-single-agent-v1",
+    "protocol_id": "contractfin-b1-finqa-dev1-interface-v1",
+    "sample_count": 1,
+    "successful_samples": 1,
+    "failed_samples": 0,
+    "model_calls": 3,
+    "tool_calls": 2,
+    "samples_with_tool_use": 1,
+    "samples_with_search_document": 1,
+    "samples_with_search_top_k_12": 1,
+    "samples_with_calculate_finqa": 1,
+    "tool_call_counts": {
+      "search_document": 1,
+      "calculate_finqa": 1
+    },
+    "failed_tool_calls": 0,
+    "total_output_budget_per_sample": 32768,
+    "max_model_calls_per_sample": 4,
+    "max_tool_calls_per_sample": 6,
+    "request_timeout_seconds": 300,
+    "log_completeness": 1.0,
+    "token_usage": {
+      "input": 4498,
+      "output": 264,
+      "reasoning": 88,
+      "total": 4762
+    },
+    "latency_ms": 5201
+  }
+}

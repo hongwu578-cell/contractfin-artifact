@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b2-finqa-dev3-interface-v1.1",
+  "registration_date": "2026-09-29",
+  "purpose": "targeted live failure-mode gate for B2-v1.1 before any registered30 rerun or ablation",
+  "reportable_performance_estimate": false,
+  "parent_run": {
+    "protocol_id": "contractfin-b2-finqa-dev30-full-v1",
+    "run_id": "b2-17e7cc82-19a1-4814-ad6c-bf00d231f7a2",
+    "gate_result": "reports/b2_deepseek_full_preregistered30_v1_gate_result.json",
+    "failed_samples": 3
+  },
+  "source": {
+    "dataset": "FinQA",
+    "split": "dev",
+    "record_count": 883,
+    "normalized_file_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739"
+  },
+  "selection_rule": {
+    "method": "complete targeted replay of all parent-run failures in original run order",
+    "selected_count": 3,
+    "notes": [
+      "The gate includes every B2-v1 registered30 failure and no successful parent sample.",
+      "The samples are development diagnostics already observed under B2-v1; accuracy is not a gate and no generalization claim is permitted.",
+      "No sample may be substituted after registration.",
+      "The gate tests safe semantic normalization and live output-budget behavior without automatic retry."
+    ]
+  },
+  "samples": [
+    {
+      "run_order": 1,
+      "parent_run_order": 13,
+      "sample_id": "finqa:dev:LMT/2012/page_47.pdf-3",
+      "source_position": 42,
+      "stratum": "multi_2_step",
+      "operation_sequence": ["subtract", "divide"],
+      "document_id": "LMT/2012/page_47.pdf-3",
+      "gold_evidence_count": 1,
+      "parent_failure": "inconsistent accepting verifier verdict",
+      "question": "what is the growth rate in operating profit for space systems in 2011?"
+    },
+    {
+      "run_order": 2,
+      "parent_run_order": 25,
+      "sample_id": "finqa:dev:APD/2018/page_59.pdf-1",
+      "source_position": 245,
+      "stratum": "contains_exp",
+      "operation_sequence": ["divide", "add", "exp", "multiply"],
+      "document_id": "APD/2018/page_59.pdf-1",
+      "gold_evidence_count": 2,
+      "parent_failure": "verifier incomplete at cumulative output ceiling",
+      "question": "considering the fair market value of plan assets in 2018 , what is its estimated return for 10 years?"
+    },
+    {
+      "run_order": 3,
+      "parent_run_order": 28,
+      "sample_id": "finqa:dev:LKQ/2016/page_26.pdf-2",
+      "source_position": 606,
+      "stratum": "multi_5_step",
+      "operation_sequence": ["subtract", "divide", "subtract", "divide", "subtract"],
+      "document_id": "LKQ/2016/page_26.pdf-2",
+      "gold_evidence_count": 2,
+      "parent_failure": "inconsistent accepting verifier verdict",
+      "question": "what was the difference in percentage cumulative return for lkq corporation and the s&p 500 index for the five years ended 12/31/2016?"
+    }
+  ]
+}

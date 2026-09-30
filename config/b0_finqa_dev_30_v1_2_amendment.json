@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b0-finqa-dev30-v1.2",
+  "parent_protocol_id": "contractfin-b0-finqa-dev30-v1.1",
+  "registration_date": "2026-09-28",
+  "status": "prepared_not_executed",
+  "reason": {
+    "category": "residual_interface_output_ceiling",
+    "evidence": "The v1.1 run completed 29/30 items. The sole failure consumed exactly 8192 output tokens, all reported as reasoning tokens, and returned no visible output_text.",
+    "parent_run_id": "b0-f43ed65b-2964-4c73-b242-9615e49f494d",
+    "parent_report_sha256": "72932a68c6fee4be38214270fd02a738ba58ede6fce0e4885d6303107c7cf035",
+    "parent_log_sha256": "e1b9d76593d6c32d01c45ab558b2d5f34b18980dcc9294c92f828f27676c9de0",
+    "recurrent_sample_id": "finqa:dev:CB/2010/page_200.pdf-4"
+  },
+  "single_request_behavior_change": {
+    "parameter": "max_output_tokens",
+    "from": 8192,
+    "to": 32768,
+    "rationale": "Provide four times the observed failing ceiling while preserving the same model reasoning defaults. The value is an upper bound and does not force full consumption."
+  },
+  "transport_only_change": {
+    "parameter": "request_timeout_seconds",
+    "from": 120,
+    "to": 300,
+    "rationale": "Allow the client to receive a potentially longer authorized response. This value is not sent in the model request body and does not alter model behavior."
+  },
+  "frozen_factors": {
+    "provider": "deepseek",
+    "responses_url": "https://api.deepseek.com/responses",
+    "requested_model": "deepseek-flash",
+    "prompt_version": "b0-direct-v1",
+    "structured_output_schema": "contractfin_prediction",
+    "reasoning_configuration": "provider default; no reasoning field is sent",
+    "temperature_configuration": "provider default; no temperature field is sent",
+    "sample_manifest": "config/b0_finqa_dev_30_manifest.json",
+    "sample_manifest_sha256": "3afaa34852cdf799e1993952a6326d8b1ca6ead9a4798acb0d7ed9f889542ba3",
+    "parent_amendment_sha256": "2ac00cbf370447de15bdded76a80155b5f924cb1871c673f293b336a3851a530",
+    "normalized_dataset_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739",
+    "sample_count": 30,
+    "sample_ids_and_execution_order": "unchanged",
+    "retry_count_per_sample": 0,
+    "evaluation_code_and_metrics": "unchanged",
+    "response_diagnostics": "unchanged from v1.1"
+  },
+  "execution": {
+    "scope": "rerun all 30 registered samples, not only the recurrent failure",
+    "artifact_stem": "b0_deepseek_preregistered30_v1_2",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b0.py --provider deepseek --model deepseek-flash --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b0-finqa-dev30-v1.2 --max-output-tokens 32768 --request-timeout-seconds 300 --artifact-stem b0_deepseek_preregistered30_v1_2",
+    "paid_api_calls": 30,
+    "retries": 0,
+    "requires_separate_user_authorization": true,
+    "theoretical_maximum_output_tokens_if_every_call_hits_the_ceiling": 983040
+  },
+  "acceptance_gate": {
+    "attempted_calls": 30,
+    "minimum_successful_structured_responses": 30,
+    "maximum_max_output_token_failures": 0,
+    "maximum_transport_timeout_failures": 0,
+    "required_log_completeness": 1.0,
+    "required_sample_identity_and_order_match": true,
+    "accuracy_is_a_gate": false
+  },
+  "official_references": [
+    "https://api-docs.deepseek.com/api/create-response/",
+    "https://api-docs.deepseek.com/guides/responses_api/",
+    "https://api-docs.deepseek.com/quick_start/pricing/"
+  ]
+}

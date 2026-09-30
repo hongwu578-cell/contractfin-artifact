@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "gold_file": "reports/b1_deepseek_interface2_v1_1_gold.jsonl",
+  "prediction_file": "reports/b1_deepseek_interface2_v1_1_predictions.jsonl",
+  "duplicates": [],
+  "summary": {
+    "total": 2,
+    "coverage": 1.0,
+    "final_answer_accuracy": 0.5,
+    "selective_accuracy": 0.5,
+    "schema_valid_rate": 1.0,
+    "program_accuracy": 1.0,
+    "execution_accuracy": 1.0,
+    "execution_coverage": 1.0,
+    "evidence_macro_precision": 0.5833333333333333,
+    "evidence_macro_recall": 1.0,
+    "evidence_macro_f1": 0.7333333333333334,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0
+  },
+  "results": [
+    {
+      "sample_id": "finqa:dev:C/2010/page_223.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": true,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 2,
+        "predicted_count": 3,
+        "gold_count": 2,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8
+      }
+    },
+    {
+      "sample_id": "finqa:dev:AES/2016/page_191.pdf-3",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": true,
+      "answer_correct": false,
+      "program_correct": true,
+      "execution_correct": true,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 1,
+        "predicted_count": 2,
+        "gold_count": 1,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      }
+    }
+  ],
+  "run": {
+    "run_id": "b1-ad25e277-a336-4455-a29f-4eaf83fe8b8d",
+    "system": "B1_tool_augmented_single_agent",
+    "provider": "deepseek",
+    "requested_model": "deepseek-flash",
+    "prompt_version": "b1-tool-single-agent-v1.1",
+    "protocol_id": "contractfin-b1-finqa-dev2-interface-v1.1",
+    "sample_count": 2,
+    "successful_samples": 2,
+    "failed_samples": 0,
+    "model_calls": 6,
+    "tool_calls": 4,
+    "samples_with_tool_use": 2,
+    "samples_with_search_document": 2,
+    "samples_with_search_top_k_12": 2,
+    "samples_with_calculate_finqa": 2,
+    "tool_call_counts": {
+      "search_document": 2,
+      "calculate_finqa": 2
+    },
+    "failed_tool_calls": 0,
+    "total_output_budget_per_sample": 32768,
+    "max_model_calls_per_sample": 6,
+    "max_tool_calls_per_sample": 8,
+    "request_timeout_seconds": 300,
+    "log_completeness": 1.0,
+    "token_usage": {
+      "input": 12025,
+      "output": 2295,
+      "reasoning": 1836,
+      "total": 14320
+    },
+    "latency_ms": 19906
+  }
+}

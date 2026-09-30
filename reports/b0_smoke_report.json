@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "gold_file": "reports/b0_smoke_gold.jsonl",
+  "prediction_file": "reports/b0_smoke_predictions.jsonl",
+  "duplicates": [],
+  "summary": {
+    "total": 1,
+    "coverage": 0.0,
+    "final_answer_accuracy": 0.0,
+    "selective_accuracy": 0.0,
+    "schema_valid_rate": 1.0,
+    "program_accuracy": null,
+    "execution_accuracy": null,
+    "execution_coverage": 0.0,
+    "evidence_macro_precision": 0.0,
+    "evidence_macro_recall": 0.0,
+    "evidence_macro_f1": 0.0,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0
+  },
+  "results": [
+    {
+      "sample_id": "finqa:dev:V/2008/page_17.pdf-1",
+      "schema_valid": true,
+      "schema_errors": [],
+      "answered": false,
+      "answer_correct": false,
+      "program_correct": null,
+      "execution_correct": null,
+      "execution_error": null,
+      "unit_scale_error": false,
+      "unsupported_claim": false,
+      "evidence": {
+        "true_positive": 0,
+        "predicted_count": 0,
+        "gold_count": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    }
+  ],
+  "run": {
+    "run_id": "b0-d5fae7d0-1202-40c4-be09-64bf256555d0",
+    "system": "B0_direct_llm",
+    "requested_model": "gpt-5.4-mini-2026-03-17",
+    "prompt_version": "b0-direct-v1",
+    "sample_count": 1,
+    "successful_calls": 0,
+    "failed_calls": 1,
+    "log_completeness": 1.0,
+    "token_usage": {
+      "input": 0,
+      "output": 0,
+      "total": 0
+    },
+    "latency_ms": 2576
+  }
+}

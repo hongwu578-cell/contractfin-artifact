@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "release_candidate": "contractfin_artifact_v1_0_rc5",
+  "local_only": true,
+  "external_upload_performed": false,
+  "license_selected_for_original_code": true,
+  "original_code_license": "MIT",
+  "copyright_holders": [
+    "Wang Hongwu",
+    "Xu Hui"
+  ],
+  "finqa_license_included": true,
+  "financebench_content_included": false,
+  "authorization_text_redacted": true,
+  "local_paths_normalized": true,
+  "passed": true,
+  "secret_or_local_path_findings": [],
+  "forbidden_paths": []
+}

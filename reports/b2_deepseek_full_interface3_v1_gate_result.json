@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b2-finqa-dev3-interface-v1",
+  "execution_date": "2026-09-29",
+  "run_id": "b2-f9f708dd-ecf0-4036-82ed-51c066a2b035",
+  "gate_status": "passed",
+  "classification": "accepted_b2_full_live_interface_gate",
+  "sample_integrity": {
+    "sample_count": 3,
+    "unique_sample_count": 3,
+    "gold_matches_registered_identity_and_order": true,
+    "predictions_match_registered_identity_and_order": true,
+    "logs_match_registered_identity_and_order": true,
+    "automatic_retries": 0,
+    "sample_substitutions": 0
+  },
+  "acceptance": [
+    {
+      "criterion": "successful_structured_samples",
+      "required": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "criterion": "samples_with_valid_task_contract",
+      "required": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "criterion": "samples_with_search_document",
+      "required": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "criterion": "samples_with_explicit_search_top_k_12",
+      "required": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "criterion": "samples_with_calculate_finqa",
+      "required": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "criterion": "samples_with_valid_verifier_verdict",
+      "required": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "criterion": "failed_tool_calls",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "invalid_structured_stage_outputs",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "output_ceiling_failures",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "transport_timeouts",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "log_completeness",
+      "required": 1.0,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "criterion": "sample_identity_and_order",
+      "required": true,
+      "observed": true,
+      "passed": true
+    }
+  ],
+  "resource_use": {
+    "model_calls": 18,
+    "authorized_model_call_upper_bound": 18,
+    "tool_calls": 6,
+    "search_document_calls": 3,
+    "calculate_finqa_calls": 3,
+    "input_tokens": 23768,
+    "output_tokens_including_reasoning": 23381,
+    "reasoning_tokens": 20320,
+    "total_tokens": 47149,
+    "aggregate_measured_latency_ms": 128010,
+    "by_role": {
+      "contract_agent": {
+        "calls": 3,
+        "input_tokens": 2398,
+        "output_tokens": 4504,
+        "reasoning_tokens": 3555,
+        "total_tokens": 6902,
+        "latency_ms": 24591
+      },
+      "evidence_agent": {
+        "calls": 6,
+        "input_tokens": 8619,
+        "output_tokens": 2092,
+        "reasoning_tokens": 561,
+        "total_tokens": 10711,
+        "latency_ms": 14958
+      },
+      "solver_agent": {
+        "calls": 6,
+        "input_tokens": 8895,
+        "output_tokens": 13914,
+        "reasoning_tokens": 13477,
+        "total_tokens": 22809,
+        "latency_ms": 71482
+      },
+      "verifier_agent": {
+        "calls": 3,
+        "input_tokens": 3856,
+        "output_tokens": 2871,
+        "reasoning_tokens": 2727,
+        "total_tokens": 6727,
+        "latency_ms": 16959
+      }
+    }
+  },
+  "verifier_behavior": {
+    "accept": 2,
+    "human_review": 1,
+    "human_review_is_an_interface_gate": false,
+    "human_review_sample_id": "finqa:dev:ABMD/2009/page_56.pdf-1",
+    "human_review_reason_codes": [
+      "incorrect_total",
+      "double_counted_components",
+      "answer_evidence_mismatch",
+      "direct_total_available"
+    ],
+    "interpretation": "The conservative conflict path executed successfully. Whether the verdict is substantively correct is an outcome, not an interface criterion."
+  },
+  "diagnostic_evaluation_not_performance": {
+    "answer_coverage": 0.6666666666666666,
+    "final_answer_accuracy": 0.3333333333333333,
+    "selective_accuracy": 0.5,
+    "program_accuracy": 0.3333333333333333,
+    "execution_accuracy": 0.3333333333333333,
+    "execution_coverage": 1.0,
+    "evidence_macro_f1": 0.6888888888888888,
+    "warning": "Three deliberately selected interface items are not a performance sample. Accuracy and human-review outcomes must not trigger item-specific prompt or evaluator changes."
+  },
+  "transport_and_runtime_checks": {
+    "all_provider_calls_reported_completed": true,
+    "provider_error_codes": 0,
+    "incomplete_responses": 0,
+    "transport_normalizations_used": 0,
+    "failed_local_tool_calls": 0
+  },
+  "decision": {
+    "interface_gate_passed": true,
+    "change_protocol_before_registered30": false,
+    "next_stage": "registered30 full-B2 development run under separate explicit authorization",
+    "next_stage_model_call_upper_bound": 180,
+    "exact_authorization_phrase": "同意执行B2-v1完整架构预注册30题测试，最多180次模型调用。"
+  },
+  "artifacts": {
+    "gold": {
+      "path": "reports/b2_deepseek_full_interface3_v1_gold.jsonl",
+      "sha256": "778765502767f374124c876465fc7e0ab5baa48673f0d523b23cc494e80b20a0"
+    },
+    "predictions": {
+      "path": "reports/b2_deepseek_full_interface3_v1_predictions.jsonl",
+      "sha256": "b8b83ab3cfb5892ac8599de507010f9ebdba0d7524eb06a58e520871f4e39cce"
+    },
+    "report": {
+      "path": "reports/b2_deepseek_full_interface3_v1_report.json",
+      "sha256": "55308a375f10ac56cf4258ea09815adbd40a52a2ca45c5b63baf4bcdd53e972c"
+    },
+    "log": {
+      "path": "logs/b2_deepseek_full_interface3_v1.jsonl",
+      "sha256": "f783196de98206a23a7dc269614ebec6503a312a785f7204bb293467421b22ff"
+    }
+  }
+}

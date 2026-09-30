@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "release_candidate": "contractfin_artifact_v1_0_rc5",
+  "file_count_before_manifest": 249,
+  "total_bytes_before_manifest": 29671515,
+  "files_by_top_level": {
+    ".gitignore": 1,
+    "CITATION.cff": 1,
+    "LICENSE": 1,
+    "LICENSE_SCOPE.md": 1,
+    "README.md": 1,
+    "REPRODUCIBILITY.md": 1,
+    "THIRD_PARTY_NOTICES.md": 1,
+    "config": 20,
+    "data": 5,
+    "logs": 18,
+    "paper": 11,
+    "pyproject.toml": 1,
+    "reports": 128,
+    "reproducibility": 2,
+    "schemas": 2,
+    "scripts": 28,
+    "src": 17,
+    "tests": 9,
+    "third_party": 1
+  },
+  "included_data": [
+    "FinQA normalized development split",
+    "FinQA normalized test split required by the 34-file freeze lock",
+    "registered 500-item answer-stripped inference input",
+    "registered 500-item gold record"
+  ],
+  "excluded_data": [
+    "all FinanceBench raw and normalized records",
+    "full raw FinQA train/dev/test downloads",
+    "normalized FinQA training split"
+  ],
+  "excluded_sensitive_material": [
+    "API keys and environment files",
+    "exact user-authored authorization text",
+    "journal submission and correspondence files",
+    "local absolute paths"
+  ]
+}

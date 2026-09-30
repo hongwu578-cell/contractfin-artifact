@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "status": "frozen_confirmed_stability_no_live_api_authorization",
+  "live_api_authorized": false,
+  "requested_provider": "deepseek",
+  "requested_model": "deepseek-flash",
+  "inference_artifact": {
+    "path": "data/heldout/finqa_test500_inference_v1.jsonl",
+    "sha256": "ce6b78a25aa709cbac0b862df775df079d869fb79df1ace3ce8cf4d8d4e7b6e1",
+    "record_count": 500
+  },
+  "schedule_artifact": {
+    "path": "config/sci_finqa_stability100_interleaved_schedule_v1.jsonl",
+    "sha256": "e9988a8a45fb11d78f08f39a76a8142492df63bae643bca92cdaca72560428b4",
+    "task_count": 400
+  },
+  "B0": {
+    "label": "Direct LLM",
+    "prompt_version": "b0-direct-v2-text-evidence-id-fix",
+    "system_prompt_sha256": "e76a37331a401c48cb7950c0e4fb1f07623db46eb0329992f04543d41d5c0e7c",
+    "max_output_tokens": 32768,
+    "request_timeout_seconds": 300,
+    "automatic_retries": 0
+  },
+  "B1": {
+    "label": "Tool-Augmented Single Agent",
+    "prompt_version": "b1-tool-single-agent-v1.1",
+    "system_prompt_sha256": "95c84f2094df422746c248c1d4f7c6556415db77a082ed54213039a2703f6137",
+    "total_output_budget": 32768,
+    "max_model_calls": 6,
+    "max_tool_calls": 8,
+    "request_timeout_seconds": 300,
+    "automatic_retries": 0
+  },
+  "execution_policy": {
+    "strict_schedule_order": true,
+    "store_provider_responses": false,
+    "semantic_retries": 0,
+    "evaluation_in_inference_process": false,
+    "resume_only_skips_already_logged_tasks": true,
+    "replicates": [
+      2,
+      3
+    ],
+    "primary_results_pooled": false
+  }
+}

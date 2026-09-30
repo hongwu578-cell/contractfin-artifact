@@ -1,0 +1,28 @@
+{
+  "manifest_version": 1,
+  "sources": [
+    {
+      "dataset": "finqa",
+      "repository": "czyssrs/FinQA",
+      "ref": "main",
+      "commit": "0f16e2867befa6840783e58be38c9efb9229d742",
+      "license_note": "Verify upstream dataset and report redistribution terms before public release.",
+      "files": [
+        "dataset/train.json",
+        "dataset/dev.json",
+        "dataset/test.json"
+      ]
+    },
+    {
+      "dataset": "financebench",
+      "repository": "patronus-ai/financebench",
+      "ref": "main",
+      "commit": "cc39aeb4afdf33909ee1412188bf89035950c2eb",
+      "license_note": "Open-source sample; verify repository terms before redistributing data or PDFs.",
+      "files": [
+        "data/financebench_open_source.jsonl",
+        "data/financebench_document_information.jsonl"
+      ]
+    }
+  ]
+}

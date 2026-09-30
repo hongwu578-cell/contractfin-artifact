@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-09-29",
+  "protocol_id": "contractfin-b2-finqa-dev3-interface-v1.1",
+  "run_id": "b2-d558adc6-9f22-4168-987a-c4dd47bc713b",
+  "variant": "full",
+  "status": "passed",
+  "decision": "The B2-v1.1 three-sample live interface gate passed its preregistered operational criteria. A registered30 full run is unlocked only after separate user authorization.",
+  "integrity": {
+    "registered_samples": 3,
+    "gold_rows": 3,
+    "prediction_rows": 3,
+    "log_rows": 3,
+    "gold_unique_sample_ids": 3,
+    "prediction_unique_sample_ids": 3,
+    "log_unique_sample_ids": 3,
+    "gold_order_matches_manifest": true,
+    "prediction_order_matches_manifest": true,
+    "log_order_matches_manifest": true,
+    "sample_substitution": false,
+    "automatic_retries": 0,
+    "log_completeness": 1.0
+  },
+  "execution": {
+    "successful_samples": 3,
+    "failed_samples": 0,
+    "model_calls": 18,
+    "model_call_ceiling": 18,
+    "role_model_call_counts": {
+      "contract_agent": 3,
+      "evidence_agent": 6,
+      "solver_agent": 6,
+      "verifier_agent": 3
+    },
+    "provider_call_status_counts": {
+      "completed": 18,
+      "incomplete": 0
+    },
+    "tool_calls": 6,
+    "tool_call_counts": {
+      "search_document": 3,
+      "calculate_finqa": 3
+    },
+    "failed_tool_calls": 0,
+    "samples_with_valid_task_contract": 3,
+    "samples_with_valid_effective_verifier_verdict": 3,
+    "samples_with_explicit_search_top_k_12": 3,
+    "samples_with_successful_calculator_call": 3,
+    "verifier_accepts": 3,
+    "human_review_outputs": 0,
+    "verifier_normalizations": 0,
+    "role_output_token_caps": [8192, 1024, 2048, 8192, 2048, 11264],
+    "token_usage": {
+      "input": 22945,
+      "output": 16488,
+      "reasoning": 13692,
+      "total": 39433
+    },
+    "latency_ms": 100410
+  },
+  "per_sample_output_usage": [
+    {
+      "sample_id": "finqa:dev:LMT/2012/page_47.pdf-3",
+      "output_tokens_by_turn": [1742, 77, 1164, 153, 88, 208],
+      "status": "answered",
+      "verifier_decision": "accept"
+    },
+    {
+      "sample_id": "finqa:dev:APD/2018/page_59.pdf-1",
+      "output_tokens_by_turn": [7753, 109, 415, 1690, 212, 253],
+      "status": "answered",
+      "verifier_decision": "accept",
+      "contract_cap_utilization": 0.9464111328125
+    },
+    {
+      "sample_id": "finqa:dev:LKQ/2016/page_26.pdf-2",
+      "output_tokens_by_turn": [722, 89, 607, 477, 100, 629],
+      "status": "answered",
+      "verifier_decision": "accept"
+    }
+  ],
+  "preregistered_acceptance": {
+    "successful_structured_samples_3": true,
+    "exact_model_calls_18": true,
+    "exact_tool_calls_6": true,
+    "valid_task_contracts_3": true,
+    "search_document_top_k_12_samples_3": true,
+    "successful_calculator_samples_3": true,
+    "valid_effective_verifier_verdicts_3": true,
+    "failed_tool_calls_at_most_0": true,
+    "structurally_invalid_verdicts_at_most_0": true,
+    "output_ceiling_failures_at_most_0": true,
+    "transport_timeouts_at_most_0": true,
+    "role_output_token_caps_match": true,
+    "log_completeness_1": true,
+    "sample_identity_and_order_match": true,
+    "passed": true
+  },
+  "diagnostic_performance_not_a_gate": {
+    "coverage": 1.0,
+    "final_answer_accuracy": 0.0,
+    "selective_accuracy": 0.0,
+    "program_accuracy": 0.0,
+    "execution_accuracy": 0.0,
+    "execution_coverage": 1.0,
+    "evidence_macro_precision": 0.8333333333333334,
+    "evidence_macro_recall": 1.0,
+    "evidence_macro_f1": 0.8888888888888888,
+    "schema_valid_rate": 1.0,
+    "interpretation": "All three incorrect candidates were accepted by the verifier. Accuracy was explicitly not an interface-gate criterion, so the operational gate passes, but this is adverse evidence about verifier discrimination and must be reported with any later full-run results."
+  },
+  "artifact_sha256": {
+    "reports/b2_deepseek_full_interface3_v1_1_gold.jsonl": "433df6827cc13a61dc5876f747ee3fb1f70d26906de0aff3473cc4fe747a6d3d",
+    "reports/b2_deepseek_full_interface3_v1_1_predictions.jsonl": "2e0ba825a9464abad8f8db12ac9280d925a32f75da7583ee2d5dbd1997b0ca40",
+    "reports/b2_deepseek_full_interface3_v1_1_report.json": "20787f47ddbac69be3ded424b8ff210fe5cefe57134b850256f1cd3d5de858ea",
+    "logs/b2_deepseek_full_interface3_v1_1.jsonl": "2b5ea34e61fcc9709375c26c454359635c83ae25a805f62a33835d5ddb4b0c98"
+  },
+  "next_step": "A separately authorized B2-v1.1 full registered30 run may now be executed, with performance interpreted descriptively and the verifier-discrimination warning retained."
+}

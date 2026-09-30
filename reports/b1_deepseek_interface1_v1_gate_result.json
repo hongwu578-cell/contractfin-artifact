@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev1-interface-v1",
+  "parent_protocol": "config/b1_finqa_dev_v1_protocol.json",
+  "parent_protocol_sha256": "ebfbc1accb48d70bd6c881afb62faef887442bfc2bdeecc4f2c4ecafe181610f",
+  "execution_date": "2026-09-29",
+  "run_id": "b1-558626a3-9760-421a-8479-f90c99cbca15",
+  "gate_status": "passed",
+  "sample": {
+    "count": 1,
+    "sample_id": "finqa:dev:V/2008/page_17.pdf-1",
+    "provider": "deepseek",
+    "requested_and_reported_model": "deepseek-flash"
+  },
+  "acceptance": [
+    {
+      "criterion": "successful_structured_samples",
+      "required": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_search_document",
+      "required": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_search_top_k_12",
+      "required": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_calculate_finqa",
+      "required": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "criterion": "failed_tool_calls",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "output_ceiling_failures",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "transport_timeouts",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "log_completeness",
+      "required": 1.0,
+      "observed": 1.0,
+      "passed": true
+    }
+  ],
+  "resource_use": {
+    "model_calls": 3,
+    "tool_calls": 2,
+    "input_tokens": 4498,
+    "output_tokens_including_reasoning": 264,
+    "reasoning_tokens": 88,
+    "total_tokens": 4762,
+    "aggregate_measured_latency_ms": 5201
+  },
+  "evaluation": {
+    "final_answer_accuracy": 1.0,
+    "schema_valid_rate": 1.0,
+    "evidence_macro_f1": 1.0,
+    "exact_program_accuracy": 0.0,
+    "execution_accuracy": 1.0,
+    "unit_scale_error_rate": 0.0,
+    "predicted_answer": "127.4",
+    "predicted_program": "divide(637, 5.0)",
+    "gold_program": "divide(637, const_5)",
+    "interpretation": "The program strings differ but are execution-equivalent and both produce 127.4."
+  },
+  "artifacts": {
+    "gold": {
+      "path": "reports/b1_deepseek_interface1_v1_gold.jsonl",
+      "sha256": "97b5722fc597e0d56c1e92768fb4f922535a6044a15667983150bef82cb5ffb1"
+    },
+    "predictions": {
+      "path": "reports/b1_deepseek_interface1_v1_predictions.jsonl",
+      "sha256": "b5d5f1c4967629a0e5acf715293ea74cb008a1292d16b6af4afaf29dba800bd6"
+    },
+    "report": {
+      "path": "reports/b1_deepseek_interface1_v1_report.json",
+      "sha256": "aea01bc60e1f13f9e6531aa3bdbf6564e3e0c3dbe6564b732108f9dbff3deb59"
+    },
+    "log": {
+      "path": "logs/b1_deepseek_interface1_v1.jsonl",
+      "sha256": "4fc5f067f2ef999bea4f2f18617e94a1c9e30dfb3deb7cf3b4023ab7a2757316"
+    }
+  },
+  "decision": {
+    "interface_gate_passed": true,
+    "registered30_is_technically_ready": true,
+    "registered30_requires_separate_user_authorization": true,
+    "registered30_paid_model_call_upper_bound": 120
+  }
+}

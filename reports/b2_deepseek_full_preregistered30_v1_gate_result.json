@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-09-29",
+  "protocol_id": "contractfin-b2-finqa-dev30-full-v1",
+  "run_id": "b2-17e7cc82-19a1-4814-ad6c-bf00d231f7a2",
+  "variant": "full",
+  "status": "failed",
+  "decision": "The registered30 full-B2 run is retained as an immutable failed run and is not eligible to unlock the preregistered ablations.",
+  "failure_reasons": [
+    {
+      "category": "invalid_verifier_verdict",
+      "count": 2,
+      "sample_ids": [
+        "finqa:dev:LMT/2012/page_47.pdf-3",
+        "finqa:dev:LKQ/2016/page_26.pdf-2"
+      ],
+      "message": "an accepting verifier must have all checks true and no reason codes"
+    },
+    {
+      "category": "output_ceiling",
+      "count": 1,
+      "sample_ids": [
+        "finqa:dev:APD/2018/page_59.pdf-1"
+      ],
+      "role": "verifier_agent",
+      "provider_status": "incomplete",
+      "incomplete_reason": "max_output_tokens"
+    }
+  ],
+  "integrity": {
+    "registered_samples": 30,
+    "gold_rows": 30,
+    "prediction_rows": 30,
+    "log_rows": 30,
+    "gold_unique_sample_ids": 30,
+    "prediction_unique_sample_ids": 30,
+    "log_unique_sample_ids": 30,
+    "gold_order_matches_manifest": true,
+    "prediction_order_matches_manifest": true,
+    "log_order_matches_manifest": true,
+    "sample_substitution": false,
+    "automatic_retries": 0,
+    "log_completeness": 1.0
+  },
+  "execution": {
+    "successful_samples": 27,
+    "failed_samples": 3,
+    "model_calls": 180,
+    "model_call_ceiling": 180,
+    "role_model_call_counts": {
+      "contract_agent": 30,
+      "evidence_agent": 60,
+      "solver_agent": 60,
+      "verifier_agent": 30
+    },
+    "provider_call_status_counts": {
+      "completed": 179,
+      "incomplete": 1
+    },
+    "tool_calls": 60,
+    "tool_call_counts": {
+      "search_document": 30,
+      "calculate_finqa": 30
+    },
+    "failed_tool_calls": 0,
+    "samples_with_valid_task_contract": 30,
+    "samples_with_valid_verifier_verdict": 27,
+    "samples_with_explicit_search_top_k_12": 30,
+    "samples_with_successful_calculator_call": 30,
+    "token_usage": {
+      "input": 223341,
+      "output": 149518,
+      "reasoning": 123333,
+      "total": 372859
+    },
+    "latency_ms": 899958
+  },
+  "verifier_behavior": {
+    "valid_verdicts": 27,
+    "accept": 24,
+    "human_review": 3,
+    "human_review_rate_over_all_samples": 0.1,
+    "human_review_rate_over_valid_verdicts": 0.1111111111111111,
+    "reason_code_counts": {
+      "allowed_operation_violation": 1,
+      "insufficient_supporting_evidence": 1,
+      "rounding_rule_mismatch": 1,
+      "contract_requires_sum_of_separate_values": 1,
+      "ambiguous_2010_statutory_values": 1,
+      "unspecified_subsidiary": 1,
+      "operation_not_allowed": 1,
+      "multiply_not_in_allowed_operations": 1,
+      "allowed_operations_add_table_sum_only": 1
+    }
+  },
+  "frozen_evaluator_output_diagnostic_only": {
+    "coverage": 0.8,
+    "final_answer_accuracy": 0.3,
+    "selective_accuracy": 0.375,
+    "schema_valid_rate": 1.0,
+    "program_accuracy": 0.3333333333333333,
+    "execution_accuracy": 0.5185185185185185,
+    "execution_coverage": 0.9,
+    "evidence_macro_precision": 0.63,
+    "evidence_macro_recall": 0.8333333333333334,
+    "evidence_macro_f1": 0.6912698412698413,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "interpretation": "These values describe the failed run only. They are not an accepted B2 registered30 result and must not be used to claim B2 performance."
+  },
+  "b1_diagnostic_comparison": {
+    "comparator_run_id": "b1-bb2095c7-deeb-4a70-925e-f8991a8035c3",
+    "b1_final_answer_accuracy": 0.5,
+    "b2_failed_run_final_answer_accuracy": 0.3,
+    "final_answer_accuracy_difference": -0.2,
+    "b1_execution_accuracy": 0.5666666666666667,
+    "b2_failed_run_execution_accuracy": 0.5185185185185185,
+    "execution_accuracy_difference": -0.04814814814814816,
+    "b1_evidence_macro_f1": 0.9088888888888889,
+    "b2_failed_run_evidence_macro_f1": 0.6912698412698413,
+    "evidence_macro_f1_difference": -0.2176190476190476,
+    "b1_model_calls": 94,
+    "b2_model_calls": 180,
+    "b1_total_tokens": 200561,
+    "b2_total_tokens": 372859,
+    "b1_latency_ms": 188915,
+    "b2_latency_ms": 899958,
+    "interpretation": "Descriptive diagnostic only. The B2 run failed its structural completion requirement, so this is not a valid performance comparison or hypothesis test."
+  },
+  "artifact_sha256": {
+    "reports/b2_deepseek_full_preregistered30_v1_gold.jsonl": "b6ac633d53f78e4ffd66e6507b6dfcaddf33eec70acd7e8e8cb98f19af757e40",
+    "reports/b2_deepseek_full_preregistered30_v1_predictions.jsonl": "0b84533ce7a2116b4e7a3fde16db158582d44d6f02d4b24f8789e2335d046230",
+    "reports/b2_deepseek_full_preregistered30_v1_report.json": "9ab61697a8f7cbd3f01848033449b9844a940c555b90dbea8f7875752f321b1e",
+    "logs/b2_deepseek_full_preregistered30_v1.jsonl": "4b70f45bf1ce29e6553509186fa57b263d9523e9e532e0f1f91df780f8cd87cd"
+  },
+  "next_step": "Do not run either ablation under B2-v1. Diagnose and preregister a revised B2 protocol before any paid rerun."
+}

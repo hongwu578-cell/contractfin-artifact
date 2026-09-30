@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b2-finqa-dev-v1.1",
+  "parent_protocol_id": "contractfin-b2-finqa-dev-v1",
+  "registration_date": "2026-09-29",
+  "status": "locally_validated_live_interface_not_executed",
+  "trigger": {
+    "parent_run_id": "b2-17e7cc82-19a1-4814-ad6c-bf00d231f7a2",
+    "parent_protocol_id": "contractfin-b2-finqa-dev30-full-v1",
+    "parent_gate_result": "reports/b2_deepseek_full_preregistered30_v1_gate_result.json",
+    "parent_gate_result_sha256": "c2fb88006b332fcfb7aff72a0da60f9e86e14acf94a84ddb6579f8765f89c526",
+    "parent_log": "logs/b2_deepseek_full_preregistered30_v1.jsonl",
+    "parent_log_sha256": "4b70f45bf1ce29e6553509186fa57b263d9523e9e532e0f1f91df780f8cd87cd",
+    "successful_samples": 27,
+    "failed_samples": 3,
+    "failure_classification": {
+      "semantically_inconsistent_accepting_verdict": 2,
+      "verifier_incomplete_at_cumulative_output_ceiling": 1
+    }
+  },
+  "diagnosis": {
+    "verdict_failure": "The v1 schema validated field types but could not enforce the cross-field invariant that accept requires all checks true and no reason codes. The v1 controller rejected two contradictory but structurally valid verdicts as sample failures.",
+    "budget_failure": "The v1 controller exposed the entire remaining cumulative output budget to each turn. On the failing APD item, contract and first solver calls consumed 13,986 and 16,311 output tokens, leaving 1,709 for the verifier, which ended incomplete at the ceiling.",
+    "non_causes": [
+      "sample substitution",
+      "automatic retry",
+      "document-search failure",
+      "calculator failure",
+      "log incompleteness"
+    ]
+  },
+  "versioned_changes": [
+    {
+      "component": "verifier decision contract",
+      "from": "prompt-level instruction plus post-parse rejection of inconsistent accept",
+      "to": "explicit iff instruction plus conservative deterministic normalization",
+      "behavior": "An accept with any false check or any reason code is downgraded to human_review. A human_review without a reason receives a controller reason code.",
+      "guardrails": [
+        "the raw verdict is retained in verifier_raw_verdict",
+        "the effective verdict is retained separately in verifier_verdict",
+        "the normalization trigger is logged",
+        "normalization can only preserve or reduce acceptance; it cannot promote human_review to accept",
+        "the candidate answer and program are never rewritten"
+      ]
+    },
+    {
+      "component": "role output-token allocation",
+      "from": "every turn receives all remaining tokens from one 32,768-token cumulative pool",
+      "to": "fixed per-turn caps summing to the unchanged 32,768-token pool",
+      "full_pipeline_sequence": [8192, 1024, 2048, 8192, 2048, 11264],
+      "roles": {
+        "contract_agent": [8192],
+        "evidence_agent": [1024, 2048],
+        "solver_agent": [8192, 2048],
+        "verifier_agent": [11264]
+      },
+      "rationale": "Prevent early roles from exhausting the final verifier budget while keeping the B1-comparable cumulative ceiling unchanged."
+    },
+    {
+      "component": "brevity constraints",
+      "changes": [
+        "The contract agent is instructed to populate the schema directly and concisely without prolonged analysis.",
+        "The solver is instructed to call calculate_finqa directly on its tool-enabled turn without narrated or extended analysis.",
+        "The verifier is instructed to evaluate checks first and apply the accept iff invariant without narrated analysis."
+      ],
+      "purpose": "Reduce pathological hidden-reasoning consumption observed in the parent run."
+    },
+    {
+      "component": "audit logging",
+      "changes": [
+        "record requested_max_output_tokens on every model-call trace",
+        "record role_output_token_caps in run inputs and reports",
+        "record verifier_normalizations in run summaries"
+      ]
+    }
+  ],
+  "frozen_factors": {
+    "provider": "deepseek",
+    "responses_url": "https://api.deepseek.com/responses",
+    "requested_model": "deepseek-flash",
+    "reasoning_configuration": "provider default; no reasoning field is sent",
+    "temperature_configuration": "provider default; no temperature field is sent",
+    "store": false,
+    "normalized_dataset": "data/normalized/finqa_dev.jsonl",
+    "normalized_dataset_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739",
+    "registered30_manifest": "config/b0_finqa_dev_30_manifest.json",
+    "registered30_manifest_sha256": "3afaa34852cdf799e1993952a6326d8b1ca6ead9a4798acb0d7ed9f889542ba3",
+    "sample_identity_and_order": "unchanged",
+    "retriever": "unchanged deterministic lexical BM25-style ranking",
+    "retriever_top_k": 12,
+    "calculator": "unchanged deterministic structured FinQA calculator",
+    "evaluator_and_metrics": "unchanged",
+    "cumulative_output_budget_per_sample": 32768,
+    "maximum_model_calls_per_sample_full": 6,
+    "maximum_tool_calls_per_sample_full": 2,
+    "request_timeout_seconds_per_model_call": 300,
+    "automatic_retries": 0,
+    "sample_substitution": false,
+    "runtime_gold_access": false
+  },
+  "interpretation_boundary": {
+    "registered30_is_development_data": true,
+    "performance_claim_permitted": false,
+    "causal_claim_permitted": false,
+    "effect_of_semantic_normalization": "may convert v1 sample errors into explicit human_review outputs and therefore changes coverage accounting; it does not improve a candidate answer",
+    "effect_of_role_caps": "controls resource allocation but may expose an earlier-role output ceiling; live completion must be tested"
+  },
+  "local_validation": {
+    "api_calls": 0,
+    "unit_tests_passed": 59,
+    "bytecode_compilation_passed": true,
+    "registered30_mocked_orchestration": {
+      "artifact": "reports/b2_v1_1_local_orchestration_audit.json",
+      "artifact_sha256": "aa3eace85235f5fb8828630f7ac0817a6a1f548ba93ec5910db123236bda69f5",
+      "successful_samples": 30,
+      "mocked_model_calls": 180,
+      "mocked_tool_calls": 60,
+      "failed_tool_calls": 0,
+      "log_completeness": 1.0,
+      "gold_fields_exposed_to_mock_payloads": 0,
+      "passed": true
+    },
+    "parent_failure_replay": {
+      "artifact": "reports/b2_v1_1_failure_diagnostic.json",
+      "artifact_sha256": "3bc106a8706dc368d44bf33725fe9d6ab0e7bd4a1673f28446a3938febc0a5e4",
+      "parent_failures_classified": 3,
+      "contradictory_accepts_route_to_human_review": true,
+      "valid_accept_is_unchanged": true,
+      "fixed_budget_allocation_passed": true,
+      "passed": true
+    }
+  },
+  "live_interface_gate": {
+    "status": "awaiting_explicit_user_authorization",
+    "protocol_id": "contractfin-b2-finqa-dev3-interface-v1.1",
+    "sample_manifest": "config/b2_finqa_dev_v1_1_interface_manifest.json",
+    "sample_manifest_sha256": "9ddbdff0804f867807d3e587f9d71a48c0ce37f124354438bcbc5a56af9339fc",
+    "sample_count": 3,
+    "selection": "all three failures from the parent B2-v1 registered30 run, in original order",
+    "artifact_stem": "b2_deepseek_full_interface3_v1_1",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b2.py --provider deepseek --model deepseek-flash --variant full --sample-manifest config/b2_finqa_dev_v1_1_interface_manifest.json --protocol-id contractfin-b2-finqa-dev3-interface-v1.1 --total-output-budget 32768 --max-model-calls 6 --max-tool-calls 2 --request-timeout-seconds 300 --artifact-stem b2_deepseek_full_interface3_v1_1",
+    "paid_model_call_upper_bound": 18,
+    "local_tool_call_upper_bound": 6,
+    "requires_separate_user_authorization": true,
+    "exact_authorization_phrase": "同意执行B2-v1.1三题真实接口测试，最多18次模型调用。",
+    "acceptance": {
+      "successful_structured_samples": 3,
+      "exact_model_calls": 18,
+      "exact_tool_calls": 6,
+      "samples_with_valid_task_contract": 3,
+      "samples_with_search_document_top_k_12": 3,
+      "samples_with_successful_calculate_finqa": 3,
+      "samples_with_valid_effective_verifier_verdict": 3,
+      "maximum_failed_tool_calls": 0,
+      "maximum_structurally_invalid_verdicts": 0,
+      "maximum_output_ceiling_failures": 0,
+      "maximum_transport_timeouts": 0,
+      "required_role_output_token_caps": [8192, 1024, 2048, 8192, 2048, 11264],
+      "required_log_completeness": 1.0,
+      "required_sample_identity_and_order_match": true,
+      "verifier_normalization_rate_is_a_gate": false,
+      "human_review_rate_is_a_gate": false,
+      "answer_accuracy_is_a_gate": false
+    }
+  },
+  "registered30_rerun": {
+    "status": "blocked_until_live_interface_gate_passes_and_separate_authorization_is_given",
+    "protocol_id": "contractfin-b2-finqa-dev30-full-v1.1",
+    "artifact_stem": "b2_deepseek_full_preregistered30_v1_1",
+    "planned_command": "PYTHONPATH=src python3 scripts/run_b2.py --provider deepseek --model deepseek-flash --variant full --sample-manifest config/b0_finqa_dev_30_manifest.json --protocol-id contractfin-b2-finqa-dev30-full-v1.1 --total-output-budget 32768 --max-model-calls 6 --max-tool-calls 2 --request-timeout-seconds 300 --artifact-stem b2_deepseek_full_preregistered30_v1_1",
+    "paid_model_call_upper_bound": 180,
+    "requires_separate_user_authorization": true,
+    "exact_authorization_phrase": "同意执行B2-v1.1完整架构预注册30题测试，最多180次模型调用。"
+  },
+  "ablations": {
+    "status": "not_unlocked",
+    "condition": "Ablations remain prohibited until the v1.1 live interface gate and full registered30 run both pass; each ablation will still require separate authorization."
+  },
+  "version_hashes": {
+    "b2_source_sha256": "55ff03d8b05470629529892dae231dab4fd010f46a9b5ed3ac80ec1c62b8f3cd",
+    "cli_runner_sha256": "5e325d800a1ee72cd56bd5500d2236c25d816affa36218ec6e8e2420775183b1",
+    "local_audit_source_sha256": "c2de2bbda91a9ff8f19d782685069bddbb2d46abbd8c3f3efbeeeb02ce21058d",
+    "failure_audit_source_sha256": "da26e5a729f068e6c2df0fd489039d53cbe3a3d84807026f16bad79e1f532a2f",
+    "b2_tests_sha256": "e1616c6f372eb1212a0b4e2ee6a6f7a7eb94988b90b6126739cb7861dc090898",
+    "contract_prompt_sha256": "8f4b54a83bbe333e79c5f0be4395b84aaea18d0b33b7e0257fa7c9ee05ed9bf3",
+    "evidence_prompt_sha256": "9a68062d022ecffee023ad04ff82d73e37bab488f080dce54a50aac791ce4b7f",
+    "solver_prompt_sha256": "3f3c6c414d1d6587fa5b35b86a729651a9321ef66c97dfe08531c38e11056d3b",
+    "verifier_prompt_sha256": "5110c681c344cf6f3d7e79700ef79fce01d2aad87a2cbe5ba5ecce9e8be0dc3b",
+    "role_output_token_caps_sha256": "a3f8f98b1e7ebf370cc768f107d823aa279b9856c9eebf42c95915d82d807898",
+    "verdict_schema_sha256": "0aa997839605fbe7eb0a93f91bbe980e71ba1f5dfde0065749fb0171e322f2aa"
+  }
+}

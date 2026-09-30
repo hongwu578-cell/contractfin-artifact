@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b1-finqa-dev30-v1.2",
+  "execution_date": "2026-09-29",
+  "run_id": "b1-bb2095c7-deeb-4a70-925e-f8991a8035c3",
+  "gate_status": "passed",
+  "classification": "accepted_b1_development_run",
+  "sample_integrity": {
+    "sample_count": 30,
+    "unique_sample_count": 30,
+    "gold_matches_registered_identity_and_order": true,
+    "predictions_match_registered_identity_and_order": true,
+    "logs_match_registered_identity_and_order": true,
+    "automatic_retries": 0,
+    "sample_substitutions": 0
+  },
+  "acceptance": [
+    {
+      "criterion": "successful_structured_samples",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_search_document",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_search_top_k_12",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "samples_using_calculate_finqa",
+      "required": 30,
+      "observed": 30,
+      "passed": true
+    },
+    {
+      "criterion": "failed_tool_calls",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "invalid_final_json_samples",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "output_ceiling_failures",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "transport_timeouts",
+      "required_maximum": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "criterion": "log_completeness",
+      "required": 1.0,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "criterion": "sample_identity_and_order",
+      "required": true,
+      "observed": true,
+      "passed": true
+    }
+  ],
+  "resource_use": {
+    "model_calls": 94,
+    "authorized_model_call_upper_bound": 180,
+    "tool_calls": 64,
+    "search_document_calls": 34,
+    "calculate_finqa_calls": 30,
+    "maximum_model_calls_observed_per_sample": 4,
+    "maximum_tool_calls_observed_per_sample": 3,
+    "input_tokens": 187432,
+    "output_tokens_including_reasoning": 13129,
+    "reasoning_tokens": 6401,
+    "total_tokens": 200561,
+    "aggregate_measured_latency_ms": 188915
+  },
+  "evaluation": {
+    "final_answer_correct": 15,
+    "final_answer_denominator": 30,
+    "final_answer_accuracy": 0.5,
+    "exact_program_correct": 13,
+    "exact_program_accuracy": 0.43333333333333335,
+    "execution_correct": 17,
+    "execution_accuracy": 0.5666666666666667,
+    "execution_coverage": 1.0,
+    "evidence_macro_precision": 0.888888888888889,
+    "evidence_macro_recall": 0.95,
+    "evidence_macro_f1": 0.9088888888888889,
+    "schema_valid_rate": 1.0,
+    "unit_scale_error_rate": 0.0,
+    "unsupported_claim_rate": 0.0
+  },
+  "descriptive_b0_comparison": {
+    "b0_artifact": "reports/b0_deepseek_preregistered30_v1_2_report_evidence_ids_v2.json",
+    "same_registered_samples_and_order": true,
+    "b0_final_answer_accuracy": 0.4,
+    "b1_final_answer_accuracy": 0.5,
+    "absolute_answer_accuracy_difference": 0.1,
+    "b0_execution_coverage": 0.9,
+    "b1_execution_coverage": 1.0,
+    "b0_execution_accuracy": 0.18518518518518517,
+    "b1_execution_accuracy": 0.5666666666666667,
+    "b0_corrected_evidence_macro_f1": 0.9211111111111111,
+    "b1_evidence_macro_f1": 0.9088888888888889,
+    "warning": "This is a single small development-set run with provider-default stochastic generation. Differences are descriptive, not a causal or inferential estimate."
+  },
+  "transport_and_runtime_checks": {
+    "all_provider_calls_reported_completed": true,
+    "provider_error_codes": 0,
+    "incomplete_responses": 0,
+    "transport_normalizations_used": 0,
+    "failed_local_tool_calls": 0
+  },
+  "decision": {
+    "interface_gate_passed": true,
+    "accepted_as_b1_development_result": true,
+    "tune_b1_again_on_these_items": false,
+    "next_research_stage": "freeze B1 and preregister B2 multi-agent architecture and ablation protocol before any B2 API call"
+  },
+  "artifacts": {
+    "gold": {
+      "path": "reports/b1_deepseek_preregistered30_v1_2_gold.jsonl",
+      "sha256": "b6ac633d53f78e4ffd66e6507b6dfcaddf33eec70acd7e8e8cb98f19af757e40"
+    },
+    "predictions": {
+      "path": "reports/b1_deepseek_preregistered30_v1_2_predictions.jsonl",
+      "sha256": "3821dff53acad85ba1c194ca18b3665f548a83d2e4a511cec56ee3731c12bcbe"
+    },
+    "report": {
+      "path": "reports/b1_deepseek_preregistered30_v1_2_report.json",
+      "sha256": "88a285ffc55a10efc0b03d076ea42c428a0f76f55e9a41ac29c6533bca324c83"
+    },
+    "log": {
+      "path": "logs/b1_deepseek_preregistered30_v1_2.jsonl",
+      "sha256": "71c59e861b731930ca6644c453486c10b559841cf05ff434afc30f9ba25a598e"
+    }
+  }
+}

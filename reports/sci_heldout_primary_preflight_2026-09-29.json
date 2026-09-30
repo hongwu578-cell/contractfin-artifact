@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-29",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "scope": "primary",
+  "decision": "pass_ready_for_separate_explicit_authorization",
+  "api_calls": 0,
+  "freeze_lock": {
+    "sha256": "090d7b4e71be4cbdf9fe41e9dd614953a2f7fe56de7a28c4d3b470f5f6414b40",
+    "locked_files": 34,
+    "hash_mismatches": 0,
+    "passed": true
+  },
+  "tests": {
+    "passed": 62,
+    "failed": 0
+  },
+  "dry_run": {
+    "systems_completed": [
+      "B0",
+      "B1"
+    ],
+    "payloads_checked": 3,
+    "api_calls": 0,
+    "passed": true
+  },
+  "live_without_authorization": {
+    "blocked_before_provider_call": true,
+    "error_type": "PermissionError"
+  },
+  "artifacts": {
+    "inference_records": 500,
+    "scheduled_tasks": 1000,
+    "existing_primary_output_collision": false,
+    "output_directories_writable": true
+  },
+  "environment": {
+    "deepseek_key_in_current_noninteractive_shell": false,
+    "deepseek_key_after_interactive_zsh_load": true,
+    "required_action_for_live_run": "source ~/.zshrc in the same shell before invoking the frozen runner",
+    "available_disk_kib": 12001728,
+    "filesystem_capacity_used_percent": 95,
+    "file_descriptor_soft_limit": 1048575
+  },
+  "call_budget": {
+    "expected_model_calls": 2067,
+    "maximum_model_calls": 3500,
+    "current_authorized_model_calls": 0
+  },
+  "authorization_template": {
+    "path": "config/authorizations/sci_heldout_primary_authorization_2026-09-29.template.json",
+    "authorized": false,
+    "exact_user_authorization_phrase": "同意执行SCI held-out主实验B0/B1配对500题测试，最多3500次模型调用。"
+  },
+  "stability_authorized": false
+}

@@ -1,0 +1,1 @@
+{"sample_id":"finqa:dev:V/2008/page_17.pdf-1","answer":null,"evidence":[],"status":"error","program":null,"unit":null,"metadata":{"baseline":"B0_direct_llm","prompt_version":"b0-direct-v1","error_type":"APIRequestError","error":"OpenAI API request failed (status=429, type=insufficient_quota, code=credit_balance_exhausted)"}}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "source_file": "config/authorizations/sci_heldout_primary_authorization_2026-09-29.json",
+      "source_sha256": "ba3c8e9979a6547fa87ef7cb9d4fd2ac459ed85d1df8f5f2869a741c3f62c073",
+      "schema_version": "1.0",
+      "protocol_id": "contractfin-sci-finqa-test500-v1",
+      "scope": "primary",
+      "authorized": true,
+      "date": "2026-09-29",
+      "authorization_id": "contractfin-sci-heldout-primary-2026-09-29",
+      "call_budget": {
+        "expected_model_calls": 2067,
+        "maximum_model_calls": 3500,
+        "scheduled_system_tasks": 1000,
+        "automatic_retries": 0,
+        "semantic_retries": 0
+      },
+      "external_data_transfer_authorized": false,
+      "privacy_note": "Exact user-authored authorization text is intentionally omitted from the public artifact."
+    },
+    {
+      "source_file": "config/authorizations/sci_heldout_primary_rerun1_amendment_2026-09-29.json",
+      "source_sha256": "3956fbbe7cc5bbb232f57b48e4da1078c41cef77d4e22414635e4dd2de00c16e",
+      "schema_version": "1.0",
+      "protocol_id": "contractfin-sci-finqa-test500-v1",
+      "scope": "primary",
+      "authorized": true,
+      "date": "2026-09-29",
+      "authorization_id": "contractfin-sci-heldout-primary-rerun1-2026-09-29",
+      "external_data_transfer_authorized": false,
+      "privacy_note": "Exact user-authored authorization text is intentionally omitted from the public artifact."
+    },
+    {
+      "source_file": "config/authorizations/sci_heldout_stability_authorization_2026-09-30.json",
+      "source_sha256": "faa5c8a888b2a3fb64d4af4f5bbc1c82f024612b2e479bfd5ec5beaaf9184179",
+      "schema_version": "1.0",
+      "protocol_id": "contractfin-sci-finqa-test500-v1",
+      "scope": "stability",
+      "authorized": true,
+      "date": "2026-09-30",
+      "authorization_id": "contractfin-sci-heldout-stability-2026-09-30",
+      "execution": {
+        "artifact_stem": "sci_finqa_stability100_v1",
+        "registered_items": 100,
+        "additional_replicates": [
+          2,
+          3
+        ],
+        "scheduled_system_tasks": 400,
+        "expected_model_calls": 827,
+        "maximum_model_calls": 1400,
+        "automatic_retries": 0,
+        "semantic_retries": 0,
+        "run_outside_network_sandbox": true,
+        "pool_with_primary_test": false
+      },
+      "external_data_transfer_authorized": true,
+      "privacy_note": "Exact user-authored authorization text is intentionally omitted from the public artifact."
+    }
+  ]
+}

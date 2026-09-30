@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "checks": [
+    {
+      "check": "raw_file_hash",
+      "dataset": "finqa",
+      "path": "data/raw/finqa/dataset/train.json",
+      "expected": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+      "actual": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+      "passed": true
+    },
+    {
+      "check": "raw_file_hash",
+      "dataset": "finqa",
+      "path": "data/raw/finqa/dataset/dev.json",
+      "expected": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+      "actual": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+      "passed": true
+    },
+    {
+      "check": "raw_file_hash",
+      "dataset": "finqa",
+      "path": "data/raw/finqa/dataset/test.json",
+      "expected": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+      "actual": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+      "passed": true
+    },
+    {
+      "check": "raw_file_hash",
+      "dataset": "financebench",
+      "path": "data/raw/financebench/data/financebench_open_source.jsonl",
+      "expected": "a5a2aa673e573e55675fc3c0f9aa38c1cf59d2abc91edb077534f71f10a71877",
+      "actual": "a5a2aa673e573e55675fc3c0f9aa38c1cf59d2abc91edb077534f71f10a71877",
+      "passed": true
+    },
+    {
+      "check": "raw_file_hash",
+      "dataset": "financebench",
+      "path": "data/raw/financebench/data/financebench_document_information.jsonl",
+      "expected": "1c69127783879de8cdadb159d2181f39bc3123b8e0ebf74031c3969d69189575",
+      "actual": "1c69127783879de8cdadb159d2181f39bc3123b8e0ebf74031c3969d69189575",
+      "passed": true
+    },
+    {
+      "check": "normalized_dataset",
+      "path": "data/normalized/finqa_train.jsonl",
+      "expected_count": 6251,
+      "actual_count": 6251,
+      "validation_errors": 0,
+      "duplicate_ids": 0,
+      "passed": true
+    },
+    {
+      "check": "normalized_dataset",
+      "path": "data/normalized/finqa_dev.jsonl",
+      "expected_count": 883,
+      "actual_count": 883,
+      "validation_errors": 0,
+      "duplicate_ids": 0,
+      "passed": true
+    },
+    {
+      "check": "normalized_dataset",
+      "path": "data/normalized/finqa_test.jsonl",
+      "expected_count": 1147,
+      "actual_count": 1147,
+      "validation_errors": 0,
+      "duplicate_ids": 0,
+      "passed": true
+    },
+    {
+      "check": "normalized_dataset",
+      "path": "data/normalized/financebench_open_source.jsonl",
+      "expected_count": 150,
+      "actual_count": 150,
+      "validation_errors": 0,
+      "duplicate_ids": 0,
+      "passed": true
+    },
+    {
+      "check": "financebench_evidence_page_coverage",
+      "evidence_items": 189,
+      "located_items": 189,
+      "coverage": 1.0,
+      "passed": true
+    },
+    {
+      "check": "finqa_executor_audit",
+      "execution_coverage": 1.0,
+      "execution_accuracy": 1.0,
+      "passed": true
+    },
+    {
+      "check": "smoke_log_completeness",
+      "records": 30,
+      "completeness": 1.0,
+      "passed": true
+    }
+  ]
+}

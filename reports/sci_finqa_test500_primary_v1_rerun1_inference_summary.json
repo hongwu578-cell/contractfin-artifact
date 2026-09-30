@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "run_id": "sci-heldout-9d2c37d5-bc3e-473f-b8af-7630be75e31e",
+  "runtime_config_sha256": "7c0d3d37cbec25609c9c052b2d79dd7f332ff2795585431903f8748bdfaa050c",
+  "evaluation_deferred": true,
+  "gold_loaded": false,
+  "task_count": 1000,
+  "expected_task_count": 1000,
+  "completed": true,
+  "prediction_groups": {
+    "B0_R1": {
+      "system": "B0",
+      "replicate": 1,
+      "predictions": 500,
+      "errors": 0,
+      "prediction_file": "reports/sci_finqa_test500_primary_v1_rerun1_B0_predictions.jsonl",
+      "prediction_sha256": "ab9bcf0252ccee773e7d9c3a6b938892c91788a3a057422f93fb954be554eed3"
+    },
+    "B1_R1": {
+      "system": "B1",
+      "replicate": 1,
+      "predictions": 500,
+      "errors": 7,
+      "prediction_file": "reports/sci_finqa_test500_primary_v1_rerun1_B1_predictions.jsonl",
+      "prediction_sha256": "bee83fe075fedfdf3ee6a06d529cef3dfc8f5316837615ea0b06a3cf6de10cee"
+    }
+  }
+}

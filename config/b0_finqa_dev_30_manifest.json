@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-b0-finqa-dev30-v1",
+  "registration_date": "2026-09-28",
+  "purpose": "coverage-oriented FinQA development smoke test",
+  "reportable_performance_estimate": false,
+  "source": {
+    "dataset": "FinQA",
+    "split": "dev",
+    "record_count": 883,
+    "normalized_file_sha256": "91237413e337148faf0ae58c06539d8c428fbf2f06ef84dc335cdd0616032739"
+  },
+  "selection_rule": {
+    "method": "quota-stratified deterministic SHA-256 ranking",
+    "selection_rank_material": "selection|{protocol_id}|{normalized_file_sha256}|{sample_id}",
+    "execution_order_material": "execution|{protocol_id}|{normalized_file_sha256}|{sample_id}",
+    "quotas": {
+      "single_divide": 5,
+      "single_subtract": 4,
+      "single_add": 2,
+      "single_multiply": 2,
+      "table_average": 2,
+      "table_sum": 1,
+      "table_max": 1,
+      "table_min": 1,
+      "comparison": 2,
+      "contains_exp": 1,
+      "multi_2_step": 4,
+      "multi_3_step": 2,
+      "multi_4_step": 1,
+      "multi_5_step": 2
+    },
+    "eligible_pool_counts": {
+      "single_divide": 287,
+      "single_subtract": 137,
+      "single_add": 30,
+      "single_multiply": 25,
+      "table_average": 19,
+      "table_sum": 4,
+      "table_max": 7,
+      "table_min": 5,
+      "comparison": 10,
+      "contains_exp": 1,
+      "multi_2_step": 287,
+      "multi_3_step": 41,
+      "multi_4_step": 13,
+      "multi_5_step": 16
+    },
+    "selected_count": 30,
+    "notes": [
+      "Gold programs are used only to assign coverage strata and are never placed in prompts.",
+      "The prior one-item interface-gate sample is excluded.",
+      "No sample may be substituted after registration.",
+      "Individual item errors must not trigger prompt or evaluator tuning."
+    ]
+  },
+  "exclusions": [
+    {
+      "sample_id": "finqa:dev:V/2008/page_17.pdf-1",
+      "source_position": 1,
+      "reason": "Used for the authorized one-item DeepSeek interface gate before preregistration."
+    }
+  ],
+  "selected_stratum_counts": {
+    "single_divide": 5,
+    "single_subtract": 4,
+    "comparison": 2,
+    "multi_3_step": 2,
+    "single_add": 2,
+    "single_multiply": 2,
+    "table_min": 1,
+    "multi_2_step": 4,
+    "table_average": 2,
+    "table_max": 1,
+    "multi_4_step": 1,
+    "table_sum": 1,
+    "multi_5_step": 2,
+    "contains_exp": 1
+  },
+  "samples": [
+    {
+      "sample_id": "finqa:dev:LMT/2010/page_42.pdf-2",
+      "source_position": 691,
+      "stratum": "single_divide",
+      "stratum_rank": 3,
+      "selection_hash": "00e0216167e9a344f007d01c5ea06f518a0ce160072e8dbe135dec55ddadf295",
+      "execution_order_hash": "0b3589a2a8409af2cb225f89e80be28ee1835110cd7abb9d96a63f9e24bc58e1",
+      "operation_sequence": [
+        "divide"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "LMT/2010/page_42.pdf-2",
+      "question": "what is the percentage increase in the net cash provided by operating activities in 2010 compare to 2009?",
+      "run_order": 1
+    },
+    {
+      "sample_id": "finqa:dev:SYY/2019/page_9.pdf-1",
+      "source_position": 747,
+      "stratum": "single_subtract",
+      "stratum_rank": 3,
+      "selection_hash": "040ea33a44760bea09f5da153e9635ac06f09d6cdd71f0e85fe9e6dfa3e703b3",
+      "execution_order_hash": "1be54b31211d42901d9d8b92e12470e7af94edd4362d5bc5c05c1631aa0fe872",
+      "operation_sequence": [
+        "subtract"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "SYY/2019/page_9.pdf-1",
+      "question": "what was the change in the percentage of sales to restaurants from 2017 to 2018?",
+      "run_order": 2
+    },
+    {
+      "sample_id": "finqa:dev:JPM/2014/page_65.pdf-4",
+      "source_position": 614,
+      "stratum": "comparison",
+      "stratum_rank": 2,
+      "selection_hash": "03ad60a788a0917f557aa686fa64f7ad8d7acaff4fbffcafda51ba3a929a1371",
+      "execution_order_hash": "21d8f6b43f2ec8b0f8b618bba3443c24308d28ce11b1640e74d0622538d2739c",
+      "operation_sequence": [
+        "greater"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "JPM/2014/page_65.pdf-4",
+      "question": "did jpmorgan chase outperform the s&p 500 over the five year period?",
+      "run_order": 3
+    },
+    {
+      "sample_id": "finqa:dev:JPM/2018/page_110.pdf-1",
+      "source_position": 332,
+      "stratum": "multi_3_step",
+      "stratum_rank": 2,
+      "selection_hash": "01dad81035c21d19170c994332759c8e5bc46ebe94fc245cd5eecbbe5c5a8c0f",
+      "execution_order_hash": "2ac3756ffb1b8a0d24bb81f32f731b8d7a1b44896d9e88105b0fd6e11e9f0ac1",
+      "operation_sequence": [
+        "add",
+        "add",
+        "divide"
+      ],
+      "step_count": 3,
+      "gold_evidence_count": 1,
+      "document_id": "JPM/2018/page_110.pdf-1",
+      "question": "what is the average of the afs investment securities during the years 2016-2018?",
+      "run_order": 4
+    },
+    {
+      "sample_id": "finqa:dev:JKHY/2014/page_30.pdf-1",
+      "source_position": 775,
+      "stratum": "single_subtract",
+      "stratum_rank": 2,
+      "selection_hash": "03063b591b36f8d2e204c340f43f5fee8afb1546b2584165ff3ac8d5b0171de6",
+      "execution_order_hash": "2e06122c90fd41ee7da763fdcb3e3c13e62a55ead160a8f95cab4ab2c7c565f3",
+      "operation_sequence": [
+        "subtract"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "JKHY/2014/page_30.pdf-1",
+      "question": "what was the cumulative total return on the s & p 500 for the five year period?",
+      "run_order": 5
+    },
+    {
+      "sample_id": "finqa:dev:AWK/2013/page_132.pdf-4",
+      "source_position": 231,
+      "stratum": "single_add",
+      "stratum_rank": 1,
+      "selection_hash": "09e1419b5c9ea2806c635fce9a47c3fc768c46b25d0f0ca295982a199959d78e",
+      "execution_order_hash": "34c9ec0d8a02d8e57d136656c77e92ccba10e7d357dd7abac5ca392e5077a2eb",
+      "operation_sequence": [
+        "add"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "AWK/2013/page_132.pdf-4",
+      "question": "what was the net effect of the one-percentage point increase and decrease on total service and interest cost components",
+      "run_order": 6
+    },
+    {
+      "sample_id": "finqa:dev:JPM/2007/page_147.pdf-1",
+      "source_position": 760,
+      "stratum": "single_add",
+      "stratum_rank": 2,
+      "selection_hash": "0e2ab4c1a904218b92c3117f5936935286bbeaa02881471bf0bf0a24e004668a",
+      "execution_order_hash": "674e52c04ea69bd8e9cfef691e1a610ea9e45e137fb794259328879126637d85",
+      "operation_sequence": [
+        "add"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "JPM/2007/page_147.pdf-1",
+      "question": "in 2007 what was the percent of the retained interest of the total principal amount of beneficial interests",
+      "run_order": 7
+    },
+    {
+      "sample_id": "finqa:dev:RE/2015/page_33.pdf-3",
+      "source_position": 263,
+      "stratum": "single_multiply",
+      "stratum_rank": 2,
+      "selection_hash": "0bb6a35d4e2f2cdaf8516593a069f3a4dcddb9a9d79c8d16c54c798c772e8481",
+      "execution_order_hash": "6debab505fcc391279aabdb53ab295c00cdf39a4d8d82e71c2f9e955e7981338",
+      "operation_sequence": [
+        "multiply"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "RE/2015/page_33.pdf-3",
+      "question": "what is the total value of fixed maturities and cash as of december 31 , 2015 , in billions?",
+      "run_order": 8
+    },
+    {
+      "sample_id": "finqa:dev:PPG/2011/page_70.pdf-2",
+      "source_position": 208,
+      "stratum": "multi_3_step",
+      "stratum_rank": 1,
+      "selection_hash": "0009a88b4983f6af6e774dd4410c6c45f98cb5b158bb6a37de18451d0882e7bc",
+      "execution_order_hash": "71a946e03b91f002cc1bba11de81f377d1f0fd8e58123edb502385ac7c7759f7",
+      "operation_sequence": [
+        "multiply",
+        "multiply",
+        "subtract"
+      ],
+      "step_count": 3,
+      "gold_evidence_count": 2,
+      "document_id": "PPG/2011/page_70.pdf-2",
+      "question": "what was the increase for the maximum company match on january 1 , 2011?",
+      "run_order": 9
+    },
+    {
+      "sample_id": "finqa:dev:CB/2010/page_200.pdf-4",
+      "source_position": 36,
+      "stratum": "single_divide",
+      "stratum_rank": 4,
+      "selection_hash": "014c2eaf38ccaa90a89b04703352803bcc3cecdb407a317103d44959b4ea342d",
+      "execution_order_hash": "7e5f3dfcfaa6ea643cbf91a22c803c65180b28f477b9da098e9ca1d5449fe033",
+      "operation_sequence": [
+        "divide"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "CB/2010/page_200.pdf-4",
+      "question": "in 2010 what was the ratio of the statutory capital and surplus to the statutory net income",
+      "run_order": 10
+    },
+    {
+      "sample_id": "finqa:dev:AON/2009/page_46.pdf-2",
+      "source_position": 151,
+      "stratum": "table_min",
+      "stratum_rank": 1,
+      "selection_hash": "9723a8e1f9e56f60d6bc0618f39b3440cbca9be6a3a91f293036b8cd576641f6",
+      "execution_order_hash": "8031ef8ac35b59feacf8c44e17f02758206955c48fc97d8933b2f1ed53d1413e",
+      "operation_sequence": [
+        "table_min"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "AON/2009/page_46.pdf-2",
+      "question": "what is the lowest segment operating income?",
+      "run_order": 11
+    },
+    {
+      "sample_id": "finqa:dev:PPG/2013/page_40.pdf-1",
+      "source_position": 455,
+      "stratum": "comparison",
+      "stratum_rank": 1,
+      "selection_hash": "00575c8aa30d7124662fcac341564e7bb6cf4b116b40965b8d159d27435695da",
+      "execution_order_hash": "8fe02f753d8e5449f508245dc3085fd8b31b95075cc265eea1e9de2118f5bb9c",
+      "operation_sequence": [
+        "greater"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "PPG/2013/page_40.pdf-1",
+      "question": "does the company spend more on advertising in 2013 than on research and development?",
+      "run_order": 12
+    },
+    {
+      "sample_id": "finqa:dev:LMT/2012/page_47.pdf-3",
+      "source_position": 42,
+      "stratum": "multi_2_step",
+      "stratum_rank": 2,
+      "selection_hash": "0103536ce3a322084625e797677291679205a7fb1fc52db9dece2e665772f385",
+      "execution_order_hash": "93dbbc061bad7a06d3fcbdd181101b1d0147ac01bc790bd73890bffd6bb779a4",
+      "operation_sequence": [
+        "subtract",
+        "divide"
+      ],
+      "step_count": 2,
+      "gold_evidence_count": 1,
+      "document_id": "LMT/2012/page_47.pdf-3",
+      "question": "what is the growth rate in operating profit for space systems in 2011?",
+      "run_order": 13
+    },
+    {
+      "sample_id": "finqa:dev:AON/2014/page_47.pdf-1",
+      "source_position": 130,
+      "stratum": "table_average",
+      "stratum_rank": 1,
+      "selection_hash": "039a83bc775d6c5181ee0acd5bb142f70a134721f624ef38cfb04af98cd5aa6b",
+      "execution_order_hash": "93e34f629ee06548121f41e9595dd39246fcd27bf3c9463b0c35cc048332246e",
+      "operation_sequence": [
+        "table_average",
+        "table_max",
+        "subtract"
+      ],
+      "step_count": 3,
+      "gold_evidence_count": 1,
+      "document_id": "AON/2014/page_47.pdf-1",
+      "question": "what is the variation between the average and the highest operating margin?",
+      "run_order": 14
+    },
+    {
+      "sample_id": "finqa:dev:AAPL/2014/page_38.pdf-1",
+      "source_position": 738,
+      "stratum": "table_max",
+      "stratum_rank": 1,
+      "selection_hash": "10c716382aca58c23007d3a5f54645f8e7adc1da02b1e845f5ec6961785ec708",
+      "execution_order_hash": "a6b8184a54812d07df9cf7be50e1c476e23efed3e39239a3337dbd7136094da9",
+      "operation_sequence": [
+        "table_max"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "AAPL/2014/page_38.pdf-1",
+      "question": "in what year was the cash cash equivalents and marketable securities the highest?",
+      "run_order": 15
+    },
+    {
+      "sample_id": "finqa:dev:AMAT/2014/page_18.pdf-1",
+      "source_position": 773,
+      "stratum": "multi_4_step",
+      "stratum_rank": 1,
+      "selection_hash": "12d40611a7bdde13563c844f829c4665ac5f7d56da1a9ffd8b30f0bcc86ecd24",
+      "execution_order_hash": "a78a1c70a53cb392e84c135f80d6788beff409c591a25f128b7830c136e0ba90",
+      "operation_sequence": [
+        "divide",
+        "divide",
+        "subtract",
+        "divide"
+      ],
+      "step_count": 4,
+      "gold_evidence_count": 1,
+      "document_id": "AMAT/2014/page_18.pdf-1",
+      "question": "what is the growth rate in sales from 2013 to 2014?",
+      "run_order": 16
+    },
+    {
+      "sample_id": "finqa:dev:AAPL/2008/page_78.pdf-2",
+      "source_position": 96,
+      "stratum": "table_average",
+      "stratum_rank": 2,
+      "selection_hash": "03b0e47fc5b96313c60d0edfd6d58703b10dbdab12dcff7c67666f0bbcc23475",
+      "execution_order_hash": "a79e3a2026a51c8286973202348557e34eebe9cc948e96e58b9f72a6edfbbe08",
+      "operation_sequence": [
+        "table_average"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "AAPL/2008/page_78.pdf-2",
+      "question": "what was the average change in unrealized gains on derivative instruments?",
+      "run_order": 17
+    },
+    {
+      "sample_id": "finqa:dev:ABMD/2006/page_75.pdf-3",
+      "source_position": 804,
+      "stratum": "single_divide",
+      "stratum_rank": 1,
+      "selection_hash": "0038b1d71c1dcd7209dfbce84b0c4b29d45a23d59f65e5969b78256fb946eec6",
+      "execution_order_hash": "b2e41ff1263ac711b07e049aa088eed00307cb7077f2e80fd500e0a86526fc40",
+      "operation_sequence": [
+        "divide"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "ABMD/2006/page_75.pdf-3",
+      "question": "what percentage of total future minimum lease payments are due in 2008?",
+      "run_order": 18
+    },
+    {
+      "sample_id": "finqa:dev:SWKS/2006/page_81.pdf-2",
+      "source_position": 173,
+      "stratum": "single_divide",
+      "stratum_rank": 2,
+      "selection_hash": "00c4b862d2426567c1cb51686ab8cd2b698f742cd3c746b86251d9a06b216dbd",
+      "execution_order_hash": "c2b8aad595b079dce706c0dc3d25874d9949f110f6706599eee0ee6ceb90a83e",
+      "operation_sequence": [
+        "divide"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "SWKS/2006/page_81.pdf-2",
+      "question": "what is the percentage change in in the pension liability balance from 2004 to 2006?",
+      "run_order": 19
+    },
+    {
+      "sample_id": "finqa:dev:BKR/2017/page_103.pdf-4",
+      "source_position": 875,
+      "stratum": "single_multiply",
+      "stratum_rank": 1,
+      "selection_hash": "0356835832ab870f8a681467ad89c53687ac791f9c7833623163f7484f3175c2",
+      "execution_order_hash": "c611775565e99db71b0b573c0da5fd33815a4cf51822ce35b3abc4827e25a3e9",
+      "operation_sequence": [
+        "multiply"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "BKR/2017/page_103.pdf-4",
+      "question": "what is the total value of rsus converted to bhge rsus , in millions?",
+      "run_order": 20
+    },
+    {
+      "sample_id": "finqa:dev:MRO/2004/page_36.pdf-2",
+      "source_position": 129,
+      "stratum": "table_sum",
+      "stratum_rank": 1,
+      "selection_hash": "0cc55520f23943107d52c061f637b1f0fcd4fd362bd0b6086ae7ed80b4830a03",
+      "execution_order_hash": "caa5a34037db1a71fb9c46e9d06fecc2d4e0a521f4503b2c323b67f7d3d8f432",
+      "operation_sequence": [
+        "table_sum"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "MRO/2004/page_36.pdf-2",
+      "question": "what were total heavy fuel oil sales in tbd for the three year period?",
+      "run_order": 21
+    },
+    {
+      "sample_id": "finqa:dev:ZBH/2003/page_58.pdf-2",
+      "source_position": 729,
+      "stratum": "single_subtract",
+      "stratum_rank": 1,
+      "selection_hash": "02c408f98228271fc98e03ab5edeb1c01c512f2bff3bb88fd0d4041c076d0951",
+      "execution_order_hash": "cb02e99fd4c99a86c98cb252abaa91ed57e981e43b262987080d66d390c10aa7",
+      "operation_sequence": [
+        "subtract"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "ZBH/2003/page_58.pdf-2",
+      "question": "what is the change in finished goods in millions between 2002 and 2003?",
+      "run_order": 22
+    },
+    {
+      "sample_id": "finqa:dev:IP/2006/page_32.pdf-2",
+      "source_position": 233,
+      "stratum": "single_divide",
+      "stratum_rank": 5,
+      "selection_hash": "034720e1017454a1ccc47af8c2fd40f8e0853721cd15f7db75b077a6c7f5243a",
+      "execution_order_hash": "d3ed5c884039c70439d8af5e9d5ce41452dded18f37a75a3dfcbe8bcca575923",
+      "operation_sequence": [
+        "divide"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 2,
+      "document_id": "IP/2006/page_32.pdf-2",
+      "question": "in 2005 what percentage of consumer packaging sales were represented by foodservice net sales?",
+      "run_order": 23
+    },
+    {
+      "sample_id": "finqa:dev:C/2017/page_328.pdf-3",
+      "source_position": 218,
+      "stratum": "multi_5_step",
+      "stratum_rank": 2,
+      "selection_hash": "196163274b66a1e352047c06d448d3ca265c815c163bfefeb92caaf83bfa3ede",
+      "execution_order_hash": "d4a41ae0f087a4f44314ec5791aa97771658178efbc38b742663490c39fa1235",
+      "operation_sequence": [
+        "subtract",
+        "divide",
+        "subtract",
+        "divide",
+        "subtract"
+      ],
+      "step_count": 5,
+      "gold_evidence_count": 2,
+      "document_id": "C/2017/page_328.pdf-3",
+      "question": "what was the difference in percentage cumulative total return for the five year period ended 31-dec-2017 of citi common stock and s&p financials?",
+      "run_order": 24
+    },
+    {
+      "sample_id": "finqa:dev:APD/2018/page_59.pdf-1",
+      "source_position": 245,
+      "stratum": "contains_exp",
+      "stratum_rank": 1,
+      "selection_hash": "0c00b362d0012b5cee19ab73e0a5d25b98ae317fe2224447d743320b4a63bc14",
+      "execution_order_hash": "df8d433f7e154d42676d6ffaf3b229b669f0bbc4f5b9be3fda8bf9e5c53df77f",
+      "operation_sequence": [
+        "divide",
+        "add",
+        "exp",
+        "multiply"
+      ],
+      "step_count": 4,
+      "gold_evidence_count": 2,
+      "document_id": "APD/2018/page_59.pdf-1",
+      "question": "considering the fair market value of plan assets in 2018 , what is its estimated return for 10 years?",
+      "run_order": 25
+    },
+    {
+      "sample_id": "finqa:dev:OKE/2008/page_86.pdf-2",
+      "source_position": 162,
+      "stratum": "multi_2_step",
+      "stratum_rank": 4,
+      "selection_hash": "032d82ee31dc1554de59b74e564e22fe6bb4c2d22db3b2e92b4a4da8bd7bed9a",
+      "execution_order_hash": "e221ed3964a7ad087be9e63be62a017539cefc9eabe763e1a7b7e2394d593fc3",
+      "operation_sequence": [
+        "subtract",
+        "divide"
+      ],
+      "step_count": 2,
+      "gold_evidence_count": 2,
+      "document_id": "OKE/2008/page_86.pdf-2",
+      "question": "what was the percentage change in net fair value of derivatives outstanding at between 2007 and 2008 in thousands?",
+      "run_order": 26
+    },
+    {
+      "sample_id": "finqa:dev:PNC/2011/page_78.pdf-3",
+      "source_position": 333,
+      "stratum": "single_subtract",
+      "stratum_rank": 4,
+      "selection_hash": "06dae2139ecdde8c59c3b44276e5cc4c60e12b68f32609cff2274f47985b2e46",
+      "execution_order_hash": "ef8c1a84fe931d69a09e53ed026066708d26567ebeae98f9d9eafd1cd6d50938",
+      "operation_sequence": [
+        "subtract"
+      ],
+      "step_count": 1,
+      "gold_evidence_count": 1,
+      "document_id": "PNC/2011/page_78.pdf-3",
+      "question": "between december 31 , 2011 and december 31 , 2010 , what was the change in the unpaid principal balance outstanding of loans sold as a participant in these programs in billions?",
+      "run_order": 27
+    },
+    {
+      "sample_id": "finqa:dev:LKQ/2016/page_26.pdf-2",
+      "source_position": 606,
+      "stratum": "multi_5_step",
+      "stratum_rank": 1,
+      "selection_hash": "10f6d709ee8a82391177d7eef5a7b9db8cdc91f85615821123dbfdd8f221b209",
+      "execution_order_hash": "f15ee1ec8c645a1936e827449a4de3d9eaa82e02e7e86a652d9e1c4d8d57e113",
+      "operation_sequence": [
+        "subtract",
+        "divide",
+        "subtract",
+        "divide",
+        "subtract"
+      ],
+      "step_count": 5,
+      "gold_evidence_count": 2,
+      "document_id": "LKQ/2016/page_26.pdf-2",
+      "question": "what was the difference in percentage cumulative return for lkq corporation and the s&p 500 index for the five years ended 12/31/2016?",
+      "run_order": 28
+    },
+    {
+      "sample_id": "finqa:dev:SNPS/2006/page_69.pdf-2",
+      "source_position": 52,
+      "stratum": "multi_2_step",
+      "stratum_rank": 3,
+      "selection_hash": "0209a267d62483d1cb668399c4a37e08a4e0ea7856a599280c04e5171be37c9a",
+      "execution_order_hash": "f773405bd2cb396625df190bf6b6f1388f62ac4e5bb606950b1b9ff04339fbfc",
+      "operation_sequence": [
+        "multiply",
+        "divide"
+      ],
+      "step_count": 2,
+      "gold_evidence_count": 2,
+      "document_id": "SNPS/2006/page_69.pdf-2",
+      "question": "what percentage of the total purchase price is represented by goodwill?",
+      "run_order": 29
+    },
+    {
+      "sample_id": "finqa:dev:PNC/2011/page_78.pdf-1",
+      "source_position": 515,
+      "stratum": "multi_2_step",
+      "stratum_rank": 1,
+      "selection_hash": "0033d1d18aa7b718b16c3c89e72a143837a245684df517f0b211b1c8d8b32a2b",
+      "execution_order_hash": "f9668aa16fb4917897774984b60c36c5551a3dbb7f40659703b3b2d6ca935c3d",
+      "operation_sequence": [
+        "add",
+        "divide"
+      ],
+      "step_count": 2,
+      "gold_evidence_count": 1,
+      "document_id": "PNC/2011/page_78.pdf-1",
+      "question": "for december 31 , 2011 and december 31 , 2010 , what was the average unpaid principal balance outstanding of loans sold as a participant in these programs , in billions?",
+      "run_order": 30
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"sample_id":"finqa:dev:V/2008/page_17.pdf-1","answer":"127.4","evidence":["table_3"],"status":"answered","program":"divide(637, 5.0)","unit":"USD per transaction","metadata":{"baseline":"B0_direct_llm","provider":"deepseek","prompt_version":"b0-direct-v1","response_id":"6803e6d4-3c51-4de6-9f99-af3f77606b76","response_status":"completed"}}

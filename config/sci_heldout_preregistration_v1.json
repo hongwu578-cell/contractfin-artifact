@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "contractfin-sci-finqa-test500-v1",
+  "registration_date": "2026-09-29",
+  "status": "frozen_confirmed_no_live_api_authorization",
+  "paper_title": "Tool Use Before Teamwork: A Cost-Aware and Auditable Evaluation of LLM Architectures for Financial Numerical Reasoning",
+  "research_question": "Does deterministic tool augmentation improve paired held-out financial numerical reasoning performance over direct generation under matched provider, model alias, item set, and output ceiling?",
+  "confirmatory_hypothesis": "B1 and B0 have unequal item-level final-answer correctness; the expected direction is B1 greater than B0, but the primary test is two-sided.",
+  "exploratory_boundary": "B2-v1 and B2-v1.1 are frozen development failures used only for mechanism-oriented error analysis; they are excluded from confirmatory held-out testing.",
+  "artifacts": {
+    "source_test": {
+      "path": "data/normalized/finqa_test.jsonl",
+      "sha256": "da64fbde6763d0832a04c4f17e7a945bb3f195ab23e12bc57b31167a5b745541",
+      "record_count": 1147
+    },
+    "manifest": {
+      "path": "config/sci_finqa_test500_manifest_v1.json",
+      "sha256": "4d668998e764dcd2b9441be5b538cd3db209112275dd87def37aca273c259955"
+    },
+    "inference": {
+      "path": "data/heldout/finqa_test500_inference_v1.jsonl",
+      "sha256": "ce6b78a25aa709cbac0b862df775df079d869fb79df1ace3ce8cf4d8d4e7b6e1"
+    },
+    "gold": {
+      "path": "data/heldout/finqa_test500_gold_v1.jsonl",
+      "sha256": "71ff6e770ee3129e784b1e54a863736b034e555e9c8ce7c0e33d587bf579b9c0"
+    },
+    "schedule": {
+      "path": "config/sci_finqa_test500_interleaved_schedule_v1.jsonl",
+      "sha256": "041d935f9a87a6c67fd2aee453656c41902074ddf5952372f2293e8f6a66282d"
+    },
+    "runtime_config": {
+      "path": "config/sci_heldout_runtime_v1.json",
+      "sha256": "7c0d3d37cbec25609c9c052b2d79dd7f332ff2795585431903f8748bdfaa050c"
+    },
+    "stability_schedule": {
+      "path": "config/sci_finqa_stability100_interleaved_schedule_v1.jsonl",
+      "sha256": "e9988a8a45fb11d78f08f39a76a8142492df63bae643bca92cdaca72560428b4"
+    },
+    "stability_runtime_config": {
+      "path": "config/sci_heldout_stability_runtime_v1.json",
+      "sha256": "c839a885a7b1fb21af8e1fb638f3e2e8ea2337524e7f94920ffdf4b464c9e077"
+    },
+    "power_table": {
+      "path": "reports/sci_exact_mcnemar_power_v1.json",
+      "sha256": "905dcd44457e4c3efc439a2047c0f858c45dda1189b51661e7f33f3046313a98"
+    }
+  },
+  "sampling": {
+    "method": "minimum-quota stratification followed by residual proportional largest-remainder allocation and deterministic SHA-256 ranking",
+    "minimum_quotas": {
+      "comparison": 10,
+      "contains_exp": 3,
+      "multi_4_step": 8,
+      "multi_5_step": 10,
+      "table_average": 8,
+      "table_max": 6,
+      "table_min": 4,
+      "table_sum": 6
+    },
+    "eligible_pool_counts": {
+      "comparison": 20,
+      "contains_exp": 3,
+      "multi_2_step": 407,
+      "multi_3_step": 55,
+      "multi_4_step": 10,
+      "multi_5_step": 16,
+      "single_add": 54,
+      "single_divide": 367,
+      "single_multiply": 36,
+      "single_subtract": 140,
+      "table_average": 15,
+      "table_max": 10,
+      "table_min": 4,
+      "table_sum": 10
+    },
+    "final_quotas": {
+      "comparison": 14,
+      "contains_exp": 3,
+      "multi_2_step": 166,
+      "multi_3_step": 22,
+      "multi_4_step": 9,
+      "multi_5_step": 12,
+      "single_add": 22,
+      "single_divide": 149,
+      "single_multiply": 15,
+      "single_subtract": 57,
+      "table_average": 11,
+      "table_max": 8,
+      "table_min": 4,
+      "table_sum": 8
+    },
+    "selected_count": 500,
+    "sample_substitution": false,
+    "selection_rank_material": "primary-selection|{protocol_id}|{normalized_file_sha256}|{sample_id}",
+    "execution_order_material": "primary-order|{protocol_id}|{normalized_file_sha256}|{sample_id}",
+    "notes": [
+      "Gold programs are used only for stratum assignment and are absent from inference artifacts.",
+      "The primary unweighted estimand applies to this preregistered stress-aware sample mix.",
+      "A population-stratum-weighted effect is reported as a secondary estimand.",
+      "No selected sample may be substituted after registration."
+    ]
+  },
+  "stability_subset": {
+    "selected_count": 100,
+    "selection": "lowest deterministic stability hashes among the primary sample",
+    "additional_replicates": 2,
+    "sample_ids": [
+      "finqa:test:ADI/2010/page_80.pdf-3",
+      "finqa:test:NKE/2009/page_43.pdf-2",
+      "finqa:test:BLL/2011/page_32.pdf-1",
+      "finqa:test:MAS/2012/page_26.pdf-1",
+      "finqa:test:UNP/2009/page_42.pdf-1",
+      "finqa:test:AMT/2005/page_102.pdf-3",
+      "finqa:test:SLG/2001/page_48.pdf-3",
+      "finqa:test:IP/2006/page_38.pdf-4",
+      "finqa:test:ANSS/2016/page_47.pdf-1",
+      "finqa:test:CDW/2017/page_38.pdf-2",
+      "finqa:test:MKTX/2004/page_99.pdf-2",
+      "finqa:test:AMT/2007/page_127.pdf-2",
+      "finqa:test:ETR/2008/page_442.pdf-2",
+      "finqa:test:ETR/2004/page_239.pdf-2",
+      "finqa:test:FIS/2006/page_31.pdf-2",
+      "finqa:test:DG/2005/page_44.pdf-3",
+      "finqa:test:AAPL/2003/page_48.pdf-2",
+      "finqa:test:MRO/2004/page_46.pdf-2",
+      "finqa:test:APD/2018/page_30.pdf-2",
+      "finqa:test:LMT/2014/page_91.pdf-2",
+      "finqa:test:GRMN/2006/page_68.pdf-1",
+      "finqa:test:CMCSA/2015/page_67.pdf-1",
+      "finqa:test:HWM/2015/page_173.pdf-2",
+      "finqa:test:AES/2002/page_128.pdf-4",
+      "finqa:test:BKNG/2016/page_33.pdf-1",
+      "finqa:test:LKQ/2016/page_87.pdf-1",
+      "finqa:test:MMM/2013/page_75.pdf-1",
+      "finqa:test:ABMD/2012/page_41.pdf-2",
+      "finqa:test:CME/2010/page_123.pdf-2",
+      "finqa:test:AAPL/2006/page_100.pdf-4",
+      "finqa:test:CE/2016/page_19.pdf-2",
+      "finqa:test:IP/2006/page_75.pdf-2",
+      "finqa:test:ABMD/2007/page_78.pdf-3",
+      "finqa:test:HOLX/2009/page_127.pdf-2",
+      "finqa:test:C/2018/page_176.pdf-2",
+      "finqa:test:GS/2018/page_69.pdf-4",
+      "finqa:test:ADBE/1999/page_64.pdf-2",
+      "finqa:test:PPG/2018/page_85.pdf-4",
+      "finqa:test:STT/2011/page_69.pdf-4",
+      "finqa:test:AAL/2013/page_172.pdf-4",
+      "finqa:test:JPM/2009/page_175.pdf-1",
+      "finqa:test:CME/2017/page_40.pdf-2",
+      "finqa:test:PNC/2008/page_122.pdf-2",
+      "finqa:test:RSG/2009/page_140.pdf-2",
+      "finqa:test:SNA/2007/page_49.pdf-1",
+      "finqa:test:PPG/2012/page_29.pdf-2",
+      "finqa:test:AAPL/2006/page_100.pdf-3",
+      "finqa:test:ADBE/2008/page_89.pdf-2",
+      "finqa:test:GPN/2010/page_89.pdf-2",
+      "finqa:test:AON/2007/page_175.pdf-2",
+      "finqa:test:PPG/2006/page_42.pdf-4",
+      "finqa:test:AAL/2014/page_15.pdf-1",
+      "finqa:test:BDX/2018/page_106.pdf-3",
+      "finqa:test:ABMD/2012/page_79.pdf-2",
+      "finqa:test:PM/2017/page_32.pdf-2",
+      "finqa:test:IP/2006/page_38.pdf-3",
+      "finqa:test:INTC/2013/page_31.pdf-4",
+      "finqa:test:STT/2007/page_111.pdf-3",
+      "finqa:test:AON/2007/page_171.pdf-3",
+      "finqa:test:IPG/2008/page_72.pdf-4",
+      "finqa:test:ANSS/2012/page_93.pdf-2",
+      "finqa:test:GS/2018/page_69.pdf-1",
+      "finqa:test:PNC/2012/page_68.pdf-5",
+      "finqa:test:GS/2012/page_142.pdf-4",
+      "finqa:test:HWM/2017/page_42.pdf-2",
+      "finqa:test:PPG/2008/page_52.pdf-3",
+      "finqa:test:AAPL/2003/page_48.pdf-1",
+      "finqa:test:ETR/2016/page_23.pdf-1",
+      "finqa:test:BKR/2017/page_56.pdf-3",
+      "finqa:test:PPG/2006/page_42.pdf-1",
+      "finqa:test:ETR/2004/page_239.pdf-1",
+      "finqa:test:AMT/2008/page_94.pdf-2",
+      "finqa:test:APD/2016/page_40.pdf-1",
+      "finqa:test:GS/2014/page_40.pdf-2",
+      "finqa:test:UNP/2011/page_24.pdf-1",
+      "finqa:test:CDNS/2015/page_30.pdf-3",
+      "finqa:test:LMT/2015/page_89.pdf-1",
+      "finqa:test:AWK/2014/page_121.pdf-4",
+      "finqa:test:ETR/2016/page_23.pdf-3",
+      "finqa:test:MRO/2006/page_93.pdf-2",
+      "finqa:test:MRO/2013/page_19.pdf-1",
+      "finqa:test:PPG/2012/page_29.pdf-4",
+      "finqa:test:MO/2014/page_62.pdf-1",
+      "finqa:test:ETR/2015/page_17.pdf-4",
+      "finqa:test:ETR/2004/page_239.pdf-4",
+      "finqa:test:MKTX/2004/page_99.pdf-3",
+      "finqa:test:ADI/2010/page_80.pdf-1",
+      "finqa:test:ILMN/2008/page_86.pdf-3",
+      "finqa:test:AAL/2016/page_8.pdf-3",
+      "finqa:test:VNO/2014/page_57.pdf-2",
+      "finqa:test:MSI/2007/page_70.pdf-1",
+      "finqa:test:JPM/2012/page_140.pdf-2",
+      "finqa:test:ETR/2004/page_212.pdf-1",
+      "finqa:test:JPM/2003/page_106.pdf-3",
+      "finqa:test:SLG/2011/page_91.pdf-5",
+      "finqa:test:MSI/2007/page_70.pdf-3",
+      "finqa:test:DXC/2018/page_56.pdf-1",
+      "finqa:test:AWK/2014/page_121.pdf-1",
+      "finqa:test:HOLX/2009/page_151.pdf-2",
+      "finqa:test:AMT/2005/page_102.pdf-2"
+    ]
+  },
+  "systems": {
+    "primary_runtime": {
+      "schema_version": "1.0",
+      "protocol_id": "contractfin-sci-finqa-test500-v1",
+      "status": "frozen_confirmed_no_live_api_authorization",
+      "live_api_authorized": false,
+      "requested_provider": "deepseek",
+      "requested_model": "deepseek-flash",
+      "inference_artifact": {
+        "path": "data/heldout/finqa_test500_inference_v1.jsonl",
+        "sha256": "ce6b78a25aa709cbac0b862df775df079d869fb79df1ace3ce8cf4d8d4e7b6e1",
+        "record_count": 500
+      },
+      "schedule_artifact": {
+        "path": "config/sci_finqa_test500_interleaved_schedule_v1.jsonl",
+        "sha256": "041d935f9a87a6c67fd2aee453656c41902074ddf5952372f2293e8f6a66282d",
+        "task_count": 1000
+      },
+      "B0": {
+        "label": "Direct LLM",
+        "prompt_version": "b0-direct-v2-text-evidence-id-fix",
+        "system_prompt_sha256": "e76a37331a401c48cb7950c0e4fb1f07623db46eb0329992f04543d41d5c0e7c",
+        "max_output_tokens": 32768,
+        "request_timeout_seconds": 300,
+        "automatic_retries": 0
+      },
+      "B1": {
+        "label": "Tool-Augmented Single Agent",
+        "prompt_version": "b1-tool-single-agent-v1.1",
+        "system_prompt_sha256": "95c84f2094df422746c248c1d4f7c6556415db77a082ed54213039a2703f6137",
+        "total_output_budget": 32768,
+        "max_model_calls": 6,
+        "max_tool_calls": 8,
+        "request_timeout_seconds": 300,
+        "automatic_retries": 0
+      },
+      "execution_policy": {
+        "strict_schedule_order": true,
+        "store_provider_responses": false,
+        "semantic_retries": 0,
+        "evaluation_in_inference_process": false,
+        "resume_only_skips_already_logged_tasks": true
+      }
+    },
+    "stability_runtime": {
+      "schema_version": "1.0",
+      "protocol_id": "contractfin-sci-finqa-test500-v1",
+      "status": "frozen_confirmed_stability_no_live_api_authorization",
+      "live_api_authorized": false,
+      "requested_provider": "deepseek",
+      "requested_model": "deepseek-flash",
+      "inference_artifact": {
+        "path": "data/heldout/finqa_test500_inference_v1.jsonl",
+        "sha256": "ce6b78a25aa709cbac0b862df775df079d869fb79df1ace3ce8cf4d8d4e7b6e1",
+        "record_count": 500
+      },
+      "schedule_artifact": {
+        "path": "config/sci_finqa_stability100_interleaved_schedule_v1.jsonl",
+        "sha256": "e9988a8a45fb11d78f08f39a76a8142492df63bae643bca92cdaca72560428b4",
+        "task_count": 400
+      },
+      "B0": {
+        "label": "Direct LLM",
+        "prompt_version": "b0-direct-v2-text-evidence-id-fix",
+        "system_prompt_sha256": "e76a37331a401c48cb7950c0e4fb1f07623db46eb0329992f04543d41d5c0e7c",
+        "max_output_tokens": 32768,
+        "request_timeout_seconds": 300,
+        "automatic_retries": 0
+      },
+      "B1": {
+        "label": "Tool-Augmented Single Agent",
+        "prompt_version": "b1-tool-single-agent-v1.1",
+        "system_prompt_sha256": "95c84f2094df422746c248c1d4f7c6556415db77a082ed54213039a2703f6137",
+        "total_output_budget": 32768,
+        "max_model_calls": 6,
+        "max_tool_calls": 8,
+        "request_timeout_seconds": 300,
+        "automatic_retries": 0
+      },
+      "execution_policy": {
+        "strict_schedule_order": true,
+        "store_provider_responses": false,
+        "semantic_retries": 0,
+        "evaluation_in_inference_process": false,
+        "resume_only_skips_already_logged_tasks": true,
+        "replicates": [
+          2,
+          3
+        ],
+        "primary_results_pooled": false
+      }
+    }
+  },
+  "blinding": {
+    "inference_process_reads": [
+      "runtime_config",
+      "answer-stripped inference JSONL",
+      "interleaved schedule JSONL"
+    ],
+    "inference_process_never_reads": [
+      "gold JSONL",
+      "normalized source test JSONL",
+      "development outcomes"
+    ],
+    "evaluation_starts_only_after": [
+      "all prediction files are immutable",
+      "prediction SHA-256 values are recorded",
+      "sample identity and uniqueness gates pass"
+    ],
+    "gold_evaluation_contents": "reference answers, programs, evidence identifiers, and document tables required for deterministic program execution; never loaded by either inference runtime"
+  },
+  "outcomes": {
+    "primary": "paired final-answer correctness with missing, abstain, and error outputs scored incorrect",
+    "secondary_family": {
+      "program_itt_correctness": "exact program match; missing or invalid program is false; denominator is all 500 registered items",
+      "execution_itt_correctness": "predicted program executes to the gold answer; missing, invalid, or non-executing program is false; denominator is all 500 registered items",
+      "evidence_item_f1": "official evidence-identifier F1 computed per item, including zero values",
+      "coverage": "status equals answered; denominator is all 500 registered items"
+    },
+    "resource": [
+      "model calls",
+      "tool calls",
+      "input/output/reasoning/total tokens",
+      "latency",
+      "tokens and latency per correct answer"
+    ],
+    "stability": [
+      "item-level success frequency over three total replicates",
+      "token dispersion",
+      "latency dispersion"
+    ]
+  },
+  "statistical_analysis": {
+    "primary_test": "two-sided exact conditional McNemar test at alpha 0.05",
+    "primary_effect": "paired B1-minus-B0 accuracy difference with 95% paired bootstrap CI",
+    "bootstrap": {
+      "replicates": 10000,
+      "seed": 20260929,
+      "resampling_unit": "paired item"
+    },
+    "secondary_tests": {
+      "program_itt_correctness": "two-sided exact McNemar",
+      "execution_itt_correctness": "two-sided exact McNemar",
+      "coverage": "two-sided exact McNemar",
+      "evidence_item_f1": "paired Monte Carlo sign-flip test with 100,000 draws and seed 20260930"
+    },
+    "secondary_multiplicity": "Holm correction across the four frozen secondary p-values",
+    "stratified_reporting": "descriptive operation-stratum estimates; no underpowered stratum significance claims",
+    "population_weighted_secondary": "weight each registered stratum by its prevalence in all 1,147 FinQA test items",
+    "development_p_values": "prohibited",
+    "sequential_testing": "none"
+  },
+  "failure_policy": {
+    "automatic_retries": 0,
+    "semantic_retries": 0,
+    "item_specific_prompt_changes": "prohibited",
+    "sample_substitution": "prohibited",
+    "errors_in_primary_itt": "scored incorrect",
+    "infrastructure_failure_definition": "no HTTP response, provider 5xx/429, connection failure, or provider-side timeout before a completed response; schema-invalid and semantically wrong model outputs are system failures, not infrastructure failures",
+    "structural_invalidation": "if either system has more than 2% infrastructure failures or the between-system infrastructure-failure-rate difference exceeds 1 percentage point, stop before unblinding; any rerun requires a dated amendment and reruns the full paired primary schedule, never selected items",
+    "returned_model_drift": "record every returned model identifier; any within-pair identifier mismatch is a protocol deviation reported before unblinding, and more than 1% mismatched pairs triggers the same structural-invalidation rule"
+  },
+  "acceptance_gates_before_unblinding": {
+    "unique_predictions_per_system": 500,
+    "duplicate_predictions": 0,
+    "schedule_tasks_logged": 1000,
+    "first_system_balance": {
+      "B0": 250,
+      "B1": 250
+    },
+    "sample_identity_match": true,
+    "runtime_hash_match": true,
+    "prediction_files_hashed": true,
+    "accuracy_is_a_structural_gate": false
+  },
+  "call_budget_not_authorized": {
+    "primary_expected": 2067,
+    "primary_ceiling": 3500,
+    "stability_two_additional_replicates_expected": 827,
+    "stability_two_additional_replicates_ceiling": 1400,
+    "grand_expected": 2894,
+    "grand_ceiling": 4900,
+    "current_authorization": 0
+  },
+  "commands": {
+    "rebuild_and_verify_local_artifacts": "PYTHONPATH=src python3 scripts/prepare_sci_heldout.py",
+    "local_no_network_dry_run": "PYTHONPATH=src python3 scripts/run_sci_heldout.py --runtime-config config/sci_heldout_runtime_v1.json --mode dry-run",
+    "future_primary_live_run_blocked": "PYTHONPATH=src python3 scripts/run_sci_heldout.py --runtime-config config/sci_heldout_runtime_v1.json --mode live --artifact-stem sci_finqa_test500_primary_v1 --authorization-amendment <dated-primary-authorization.json>",
+    "future_stability_live_run_blocked": "PYTHONPATH=src python3 scripts/run_sci_heldout.py --runtime-config config/sci_heldout_stability_runtime_v1.json --mode live --artifact-stem sci_finqa_stability100_v1 --authorization-amendment <dated-stability-authorization.json>",
+    "future_live_command_status": "blocked until a separate dated authorization file binds explicit scope to the frozen runtime SHA-256 after explicit user authorization; the frozen runtime itself is never edited"
+  }
+}

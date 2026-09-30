@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "plan_id": "contractfin-sci-plan-draft-v1",
+  "date": "2026-09-29",
+  "status": "draft_local_only_no_api_authority",
+  "recommended_paper": {
+    "title": "Tool Use Before Teamwork: A Cost-Aware and Auditable Evaluation of LLM Architectures for Financial Numerical Reasoning",
+    "paper_type": "controlled empirical systems study with exploratory failure analysis",
+    "central_claim_to_test": "Tool augmentation can improve executable financial reasoning, whereas adding fixed agent roles does not automatically improve reliability and may introduce coordination and verification failures.",
+    "confirmatory_comparison": "B1 Tool-Augmented Single Agent versus B0 Direct LLM",
+    "exploratory_component": "B2 fixed-role multi-agent development failures and verifier false acceptance",
+    "not_claimed": [
+      "B2 development results are final held-out performance",
+      "multi-agent systems are universally inferior",
+      "the 30-item development differences are statistically significant",
+      "observed differences are causal effects of architecture alone"
+    ]
+  },
+  "frozen_development_evidence": {
+    "metric_artifact": "reports/b0_b1_b2_stage_metrics.json",
+    "metric_artifact_sha256": "d75b560977cf3e16bc82808767d51bb36bb0edc3913011a480a6e57b93c4c740",
+    "sample_count": 30,
+    "role": "hypothesis generation and engineering diagnosis only",
+    "final_performance_estimate": false,
+    "systems": {
+      "B0": {
+        "status": "accepted development run",
+        "final_answer_accuracy": 0.4,
+        "execution_accuracy": 0.18518518518518517,
+        "total_tokens": 92425
+      },
+      "B1": {
+        "status": "accepted development run",
+        "final_answer_accuracy": 0.5,
+        "execution_accuracy": 0.5666666666666667,
+        "total_tokens": 200561
+      },
+      "B2_v1": {
+        "status": "failed development run",
+        "final_answer_accuracy": 0.3,
+        "successful_samples": 27,
+        "total_tokens": 372859
+      },
+      "B2_v1_1": {
+        "status": "failed development run",
+        "final_answer_accuracy": 0.2,
+        "successful_samples": 23,
+        "verifier_false_accept_rate": 0.7272727272727273,
+        "total_tokens": 318823
+      }
+    }
+  },
+  "research_questions": [
+    {
+      "id": "RQ1",
+      "question": "Does tool augmentation improve final-answer and execution accuracy over direct generation on held-out financial numerical reasoning items?",
+      "type": "confirmatory"
+    },
+    {
+      "id": "RQ2",
+      "question": "What quality-cost trade-offs arise from retrieval and deterministic calculation tools?",
+      "type": "confirmatory_secondary"
+    },
+    {
+      "id": "RQ3",
+      "question": "Which coordination, evidence-contract, output-budget, and verification failures explain the underperformance of the fixed-role multi-agent prototypes?",
+      "type": "exploratory_development_case"
+    },
+    {
+      "id": "RQ4",
+      "question": "How stable are B0 and B1 outcomes under repeated calls to a provider alias without an exposed immutable model snapshot?",
+      "type": "sensitivity"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "B1 has higher held-out final-answer accuracy than B0.",
+      "primary": true,
+      "origin": "formed from development evidence before inspecting the held-out test outcomes"
+    },
+    {
+      "id": "H2",
+      "statement": "B1 has higher held-out execution accuracy and execution coverage than B0.",
+      "primary": false
+    },
+    {
+      "id": "H3",
+      "statement": "B1 requires more model calls and total tokens per item than B0, but tool execution reduces program-construction errors.",
+      "primary": false
+    }
+  ],
+  "dataset_plan": {
+    "historical_development_set": {
+      "source": "FinQA dev",
+      "count": 30,
+      "action": "freeze permanently; no further prompt or architecture tuning from item outcomes"
+    },
+    "primary_held_out_pool": {
+      "source": "data/normalized/finqa_test.jsonl",
+      "count": 1147,
+      "sha256": "da64fbde6763d0832a04c4f17e7a945bb3f195ab23e12bc57b31167a5b745541",
+      "outcomes_inspected": false
+    },
+    "recommended_primary_sample": {
+      "count": 500,
+      "selection": "operation- and step-depth-stratified deterministic SHA-256 ranking",
+      "rare_strata_rule": "minimum quotas for comparison, exponentiation, table operations, and four/five-step programs; remaining quotas proportional to the held-out pool",
+      "sample_substitution": false,
+      "gold_use": "gold programs may define strata only; gold answers, evidence, and programs never enter inference prompts"
+    },
+    "stability_subset": {
+      "count": 100,
+      "selection": "deterministic hash-ranked subset of the primary sample",
+      "additional_replicates": 2,
+      "purpose": "estimate stochastic outcome and resource variability; not pooled into the primary test"
+    },
+    "ideal_high_budget_option": "run the primary comparison once on all 1,147 FinQA test items"
+  },
+  "system_freeze": {
+    "B0": "freeze the accepted B0-v1.2 direct-LLM configuration with corrected official evidence-label presentation",
+    "B1": "freeze the accepted B1-v1.2 tool-augmented single-agent configuration",
+    "B2": "do not make additional paid calls; retain B2-v1 and v1.1 as exploratory failed development systems",
+    "common": [
+      "same requested provider/model alias",
+      "same 32,768 cumulative output ceiling per item",
+      "same evaluator and official evidence identifiers",
+      "same zero semantic-retry policy",
+      "same item order with deterministic interleaving of B0 and B1 to reduce temporal provider drift",
+      "record timestamps, returned model identifier, tokens, latency, errors, and request hashes"
+    ]
+  },
+  "inference_blinding": {
+    "required": true,
+    "design": "create answer-stripped runtime JSONL for inference and keep gold in a separately hashed evaluation artifact loaded only after predictions are immutable",
+    "guards": [
+      "assert no gold_answer, gold_program, or gold_evidence key enters any request payload",
+      "refuse output overwrite",
+      "freeze prediction files before evaluation",
+      "verify sample identity and order independently"
+    ]
+  },
+  "outcomes": {
+    "primary": [
+      "final_answer_accuracy",
+      "paired item-level B1-minus-B0 accuracy difference"
+    ],
+    "key_secondary": [
+      "execution_accuracy",
+      "execution_coverage",
+      "evidence macro-F1",
+      "exact program accuracy"
+    ],
+    "reliability": [
+      "structured completion rate",
+      "tool failure rate",
+      "unsupported claim rate",
+      "unit/scale error rate"
+    ],
+    "efficiency": [
+      "model and tool calls per item",
+      "input, output, reasoning, and total tokens per item",
+      "latency per item",
+      "tokens and latency per correct answer"
+    ],
+    "exploratory_failure_taxonomy": [
+      "retrieval miss",
+      "calculator/program error",
+      "evidence-packet contract violation",
+      "output ceiling",
+      "invalid structured output",
+      "verifier false acceptance",
+      "verifier false rejection"
+    ]
+  },
+  "statistical_plan": {
+    "primary_test": "two-sided exact McNemar test on paired B0/B1 correctness at alpha=0.05",
+    "effect_reporting": "absolute percentage-point difference, paired odds ratio, and 95% confidence interval",
+    "secondary_metrics": "paired item bootstrap with 10,000 resamples; Holm adjustment across the key secondary family",
+    "resource_metrics": "paired bootstrap and distribution summaries; do not rely on normality",
+    "heterogeneity": "predefined operation, step-depth, table/arithmetic, and evidence-count strata; exploratory with confidence intervals",
+    "stability_analysis": "report per-system item-level success frequency and token/latency dispersion over the three stability-subset replicates",
+    "development_p_value_policy": "no inferential p-values are used to validate claims from the repeatedly observed 30-item development set"
+  },
+  "power_and_scope": {
+    "approximation": "Under paired discordance assumptions, about 155 items can detect a 10-point net difference when total discordance is 20%, while about 470 items may be needed for a 5-point net difference when total discordance is 15%.",
+    "recommended_n": 500,
+    "warning": "A formal exact power sensitivity table must be generated locally and frozen before the held-out manifest is created."
+  },
+  "call_budget_estimate_no_authorization": {
+    "basis": "B1 development average 94/30 = 3.13 model calls per item; hard ceiling 6",
+    "primary_500": {
+      "B0_calls": 500,
+      "B1_expected_calls": 1567,
+      "B1_call_ceiling": 3000,
+      "combined_expected_calls": 2067,
+      "combined_call_ceiling": 3500
+    },
+    "stability_100_two_additional_replicates": {
+      "combined_expected_calls": 827,
+      "combined_call_ceiling": 1400
+    },
+    "total_expected_calls": 2894,
+    "total_call_ceiling": 4900,
+    "authorization": "none; every live stage requires a new explicit authorization after local preregistration"
+  },
+  "manuscript_visual_system": {
+    "figures": [
+      "Figure 1. Controlled architecture ladder from direct generation to tool augmentation and fixed-role multi-agent coordination",
+      "Figure 2. Failure-propagation paths across evidence selection, calculation, candidate validation, and verifier acceptance",
+      "Figure 3. Held-out quality-cost frontier using accuracy, total tokens, and latency"
+    ],
+    "tables": [
+      "Table 1. Frozen system boundaries, tools, call ceilings, and validation rules",
+      "Table 2. Formative development evidence for B0, B1, B2-v1, and B2-v1.1",
+      "Table 3. B2 failure taxonomy and observability gaps",
+      "Table 4. Preregistered held-out B0/B1 performance, reliability, and efficiency results"
+    ],
+    "style": "restrained grayscale diagrams and three-line tables; development evidence explicitly labeled formative"
+  },
+  "next_local_stage": {
+    "name": "held-out protocol preparation without API calls",
+    "tasks": [
+      "generate an exact paired-design power sensitivity table",
+      "create and hash the 500-item FinQA test manifest and 100-item stability subset",
+      "create answer-stripped inference and separate gold evaluation artifacts",
+      "freeze B0/B1 commands, interleaving order, acceptance gates, and failure policy",
+      "implement a local dry-run and leakage audit",
+      "prepare a human-readable preregistration for review"
+    ],
+    "paid_calls": 0,
+    "requires_user_authorization_before_start": true
+  }
+}

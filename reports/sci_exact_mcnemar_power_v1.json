@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0",
+  "method": "unconditional power of the two-sided exact conditional McNemar test",
+  "assumptions": [
+    "Each paired item belongs to B1-only correct, B0-only correct, both correct, or both wrong.",
+    "The number of discordant pairs is Binomial(n, total_discordance).",
+    "Conditional on discordance, B1-only counts are Binomial(D, theta).",
+    "Rejection uses the doubled smaller exact Binomial(D, 0.5) tail at alpha=0.05."
+  ],
+  "rows": [
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 100,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.17831742517997543
+    },
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 155,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.28574883660551376
+    },
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 300,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.5636273207723917
+    },
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 470,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.7764954983428652
+    },
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 500,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.8024099035395067
+    },
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 750,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9372643194207504
+    },
+    {
+      "scenario": "small_effect_low_discordance",
+      "n": 1147,
+      "total_discordance": 0.15,
+      "net_accuracy_difference_B1_minus_B0": 0.05,
+      "probability_B1_correct_B0_wrong": 0.1,
+      "probability_B0_correct_B1_wrong": 0.049999999999999996,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9919014485556981
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 100,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.31059153231648495
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 155,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.48217497317943603
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 300,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.8089866037727214
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 470,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9498663742968054
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 500,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9612072534128542
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 750,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9959636948464717
+    },
+    {
+      "scenario": "moderate_effect",
+      "n": 1147,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.075,
+      "probability_B1_correct_B0_wrong": 0.1375,
+      "probability_B0_correct_B1_wrong": 0.0625,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9999201166551968
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 100,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.5444454279352253
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 155,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.7617471785336022
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 300,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.973602209898129
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 470,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9985323824705882
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 500,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9991526726868997
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 750,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9999927155313972
+    },
+    {
+      "scenario": "ten_point_effect",
+      "n": 1147,
+      "total_discordance": 0.2,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.15000000000000002,
+      "probability_B0_correct_B1_wrong": 0.05,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9999999977138919
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 100,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.37307708430181413
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 155,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.5806955499214319
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 300,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.8735668010674803
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 470,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9762693669099015
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 500,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9826051434566495
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 750,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9988925298791098
+    },
+    {
+      "scenario": "ten_point_high_discordance",
+      "n": 1147,
+      "total_discordance": 0.3,
+      "net_accuracy_difference_B1_minus_B0": 0.1,
+      "probability_B1_correct_B0_wrong": 0.2,
+      "probability_B0_correct_B1_wrong": 0.09999999999999999,
+      "two_sided_alpha": 0.05,
+      "exact_unconditional_power": 0.9999907321627413
+    }
+  ]
+}
