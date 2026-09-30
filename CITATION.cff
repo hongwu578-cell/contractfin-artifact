@@ -3,7 +3,7 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite the associated manuscript."
 title: "ContractFin reproducibility artifact: Tool Use Before Teamwork?"
 type: software
-version: "1.0.0-rc5"
+version: "1.0.0-rc6"
 license: MIT
 date-released: 2026-09-30
 authors:
@@ -13,7 +13,7 @@ authors:
   - family-names: Xu
     given-names: Hui
     affiliation: Beijing University of Financial Technology
-repository-code: "TO_BE_ADDED_AFTER_PUBLICATION"
+repository-code: "https://github.com/hongwu578-cell/contractfin-artifact"
 abstract: >-
   Code, frozen configurations, registered FinQA inputs, predictions, logs,
   and analyses for a preregistered cost-aware comparison of direct generation,

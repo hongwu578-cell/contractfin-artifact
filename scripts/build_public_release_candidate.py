@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a local-only, security-scanned ContractFin release candidate."""
+"""Build a security-scanned ContractFin release candidate."""
 
 from __future__ import annotations
 
@@ -15,7 +15,8 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = ROOT / "releases" / "contractfin_artifact_v1_0_rc5"
+DEFAULT_OUTPUT = ROOT / "releases" / "contractfin_artifact_v1_0_rc6"
+REPOSITORY_URL = "https://github.com/hongwu578-cell/contractfin-artifact"
 
 EXCLUDED_REPORT_PREFIXES = (
     "sci_applied_",
@@ -117,9 +118,9 @@ def build_authorization_manifest(output: Path) -> None:
 
 def write_release_documents(output: Path) -> None:
     readme = """
-# ContractFin reproducibility artifact (v1.0-rc5)
+# ContractFin reproducibility artifact (v1.0-rc6)
 
-This is a local release candidate for the study **“Tool Use Before Teamwork? A Preregistered, Cost-Aware Evaluation of LLM Architectures for Financial Numerical Reasoning.”** It has not been uploaded or assigned a DOI.
+This reproducibility artifact accompanies the study **“Tool Use Before Teamwork? A Preregistered, Cost-Aware Evaluation of LLM Architectures for Financial Numerical Reasoning.”** The public repository is https://github.com/hongwu578-cell/contractfin-artifact. No DOI has been assigned.
 
 ## Contents
 
@@ -145,8 +146,14 @@ Python 3.10 or newer is required. The core package uses only the Python standard
 ```bash
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s tests -q
 python3 scripts/freeze_sci_heldout.py --verify
-python3 scripts/audit_sci_primary_structure.py
-python3 scripts/audit_sci_stability_structure.py
+python3 scripts/audit_sci_primary_structure.py \
+  --artifact-stem sci_finqa_test500_primary_v1_rerun1 \
+  --output-json /tmp/contractfin_primary_gate.json \
+  --output-md /tmp/contractfin_primary_gate.md
+python3 scripts/audit_sci_stability_structure.py \
+  --artifact-stem sci_finqa_stability100_v1 \
+  --output-json /tmp/contractfin_stability_gate.json \
+  --output-md /tmp/contractfin_stability_gate.md
 ```
 
 Live model commands require an explicitly configured provider key and may incur charges. They are not part of local validation and must not be run merely to inspect this artifact.
@@ -157,7 +164,7 @@ Live model commands require an explicitly configured provider key and may incur 
 
 ## Release status
 
-Original ContractFin code and documentation are released under the MIT License. The candidate is ready for author review before upload; the repository URL/DOI remains to be assigned. Third-party terms and exclusions are documented in `THIRD_PARTY_NOTICES.md` and `LICENSE_SCOPE.md`.
+Original ContractFin code and documentation are released under the MIT License. The canonical repository is https://github.com/hongwu578-cell/contractfin-artifact; a DOI has not yet been assigned. Third-party terms and exclusions are documented in `THIRD_PARTY_NOTICES.md` and `LICENSE_SCOPE.md`.
 """
     reproducibility = """
 # Reproducibility guide
@@ -233,7 +240,7 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite the associated manuscript."
 title: "ContractFin reproducibility artifact: Tool Use Before Teamwork?"
 type: software
-version: "1.0.0-rc5"
+version: "1.0.0-rc6"
 license: MIT
 date-released: 2026-09-30
 authors:
@@ -243,7 +250,7 @@ authors:
   - family-names: Xu
     given-names: Hui
     affiliation: Beijing University of Financial Technology
-repository-code: "TO_BE_ADDED_AFTER_PUBLICATION"
+repository-code: "https://github.com/hongwu578-cell/contractfin-artifact"
 abstract: >-
   Code, frozen configurations, registered FinQA inputs, predictions, logs,
   and analyses for a preregistered cost-aware comparison of direct generation,
@@ -417,7 +424,7 @@ def write_inventory_and_audit(output: Path) -> None:
         by_top_level[top] = by_top_level.get(top, 0) + 1
     inventory = {
         "schema_version": "1.0",
-        "release_candidate": "contractfin_artifact_v1_0_rc5",
+        "release_candidate": "contractfin_artifact_v1_0_rc6",
         "file_count_before_manifest": len(files),
         "total_bytes_before_manifest": sum(path.stat().st_size for path in files),
         "files_by_top_level": dict(sorted(by_top_level.items())),
@@ -444,9 +451,10 @@ def write_inventory_and_audit(output: Path) -> None:
     scan = scan_release(output)
     audit = {
         "schema_version": "1.0",
-        "release_candidate": "contractfin_artifact_v1_0_rc5",
+        "release_candidate": "contractfin_artifact_v1_0_rc6",
+        "audit_scope": "local_prepublication_validation",
         "local_only": True,
-        "external_upload_performed": False,
+        "external_upload_performed_at_audit_time": False,
         "license_selected_for_original_code": True,
         "original_code_license": "MIT",
         "copyright_holders": ["Wang Hongwu", "Xu Hui"],

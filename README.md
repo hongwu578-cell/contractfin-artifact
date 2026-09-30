@@ -1,7 +1,7 @@
 
-# ContractFin reproducibility artifact (v1.0-rc5)
+# ContractFin reproducibility artifact (v1.0-rc6)
 
-This is a local release candidate for the study **“Tool Use Before Teamwork? A Preregistered, Cost-Aware Evaluation of LLM Architectures for Financial Numerical Reasoning.”** It has not been uploaded or assigned a DOI.
+This reproducibility artifact accompanies the study **“Tool Use Before Teamwork? A Preregistered, Cost-Aware Evaluation of LLM Architectures for Financial Numerical Reasoning.”** The public repository is https://github.com/hongwu578-cell/contractfin-artifact. No DOI has been assigned.
 
 ## Contents
 
@@ -27,8 +27,8 @@ Python 3.10 or newer is required. The core package uses only the Python standard
 ```bash
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s tests -q
 python3 scripts/freeze_sci_heldout.py --verify
-python3 scripts/audit_sci_primary_structure.py
-python3 scripts/audit_sci_stability_structure.py
+python3 scripts/audit_sci_primary_structure.py   --artifact-stem sci_finqa_test500_primary_v1_rerun1   --output-json /tmp/contractfin_primary_gate.json   --output-md /tmp/contractfin_primary_gate.md
+python3 scripts/audit_sci_stability_structure.py   --artifact-stem sci_finqa_stability100_v1   --output-json /tmp/contractfin_stability_gate.json   --output-md /tmp/contractfin_stability_gate.md
 ```
 
 Live model commands require an explicitly configured provider key and may incur charges. They are not part of local validation and must not be run merely to inspect this artifact.
@@ -39,4 +39,4 @@ Live model commands require an explicitly configured provider key and may incur 
 
 ## Release status
 
-Original ContractFin code and documentation are released under the MIT License. The candidate is ready for author review before upload; the repository URL/DOI remains to be assigned. Third-party terms and exclusions are documented in `THIRD_PARTY_NOTICES.md` and `LICENSE_SCOPE.md`.
+Original ContractFin code and documentation are released under the MIT License. The canonical repository is https://github.com/hongwu578-cell/contractfin-artifact; a DOI has not yet been assigned. Third-party terms and exclusions are documented in `THIRD_PARTY_NOTICES.md` and `LICENSE_SCOPE.md`.

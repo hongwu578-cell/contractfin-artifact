@@ -1,8 +1,9 @@
 {
   "schema_version": "1.0",
-  "release_candidate": "contractfin_artifact_v1_0_rc5",
+  "release_candidate": "contractfin_artifact_v1_0_rc6",
+  "audit_scope": "local_prepublication_validation",
   "local_only": true,
-  "external_upload_performed": false,
+  "external_upload_performed_at_audit_time": false,
   "license_selected_for_original_code": true,
   "original_code_license": "MIT",
   "copyright_holders": [

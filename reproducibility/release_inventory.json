@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "release_candidate": "contractfin_artifact_v1_0_rc5",
+  "release_candidate": "contractfin_artifact_v1_0_rc6",
   "file_count_before_manifest": 249,
-  "total_bytes_before_manifest": 29671515,
+  "total_bytes_before_manifest": 29672469,
   "files_by_top_level": {
     ".gitignore": 1,
     "CITATION.cff": 1,
